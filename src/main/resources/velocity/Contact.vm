@@ -1,0 +1,94 @@
+<html>
+<head>
+<style type="text/css">
+.vm-container {
+	margin: 10px;
+}
+
+.vm-page-content {
+	border: 1px solid #2a3f54;
+	height: 100%;
+	color: #000;
+}
+
+.vm-page-content .head {
+	background-color: #2a3f54;
+	padding: 10px;
+	color: #FFFFFF;
+}
+
+.head .images {
+	margin-left: 10px;
+}
+
+.vm-page-content .body {
+	padding: 10px;
+	font-size: 12px;
+}
+
+.resp {
+	margin: 5px 0px;
+}
+
+.resp h5 {
+	font-size: 13px;
+	color: #000;
+	font-weight: 600;
+}
+
+.body .cont p {
+	margin: 0 0 8px;
+	text-align: justify;
+	line-height: 20px;
+}
+
+.footer {
+	padding: 10px;
+	background: #fff;
+}
+
+.footer-reg {
+	font-size: 12px;
+	color: #000;
+	font-weight: 600;
+	line-height: 20px;
+}
+
+.footer .quas {
+	margin-top: 20px;
+	font-size: 12px;
+}
+</style>
+</head>
+<body>
+	<div class="vm-container">
+		<div class="vm-page-content">
+			<div class="head">
+				<div class="images">
+					<img src="cid:imagess" alt="MyJobKart" />
+				</div>
+			</div>
+			<div class="body">
+				<div class="resp">
+					<h5>Dear Admin,</h5>
+				</div>
+				<div class="cont">
+					<p><b>Phone No</b>: ${phoneno}</p>
+					<p><b>Email</b>   : ${email}</p>
+					<p><b>Subject</b> : ${subject}</p>
+					<p><b>Message</b> : ${message}</p>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="footer-reg">
+					Warm  Regards<br /> MyJobKart.com
+				</div>
+				<div class="quas">
+					 For more clarifications, ping us at  <b>info@myjobkart.com</b>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

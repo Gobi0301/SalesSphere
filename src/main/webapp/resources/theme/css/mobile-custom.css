@@ -1,0 +1,749 @@
+.form-bk-align {
+	height: 620px !important;
+}
+
+.home-normal-view {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 16%;
+	margin-top: 0px;
+}
+
+.find-normal-view {
+	padding-top: 5px;
+	padding-bottom: 0px;
+	padding-left: 16%;
+	margin-top: 0px;
+}
+
+.find-field-space {
+	/* margin-top: 10px; */
+}
+
+.home-left {
+	/* margin-top: 10px;
+	margin-bottom: 18px;
+	padding-left: 5px; */
+}
+
+.home-right {
+	/* margin-top: -3px; */
+	margin-bottom: 10px;
+	padding-right: 5px;
+}
+
+.fd-apply {
+	margin-top: 50px;
+}
+
+.fs-search {
+	padding: 0px;
+	padding-bottom: 0px !important;
+	padding-left: 32px !important;
+}
+
+.fsl-search {
+	padding: 0px;
+	padding-right: 15px !important;
+}
+
+.pd-lft {
+	padding-left: 20px !important;
+}
+
+.pd-rgt {
+	padding-right: 20px !important;
+}
+
+.contact-dt-vw {
+	border: 1px solid #222;
+	padding: 30px;
+}
+
+.hm-tit-blts {
+	background: #000;
+	width: 8px;
+	height: 8px;
+	display: inline-block;
+	margin-bottom: 1px;
+}
+
+.contact-dt-vw label {
+	width: 100px;
+}
+
+.frm-center-cls {
+	width: 50%;
+	margin-left: 23%;
+}
+
+.brds-frm {
+	border: 1px solid #eee;
+	padding: 15px;
+	margin: 15px;
+}
+
+.pay-detail-div {
+	margin: 35px;
+}
+
+.main-navbar .navbar-nav li .pd-tp-27 {
+	padding-top: 15px !important;
+}
+
+.arrows::BEFORE {
+	left: 40px !important;
+}
+
+.arrows::AFTER {
+	left: 40px !important;
+}
+.arrows-login::BEFORE {
+	left: 330px !important;
+}
+
+.arrows-login::AFTER {
+	left: 330px !important;
+}
+.dd-center-align {
+	left: 0px;
+}
+
+.bt-hovers:HOVER {
+	font-weight: bold !important;
+}
+
+.bt-hovers:ACTIVE {
+	font-weight: bold !important;
+}
+
+.detls-align {
+	border: 1px solid #34495e;
+}
+
+.detls-align h4 {
+	text-align: center;
+	background-color: #34495e;
+	padding: 10px;
+	color: #fff;
+	margin: 0px;
+}
+
+.detls-content {
+	padding: 10px;
+}
+
+.detls-content table {
+	border: 1px solid #E3E3E3;
+	width: 100%;
+	color: #202020;
+}
+
+.detls-content table tr:nth-child(odd) {
+	background-color: #FAF9F9;
+}
+
+.detls-content table td {
+	padding: 5px;
+	border-bottom: 1px solid #E3E3E3;
+}
+
+.detls-content table td:nth-child(odd) {
+	color: #34495e;
+}
+
+.registercontain {
+	width: 39% !important;
+}
+
+.bg-clr2 {
+	background-color: #f5f5f5;
+}
+
+.bg-clr1 {
+	background-color: #FFFFFF;
+}
+
+.cm-alpha-ltrs {
+	padding-left: 11.99px !important;
+	padding-right: 10.95px !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+}
+
+.hm-alpha-ltrs {
+	padding-left: 19.3px !important;
+	padding-right: 18.4px !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+}
+
+.hm-alpha-ltrs:HOVER {
+	padding-top: 3px !important;
+	padding-bottom: 3px !important;
+}
+
+.cm-alpha-ltrs:hover {
+	padding-top: 3px !important;
+	padding-bottom: 3px !important;
+}
+
+.hm-last-div {
+	background-color: #FFF;
+	border: 1px solid #e1e1e1;
+	width: 97.75% !important;
+	margin-left: 15px;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.hm-cm-last {
+	height: 170px;
+	border: 1px solid #e1e1e1;
+}
+
+.hm-cm-last p {
+	padding: 15px;
+	text-align: justify;
+	height: 75%;
+}
+
+.hm-cm-last a {
+	float: right;
+	padding: 0px 10px !important;
+	position: relative;
+	bottom: 0px;
+	margin: 5px;
+}
+
+.main-navbar .navbar-nav li a {
+	padding: 8px 8px !important;
+}
+
+.hm-top-emp-align {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+}
+
+.hm-connent-us {
+	padding-left: 5px !important;
+	padding-right: 5px !important;
+}
+
+.hm-top-emp-align .wid {
+	width: 5%;
+	float: left;
+	padding: 7px;
+}
+
+.hm-top-emp-align .wid:HOVER {
+	width: 5%;
+	padding: 7px 0px 7px 0px;
+}
+
+.hm-top-emp-align .wid img {
+	width: 100%;
+	height: 30px;
+	border: 1px solid #e1e1e1;
+}
+
+.TFtable1 {
+	border-collapse: collapse;
+}
+
+.TFtable1 table {
+	border: #e1e1e1 1px solid;
+}
+
+.TFtable1 td {
+	font-weight: normal;
+	padding: 5px;
+}
+
+.TFtable1 tr {
+	background: #fafafa;
+}
+
+.TFtable1 tr:nth-child(odd) {
+	background: #e6e6e6;
+}
+
+.TFtable1 tr:nth-child(even) {
+	background: #fff;
+}
+
+@media ( max-width : 1281px) {
+	.home-left {
+		/* margin-top: -10px; */
+		margin-bottom: 2px;
+		padding-left: 0px;
+	}
+	.home-right {
+		/* margin-top: -10px; */
+		margin-bottom: 10px;
+		padding-right: 0px;
+	}
+	.hm-alpha-ltrs {
+		padding-left: 17.6px !important;
+		padding-right: 17.6px !important;
+		padding-top: 4px !important;
+		padding-bottom: 4px !important;
+	}
+	.hm-alpha-ltrs:HOVER {
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+	}
+	.pd-lft {
+		padding-left: 4px !important;
+	}
+	.pd-rgt {
+		padding-right: 0px !important;
+	}
+	.header-logo {
+		padding: 0px 4px 0px 4px !important;
+	}
+}
+
+@media only screen and (device-width:1920px) {
+	.hm-last-div {
+		width: 98.4% !important;
+	}
+	.hm-cm-last {
+		height: 125px;
+	}
+	.hm-cm-last p {
+		height: 67%;
+	}
+}
+
+@media ( max-width : 1025px) {
+	.hm-cm-last {
+		height: 215px;
+	}
+	.hm-cm-last p {
+		height: 80%;
+	}
+	.hm-last-div {
+		width: 97% !important;
+	}
+	.registercontain {
+		width: 55% !important;
+	}
+	.hm-alpha-ltrs {
+		padding-left: 12.8px !important;
+		padding-right: 12.9px !important;
+		padding-top: 4px !important;
+		padding-bottom: 4px !important;
+	}
+	.hm-alpha-ltrs:HOVER {
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+	}
+	.frm-center-cls {
+		width: 80%;
+		margin-left: 7%;
+	}
+}
+
+@media ( max-width : 981px) {
+	.navbar-nav {
+		margin: 0px;
+	}
+	.hm-alpha-ltrs {
+		padding-left: 12px !important;
+		padding-right: 12px !important;
+		padding-top: 4px !important;
+		padding-bottom: 4px !important;
+	}
+	.hm-alpha-ltrs:HOVER {
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+	}
+	.mobi {
+		height: 50px;
+		background-color: #2a3f54;
+	}
+	.header-logo {
+		padding: 5px 2px 2px 3px !important;
+	}
+	.logo_top {
+		margin-top: 0px !important;
+	}
+	.contentArea {
+		margin-top: 0px;
+	}
+}
+
+@media only screen and (device-width: 900px) {
+	.hm-last-div .div-pad {
+		padding-right: 2px !important;
+		padding-left: 2px !important;
+	}
+	.div-pad .btn-theme {
+		padding: 7px 3px;
+	}
+	.hm-last-div {
+		padding-right: 5px !important;
+		padding-left: 5px !important;
+	}
+}
+
+@media ( max-width : 981px) {
+	.fs-mobile-search {
+		padding-left: 10px !important;
+		padding-right: 8px !important;
+	}
+	.fsl-mobile-search {
+		padding-left: 10px !important;
+		padding-right: 8px !important;
+	}
+	.fs-mobile-skills {
+		padding-right: 8px !important;
+	}
+	.fs-mobile-btnsearch {
+		padding-left: 8px !important;
+	}
+	.hm-top-emp-align .wid {
+		width: 10% !important;
+	}
+	.mobile-hide {
+		display: none;
+	}
+	.contentArea {
+		margin-top: 0px;
+	}
+	.pay-detail-div {
+		margin: 0px;
+		margin-top: 30px;
+	}
+}
+
+@media ( max-width : 901px) {
+	.hm-top-emp-align .wid {
+		width: 10% !important;
+	}
+	.hm-cm-last {
+		height: 220px;
+	}
+	.registercontain {
+		width: 50% !important;
+	}
+	.hm-alpha-ltrs {
+		padding-left: 10.5px !important;
+		padding-right: 10.5px !important;
+		padding-top: 4px !important;
+		padding-bottom: 4px !important;
+	}
+	.hm-alpha-ltrs:HOVER {
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+	}
+}
+
+@media only screen and (device-width: 800px) {
+	.hm-last-div .div-pad {
+		padding-right: 2px !important;
+		padding-left: 2px !important;
+	}
+	.div-pad .btn-theme {
+		padding: 7px 3px;
+	}
+	.hm-last-div {
+		padding-right: 5px !important;
+		padding-left: 5px !important;
+	}
+}
+
+@media ( max-width : 801px) {
+	.mobile-topOpenings {
+		margin-top: 25px;
+	}
+	.hm-top-emp-align .wid {
+		width: 10% !important;
+	}
+	.hm-cm-last {
+		height: 235px;
+	}
+	.hm-cm-last p {
+		height: 82%;
+	}
+	.hm-last-div {
+		width: 96% !important;
+	}
+	.registercontain {
+		width: 73% !important;
+	}
+	.hm-alpha-ltrs {
+		padding-left: 8.7px !important;
+		padding-right: 8.6px !important;
+		padding-top: 4px !important;
+		padding-bottom: 4px !important;
+	}
+	.hm-alpha-ltrs:HOVER {
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+	}
+}
+
+@media only screen and (device-width: 768px) {
+	.job_other {
+		margin-top: 28px;
+	}
+	.hm-last-div .div-pad {
+		padding-right: 2px !important;
+		padding-left: 2px !important;
+	}
+	.div-pad .btn-theme {
+		padding: 7px 3px;
+	}
+	.hm-last-div {
+		padding-right: 5px !important;
+		padding-left: 5px !important;
+	}
+}
+
+@media ( max-width : 768px) {
+	.navbar-nav {
+		margin: 0px;
+	}
+}
+
+@media ( max-width : 769px) {
+	.mobile-chatview {
+		margin-top: -20% !important;
+	}
+	.hm-top-emp-align .wid {
+		width: 10% !important;
+	}
+	.hm-cm-last {
+		height: 265px;
+	}
+	.hm-cm-last p {
+		height: 82%;
+	}
+	.hm-last-div {
+		width: 96% !important;
+	}
+	.registercontain {
+		width: 75% !important;
+	}
+	.hm-alpha-ltrs {
+		padding-left: 8.1px !important;
+		padding-right: 8.1px !important;
+		padding-top: 4px !important;
+		padding-bottom: 4px !important;
+	}
+	.hm-alpha-ltrs:HOVER {
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+	}
+	.frm-center-cls {
+		width: 92%;
+		margin-left: 0%;
+	}
+}
+
+@media ( max-width : 641px) {
+	.fd-ago {
+		width: 100%;
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
+	}
+	.mobile-chatview {
+		margin-top: -25% !important;
+	}
+	.mobile-topOpenings {
+		margin-top: 6%;
+	}
+	.navbar-nav {
+		margin: 7.5px -15px;
+	}
+	.days-ago {
+		color: #868585;
+		text-align: right;
+		white-space: initial;
+		margin-top: 0px;
+	}
+	.mobile-title-view {
+		margin-left: 14%;
+		margin-top: 3.5% !important;
+		width: 70%;
+	}
+	.jb-social-align a {
+		margin: 1px;
+	}
+	.jb-social-align .btn {
+		min-width: 35px !important;
+	}
+	.jb-btn-align a {
+		width: 100%;
+		margin: 1px;
+	}
+	.hm-top-emp-align .wid {
+		width: 10% !important;
+	}
+	.hm-cm-last {
+		height: 130px;
+	}
+	.hm-cm-last p {
+		height: 68%;
+	}
+	.hm-last-div {
+		width: 95% !important;
+	}
+	.no-mr-tp {
+		margin-top: 0px !important;
+	}
+	.no-mr-bt {
+		margin-top: 0px !important;
+	}
+	.no-mr-lf {
+		margin-top: 0px !important;
+	}
+	.no-mr-rt {
+		margin-top: 0px !important;
+	}
+	.no-pd {
+		padding: 0px !important;
+	}
+	.no-pd-bt {
+		padding-bottom: 0px !important;
+	}
+	.registercontain {
+		width: 100% !important;
+	}
+	.hm-alpha-ltrs {
+		padding-left: 5.7px !important;
+		padding-right: 5.7px !important;
+		padding-top: 4px !important;
+		padding-bottom: 4px !important;
+	}
+	.hm-alpha-ltrs:HOVER {
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+	}
+	.frm-center-cls {
+		width: 80%;
+		margin-left: 10%;
+	}
+	div[class*="col"] {
+		padding-bottom: 10px;
+		padding-top: 0px;
+		margin-top: 16px;
+	}
+	.hm-search-tp-padding {
+		margin-top: 25px !important;
+	}
+}
+
+@media ( max-width : 481px) {
+	.mobile-title-view {
+		margin-left: 18%;
+		margin-top: 4% !important;
+		width: 70%;
+	}
+	.mobile-chatview {
+		margin-top: -40% !important;
+	}
+	.days-ago {
+		color: #868585;
+		text-align: right;
+		white-space: initial;
+		margin-top: 0px;
+	}
+	.hm-last-div {
+		width: 93% !important;
+	}
+	.hm-cm-last {
+		height: 150px;
+	}
+	.hm-cm-last p {
+		height: 72%;
+	}
+	.hm-alpha-ltrs {
+		padding-left: 9.4px !important;
+		padding-right: 9.4px !important;
+		padding-top: 4px !important;
+		padding-bottom: 4px !important;
+	}
+	.hm-alpha-ltrs:HOVER {
+		padding-top: 2px !important;
+		padding-bottom: 2px !important;
+	}
+	.frm-center-cls {
+		width: 100%;
+		margin-left: 0px;
+	}
+}
+
+@media ( max-width :320px) {
+	.mobile-chatview {
+		margin-top: -40%;
+	}
+	.mobile-topOpenings {
+		margin-top: 14%;
+	}
+	.days-ago {
+		color: #868585;
+		text-align: right;
+		white-space: initial;
+		margin-top: 0px;
+	}
+	.contentArea {
+		margin-top: 0px;
+	}
+}
+
+@media ( max-width : 360px) {
+	.mobile-chatview {
+		margin-top: -40% !important;
+	}
+	.mobile-topOpenings {
+		margin-top: 12%;
+	}
+}
+
+@media ( max-width : 361px) {
+	.mobile-title-view {
+		margin-left: 28%;
+		margin-top: 7% !important;
+		width: 70%;
+	}
+	.days-ago {
+		color: #868585;
+		text-align: right;
+		white-space: initial;
+		margin-top: 0px;
+	}
+	.hm-top-emp-align .wid {
+		width: 20% !important;
+		padding: 5px !important;
+	}
+	.hm-cm-last {
+		height: 210px;
+	}
+	.hm-cm-last p {
+		height: 80%;
+	}
+	.hm-last-div {
+		width: 90% !important;
+	}
+	.hm-alpha-ltrs {
+		padding-left: 4.5px !important;
+		padding-right: 4.5px !important;
+		padding-top: 3px !important;
+		padding-bottom: 3px !important;
+	}
+	.hm-alpha-ltrs:HOVER {
+		padding-top: 1px !important;
+		padding-bottom: 1px !important;
+	}
+	.contentArea {
+		margin-top: 0px;
+	}
+	.frm-center-cls {
+		width: 100%;
+		margin-left: 0px;
+	}
+}

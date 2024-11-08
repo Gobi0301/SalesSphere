@@ -1,0 +1,308 @@
+<html>
+<head>
+<style type="text/css">
+.vm-container {
+	margin: 10px;
+}
+.vm-page-content {
+	border: 1px solid #2a3f54;
+	height: 130%;
+	color: #000;
+}
+
+.vm-page-content .head {
+	background-color: #2a3f54;
+	padding: 10px;
+	color: #FFFFFF;
+}
+
+.head .images {
+margin-left:5px;
+}
+
+.vm-page-content .body {
+	padding: 10px;
+	font-size: 12px;
+}
+.resp{
+margin: 5px 0px;
+}
+.resp h5 {
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.body .cont p {
+	margin: 0 0 8px;
+	text-align: justify;
+	line-height: 20px;
+}
+
+.sub-title {
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 30px;
+}
+
+.sub-mrg-content {
+	margin-top: 3px;
+	margin-bottom: 3px;
+	padding-left: 30px;
+}
+.sub-mrg-content li{
+line-height: 25px;
+}
+.btn{
+padding: 10px;
+background:  #2a3f54;
+color: #ffffff;
+margin: 5px;
+text-align: center;
+border-radius:3px;
+}
+.footer {
+	padding: 10px;
+	background: #fff;
+}
+.footer-reg{
+font-size: 12px;
+	color: #000;
+	font-weight: 600;
+	line-height: 20px;
+}
+.footerBottom{
+
+    font-size: 12px;
+    background-color: #2a3f54;
+	padding: 16px;
+	color: #FFFFFF;
+    text-align:center;
+}
+.footer .quas {
+	margin-top: 20px;
+	font-size: 12px;
+}
+
+.min-header{
+width:100%;
+height:60%;
+background-color:#676f7c;
+background-image: url(cid:jobseekerImage);
+}
+.slider-padding{
+padding-top:4%;
+padding-bottom:20%;
+
+text-align:center;
+color:white;
+font-weight:800;
+font-size: 40px;
+font-family: "Segoe UI", "wf_segoe-ui_normal", "Arial", sans-serif;
+}
+ul {
+  list-style-type: none;
+  text-decoration: none;
+}
+.slider-ul{
+padding:0%;
+}
+.opening-slide{
+
+border: 1px solid #e1e1e1;
+text-align:center;
+font-weight:800;
+font-size: 16px;
+font-family: "Segoe UI", "wf_segoe-ui_normal", "Arial", sans-serif;
+}
+
+.company-logo{
+width:50px;
+height:30%;
+border:0px solid #e1e1e1;
+text-align:left;
+}
+.title-align{
+padding-bottom:4px;
+}
+.img-align{
+border:2px solid #e1e1e1;
+}
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border:1px solide #e1e1e1;
+}
+
+td{
+width:0%;
+}
+
+td, th {
+    border: 0px solid #dddddd;
+    padding-left: 7px;
+    padding-bottom:5px;
+    padding-right:3px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+</style>
+</head>
+<body>
+<div class="vm-container">
+	<div class="vm-page-content">
+		<div class="head">
+			<div class="images">
+				<img src="cid:imagess"alt="MyJobKart"/>
+			</div>
+		</div>
+         <div class="min-header">
+         
+         <div class="slider-padding">
+         <ul class="slider-ul">
+         <li class="slider-ul">Looking for Candidates?</li>
+          <li class="slider-ul"><a href="http://www.myjobkart.com/employer-sign-in" 
+							data-toggle="dropdown" role="button"><span
+								class="btn btn-theme btn-success"
+								style="font-size: 14px; font-weight: 700;">Find Candidates</span></a></li></ul></div>
+                     
+        </div>
+        
+                        
+        
+		<div class="body">
+        
+        
+         <div class="opening-slide"> 
+        <div class="title-align">Top Openings</div>
+                      <!---  <img src="cid:topOpenings"/> --->
+                       <div class="company-logo">   
+                       
+       <table>
+ 
+  <tr> 
+    <td><a href="${url1}"><img src="cid:jobkart1" class="img-align" style="width: 50px; height: 20px;"></a></td>
+   <td><a href="${url2}"><img src="cid:jobkart2" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url3}"><img src="cid:jobkart3" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url4}"><img src="cid:jobkart4" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url5}"><img src="cid:jobkart5" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url6}"><img src="cid:jobkart6" class="img-align" style="width: 50px; height: 20px;"></a></td>
+   <td><a href="${url7}"><img src="cid:jobkart7" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url8}"><img src="cid:jobkart8" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url9}"><img src="cid:jobkart9" class="img-align" style="width: 50px; height: 20px;"></a></td>
+     <td><a href="${url10}"><img src="cid:jobkart10" class="img-align" style="width: 50px; height: 20px;"></a></td>
+     <td><a href="${url11}"><img src="cid:jobkart11" class="img-align" style="width: 50px; height: 20px;"></a></td>
+     <td><a href="${url12}"><img src="cid:jobkart12" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    
+  </tr>
+  <tr>
+     <td><a href="${url13}"><img src="cid:jobkart13" class="img-align" style="width: 50px; height: 20px;"></a></td>
+   <td><a href="${url14}"><img src="cid:jobkart14" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url15}"><img src="cid:jobkart15" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url16}"><img src="cid:jobkart16" class="img-align" style="width: 50px; height: 20px;"></a></td>
+     <td><a href="${url17}"><img src="cid:jobkart17" class="img-align" style="width: 50px; height: 20px;"></a></td>
+     <td><a href="${url18}"><img src="cid:jobkart18" class="img-align" style="width: 50px; height: 20px;"></a></td>
+   <td><a href="${url19}"><img src="cid:jobkart19" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url20}"><img src="cid:jobkart20" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url21}"><img src="cid:jobkart21" class="img-align" style="width: 50px; height: 20px;"></a></td>
+     <td><a href="${url22}"><img src="cid:jobkart22" class="img-align" style="width: 50px; height: 20px;"></a></td>
+      <td><a href="${url23}"><img src="cid:jobkart23" class="img-align" style="width: 50px; height: 20px;"></a></td>
+      <td><a href="${url24}"><img src="cid:jobkart24" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    
+  </tr>
+  <tr>
+   <td><a href="${url25}"><img src="cid:jobkart25" class="img-align" style="width: 50px; height: 20px;"></a></td>
+   <td><a href="${url26}"><img src="cid:jobkart26" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url27}"><img src="cid:jobkart27" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url28}"><img src="cid:jobkart28" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url29}"><img src="cid:jobkart29" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url30}"><img src="cid:jobkart30" class="img-align" style="width: 50px; height: 20px;"></a></td>
+   <td><a href="${url31}"><img src="cid:jobkart31" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url32}"><img src="cid:jobkart32" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url33}"><img src="cid:jobkart33" class="img-align" style="width: 50px; height: 20px;"></a></td>
+     <td><a href="${url34}"><img src="cid:jobkart34" class="img-align" style="width: 50px; height: 20px;"></a></td>
+      <td><a href="${url35}"><img src="cid:jobkart35" class="img-align" style="width: 50px; height: 20px;"></a></td>
+      <td><a href="${url36}"><img src="cid:jobkart36" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    
+  </tr>
+  <tr>
+    <td><a href="${url37}"><img src="cid:jobkart37" class="img-align" style="width: 50px; height: 20px;"></a></td>
+   <td><a href="${url38}"><img src="cid:jobkart38" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url39}"><img src="cid:jobkart39" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url40}"><img src="cid:jobkart40" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url41}"><img src="cid:jobkart41" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url42}"><img src="cid:jobkart42" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url43}"><img src="cid:jobkart43" class="img-align" style="width: 50px; height: 20px;"></a></td>
+   <td><a href="${url44}"><img src="cid:jobkart44" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url45}"><img src="cid:jobkart45" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url46}"><img src="cid:jobkart46" class="img-align" style="width: 50px; height: 20px;"></a></td>
+     <td><a href="${url47}"><img src="cid:jobkart47" class="img-align" style="width: 50px; height: 20px;"></a></td>
+      <td><a href="${url48}"><img src="cid:jobkart48" class="img-align" style="width: 50px; height: 20px;"></a></td>
+     
+    
+  </tr>
+  <tr>
+   <td><a href="${url49}"><img src="cid:jobkart49" class="img-align" style="width: 50px; height: 20px;"></a></td>
+     <td><a href="${url50}"><img src="cid:jobkart50" class="img-align" style="width: 50px; height: 20px;"></a></td>
+   <td><a href="${url51}"><img src="cid:jobkart51" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url52}"><img src="cid:jobkart52" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url53}"><img src="cid:jobkart53" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url54}"><img src="cid:jobkart54" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url55}"><img src="cid:jobkart55" class="img-align" style="width: 50px; height: 20px;"></a></td>
+   <td><a href="${url56}"><img src="cid:jobkart56" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url57}"><img src="cid:jobkart57" class="img-align" style="width: 50px; height: 20px;"></a></td>
+    <td><a href="${url58}"><img src="cid:jobkart58" class="img-align" style="width: 50px; height: 20px;"></a></td>
+     <td><a href="${url59}"><img src="cid:jobkart59" class="img-align" style="width: 50px; height: 20px;"></a></td>
+      <td><a href="${url60}"><img src="cid:jobkart60" class="img-align" style="width: 50px; height: 20px;"></a></td>
+  </tr>
+  
+</table>
+        </div>
+                        </div>
+      
+			<div class="resp">
+					<h5>Dear ${fname},</h5>
+				</div>
+				<div class="cont">
+				<p>Greetings from MyJobKart.com! </p>
+					<p>We, Myjobkart.com, a reckoned job portal provide various types of services to all sorts of employers ranging from small scale to corporate. Unlike a typical job portal, Myjobkart.com coagulates with its clients by providing user friendly services and thereby sustains the enduring relationship.</p>
+                    <p>Also Myjobkart.com anticipates the requirements of its clients with a wide range of enhancements that user might likely get indulged in. All the incorporation made by Myjobkart.com to the client gets a positive acknowledgement as it swears a futuristic approach.</p>
+                    <p>Myjobkart.com does not compromise in the service offered and to stand by it, we strictly abide by a uniform guideline <b>"Our Product Mission gets aligned with your Organization Vision".</b></p>
+					<p>
+						Visit www.MyJobKart.com and get registered with us and become an active member of MyJobKart.com by creating your profile.
+					</p>
+                    <p>Profile creation enables the employer to utilize the below services offered, </p>
+					<ul class="sub-mrg-content">
+						<li><b>Create Sub User profile - </b>The employer can create a maximum of 10 sub users with the same accessibility that he / she has.</li>
+						<li><b>Post a Job - </b>The employer / sub user can post a job with the listed mandatory fields.</li>
+						<li><b>Post a walk in - </b>The employer / sub user can post a walk in job.</li>
+                        <li><b>Find Candidate - </b>The employer / sub user can search for a suitable candidate in accordance with the fields like Job Title, key skills and so on</li>
+                        <li><b>Save Candidate - </b>The employer / sub user can save a candidate for short listing or saving it for future reference.</li>
+                        <li><b>Applied Candidate - </b>The employer / sub user can shortlist the eligible candidate.</li>
+                        <li><b>Upload Job Posts - </b>The employer / sub user can upload bulk jobs.</li>
+                        
+                        
+                        
+					</ul>
+					<div class="sub-title">Special Services : (www.myjobkart.com/product-services.html)</div>
+                    <p>Initial trial package for an employer is 10 days and there on the employer has to opt for our special services to maximize their efficacy in recruiting a suitable candidate.</p>
+                    <p>Our Special Services has been segregated in "VIBGYOR" manner, scaling from Violet to Red; please visit our product page to get elaborated information on the same.</p>
+            <p>Your Search for a mine ends here.</p>
+            </div>
+         <div class="footerBottom">
+                    Copyright @ 2017 MyJobKart.com | All Rights Reserved
+					  
+		</div>
+	</div>
+</div>
+</body></html>

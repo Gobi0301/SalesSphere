@@ -1,0 +1,3045 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.5.15
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema mysalesliveapril24
+--
+
+CREATE DATABASE IF NOT EXISTS mysalesliveapril24;
+USE mysalesliveapril24;
+
+--
+-- Definition of table `access_log`
+--
+
+DROP TABLE IF EXISTS `access_log`;
+CREATE TABLE `access_log` (
+  `logId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `accessDate` datetime DEFAULT NULL,
+  `access_Id` bigint(20) DEFAULT NULL,
+  `clientIP` varchar(255) DEFAULT NULL,
+  `sessionId` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`logId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `access_log`
+--
+
+/*!40000 ALTER TABLE `access_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `access_log` ENABLE KEYS */;
+
+
+--
+-- Definition of table `accesss`
+--
+
+DROP TABLE IF EXISTS `accesss`;
+CREATE TABLE `accesss` (
+  `accessId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `accessName` varchar(255) DEFAULT NULL,
+  `isDeleted` tinyint(1) NOT NULL,
+  PRIMARY KEY (`accessId`)
+) ENGINE=InnoDB AUTO_INCREMENT=157 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `accesss`
+--
+
+/*!40000 ALTER TABLE `accesss` DISABLE KEYS */;
+INSERT INTO `accesss` (`accessId`,`created`,`createdBy`,`modified`,`modifiedBy`,`accessName`,`isDeleted`) VALUES 
+ (6,'2024-02-15 12:23:16',0,'2024-02-15 12:23:16',0,'ROLE_MANAGE_WORKITEM',0),
+ (21,'2024-01-04 17:17:21',0,'2024-01-04 17:17:21',0,'ROLE_CREATE_WORKITEM',0),
+ (22,'2024-01-04 17:17:41',0,'2024-01-04 17:17:41',0,'ROLE_VIEW_WORKITEM',0),
+ (23,'2024-01-04 17:18:01',0,'2024-01-04 17:18:01',0,'ROLE_UPDATE _WORKITEM',0),
+ (24,'2024-01-04 17:18:29',0,'2024-01-04 17:18:29',0,'ROLE_DELETE_WORKITEM',0),
+ (25,'2024-01-04 17:18:58',0,'2024-01-04 17:18:58',0,'ROLE_MANAGE_WI&SLA',0),
+ (26,'2024-01-04 17:19:13',0,'2024-01-04 17:19:13',0,'ROLE_CREATE_WI&SLA',0),
+ (27,'2024-01-04 17:20:16',0,'2024-01-04 17:20:16',0,'ROLE_VIEW_ WI&SLA',0),
+ (28,'2024-01-04 17:19:53',0,'2024-01-04 17:19:53',0,'ROLE_UPDATE_WI&SLA',0),
+ (29,'2024-01-04 17:21:01',0,'2024-01-04 17:21:01',0,'ROLE_DELETE_WI&SLA',0),
+ (30,'2024-01-04 17:21:42',0,'2024-01-04 17:21:42',0,'ROLE_MANAGE_WI&SKILLS',0),
+ (31,'2024-01-04 17:22:02',0,'2024-01-04 17:22:02',0,'ROLE_CREATE_WI&SKILLS',0),
+ (32,'2024-01-04 17:22:48',0,'2024-01-04 17:22:48',0,'ROLE_UPDATE_WI&SKILLS',0),
+ (33,'2024-01-04 17:23:11',0,'2024-01-04 17:23:11',0,'ROLE_VIEW_WI&SKILLS',0),
+ (34,'2024-01-22 16:58:14',0,'2024-01-22 16:58:14',0,'ROLE_DELETE_WI&SKILLS',0),
+ (35,'2024-01-04 17:23:37',0,'2024-01-04 17:23:37',0,'ROLE_MANAGE_TASK',0),
+ (36,'2024-01-04 17:24:21',0,'2024-01-04 17:24:21',0,'ROLE_CREATE_TASK',0),
+ (37,'2024-01-04 17:24:57',0,'2024-01-04 17:24:57',0,'ROLE_UPDATE_TASK',0),
+ (38,'2024-01-04 17:25:22',0,'2024-01-04 17:25:22',0,'ROLE_VIEW_TASK',0),
+ (39,'2024-01-04 17:26:03',0,'2024-01-04 17:26:03',0,'ROLE_DELETE_TASK',0),
+ (40,'2024-01-04 17:27:36',0,'2024-01-04 17:27:36',0,'ROLE_MANAGE_SLA',0),
+ (41,'2024-01-04 17:27:57',0,'2024-01-04 17:27:57',0,'ROLE_CREATE_SLA',0),
+ (42,'2024-01-04 17:28:19',0,'2024-01-04 17:28:19',0,'ROLE_UPDATE_SLA',0),
+ (43,'2024-01-04 17:28:46',0,'2024-01-04 17:28:46',0,'ROLE_VIEW_SLA',0),
+ (44,'2024-01-04 17:29:15',0,'2024-01-04 17:29:15',0,'ROLE_DELETE_SLA',0),
+ (45,'2024-01-04 17:29:46',0,'2024-01-04 17:29:46',0,'ROLE_MANAGE_SKILLS',0),
+ (46,'2024-01-04 17:30:10',0,'2024-01-04 17:30:10',0,'ROLE_CREATE_SKILLS',0),
+ (47,'2024-01-04 17:30:28',0,'2024-01-04 17:30:28',0,'ROLE_UPDATE_SKILLS',0),
+ (48,'2024-01-04 17:30:46',0,'2024-01-04 17:30:46',0,'ROLE_VIEW_SKILLS',0),
+ (49,'2024-01-04 17:31:04',0,'2024-01-04 17:31:04',0,'ROLE_DELETE_SKILLS',0),
+ (50,'2024-01-04 17:31:32',0,'2024-01-04 17:31:32',0,'ROLE_CREATE_COMPANY',0),
+ (51,'2024-01-04 17:31:53',0,'2024-01-04 17:31:53',0,'ROLE_MANAGE_COMPANY',0),
+ (52,'2024-01-04 17:32:23',0,'2024-01-04 17:32:23',0,'ROLE_UPDATE_COMPANY',0),
+ (53,'2024-01-04 17:33:00',0,'2024-01-04 17:33:00',0,'ROLE_VIEW_COMPANY',0),
+ (54,'2024-01-04 17:33:26',0,'2024-01-04 17:33:26',0,'ROLE_DELETE_COMPANY',0),
+ (55,'2024-01-04 17:33:53',0,'2024-01-04 17:33:53',0,'ROLE_MANAGE_GST',0),
+ (56,'2024-01-04 17:34:13',0,'2024-01-04 17:34:13',0,'ROLE_CREATE_GST',0),
+ (57,'2024-01-04 17:34:31',0,'2024-01-04 17:34:31',0,'ROLE_UPDATE_GST',0),
+ (58,'2024-01-04 17:34:49',0,'2024-01-04 17:34:49',0,'ROLE_VIEW_GST',0),
+ (59,'2024-01-04 17:35:16',0,'2024-01-04 17:35:16',0,'ROLE_DELETE_GST',0),
+ (60,'2024-01-04 17:35:54',0,'2024-01-04 17:35:54',0,'ROLE_MANAGE_SUPPLIERS',0),
+ (61,'2024-01-04 17:36:19',0,'2024-01-04 17:36:19',0,'ROLE_CREATE_SUPPLIERS',0),
+ (62,'2024-01-04 17:37:10',0,'2024-01-04 17:37:10',0,'ROLE_UPDATE_ SUPPLIERS',0),
+ (63,'2024-01-04 17:37:40',0,'2024-01-04 17:37:40',0,'ROLE_VIEW_SUPPLIERS',0),
+ (64,'2024-01-04 17:38:08',0,'2024-01-04 17:38:08',0,'ROLE_DELETE_SUPPLIERS',0),
+ (65,'2024-01-04 17:39:23',0,'2024-01-04 17:39:23',0,'ROLE_MANAGE_PRODUCTTYPE',0),
+ (66,'2024-01-04 17:39:52',0,'2024-01-04 17:39:52',0,'ROLE_CREATE_PRODUCTTYPE',0),
+ (67,'2024-01-04 17:40:12',0,'2024-01-04 17:40:12',0,'ROLE_UPDATE_PRODUCTTYPE',0),
+ (68,'2024-01-04 17:40:34',0,'2024-01-04 17:40:34',0,'ROLE_VIEW_PRODUCTTYPE',0),
+ (69,'2024-01-04 17:40:59',0,'2024-01-04 17:40:59',0,'ROLE_DELETE_PRODUCTTYPE',0),
+ (70,'2024-01-04 17:41:26',0,'2024-01-04 17:41:26',0,'ROLE_MANAGE_PRODUCT',0),
+ (71,'2024-01-04 17:41:49',0,'2024-01-04 17:41:49',0,'ROLE_CREATE_PRODUCT',0),
+ (72,'2024-01-04 17:42:06',0,'2024-01-04 17:42:06',0,'ROLE_UPDATE_PRODUCT',0),
+ (73,'2024-01-04 17:42:21',0,'2024-01-04 17:42:21',0,'ROLE_VIEW_PRODUCT',0),
+ (74,'2024-01-04 17:42:39',0,'2024-01-04 17:42:39',0,'ROLE_DELETE_PRODUCT',0),
+ (75,'2024-01-04 17:43:00',0,'2024-01-04 17:43:00',0,'ROLE_MANAGE_PROCUREMENT',0),
+ (76,'2024-01-04 17:43:19',0,'2024-01-04 17:43:19',0,'ROLE_CREATE_PROCUREMENT',0),
+ (77,'2024-01-04 18:10:14',0,'2024-01-04 18:10:14',0,'ROLE_UPDATE_PROCUREMENT',0),
+ (78,'2024-01-04 18:10:35',0,'2024-01-04 18:10:35',0,'ROLE_VIEW_PROCUREMENT',0),
+ (79,'2024-01-04 18:11:23',0,'2024-01-04 18:11:23',0,'ROLE_DELETE_PROCUREMENT',0),
+ (80,'2024-01-04 18:11:52',0,'2024-01-04 18:11:52',0,'ROLE_MANAGE_PRICEBOOK',0),
+ (81,'2024-01-04 18:12:39',0,'2024-01-04 18:12:39',0,'ROLE_CREATE_PRICEBOOK',0),
+ (82,'2024-01-04 18:12:57',0,'2024-01-04 18:12:57',0,'ROLE_UPDATE_PRICEBOOK',0),
+ (83,'2024-01-04 18:13:10',0,'2024-01-04 18:13:10',0,'ROLE_VIEW_PRICEBOOK',0),
+ (84,'2024-01-04 18:13:48',0,'2024-01-04 18:13:48',0,'ROLE_DELETE_PRICEBOOK',0),
+ (85,'2024-01-04 18:14:34',0,'2024-01-04 18:14:34',0,'ROLE_MANAGE_CAMPAIGN',0),
+ (86,'2024-01-04 18:15:05',0,'2024-01-04 18:15:05',0,'ROLE_CREATE_CAMPAIGN',0),
+ (87,'2024-01-04 18:16:16',0,'2024-01-04 18:16:16',0,'ROLE_UPDATE_CAMPAGAIN',0),
+ (88,'2024-01-04 18:16:53',0,'2024-01-04 18:16:53',0,'ROLE_VIEW_CAMPAGAIN',0),
+ (89,'2024-01-04 18:17:27',0,'2024-01-04 18:17:27',0,'ROLE_DELETE_CAMPAGAIN',0),
+ (90,'2024-01-04 10:59:41',0,'2024-01-04 10:59:41',0,'ROLE_MANAGE_LEAD',0),
+ (91,'2024-01-04 10:59:49',0,'2024-01-04 10:59:49',0,'ROLE_CREATE_LEAD',0),
+ (92,'2024-01-04 10:59:57',0,'2024-01-04 10:59:57',0,'ROLE_UPDATE_LEAD',0),
+ (93,'2024-01-04 11:00:05',0,'2024-01-04 11:00:05',0,'ROLE_VIEW_LEAD',0),
+ (94,'2024-01-04 11:00:15',0,'2024-01-04 11:00:15',0,'ROLE_DELETE_LEAD',0),
+ (95,'2024-01-04 11:01:16',0,'2024-01-04 11:01:16',0,'ROLE_MANAGE_OPPORTUNITY',0),
+ (96,'2024-01-04 11:01:27',0,'2024-01-04 11:01:27',0,'ROLE_CREATE_OPPORTUNITY',0),
+ (97,'2024-01-04 11:01:38',0,'2024-01-04 11:01:38',0,'ROLE_UPDATE_OPPORTUNITY',0),
+ (98,'2024-01-04 11:01:47',0,'2024-01-04 11:01:47',0,'ROLE_VIEW_OPPORTUNITY',0),
+ (99,'2024-01-04 11:01:57',0,'2024-01-04 11:01:57',0,'ROLE_DELETE_OPPORTUNITY',0),
+ (100,'2024-01-04 17:27:36',0,'2024-01-04 17:27:36',0,'ROLE_MANAGE_ACCOUNT',0),
+ (101,'2024-01-04 17:28:10',0,'2024-01-04 17:28:10',0,'ROLE_CREATE_ACCOUNT',0),
+ (102,'2024-01-04 17:28:35',0,'2024-01-04 17:28:35',0,'ROLE_UPDATE_ACCOUNT',0),
+ (103,'2024-01-04 17:29:05',0,'2024-01-04 17:29:05',0,'ROLE_VIEW_ACCOUNT',0),
+ (104,'2024-01-04 17:29:39',0,'2024-01-04 17:29:39',0,'ROLE_DELETE_ACCOUNT',0),
+ (105,'2024-01-04 17:30:09',0,'2024-01-04 17:30:09',0,'ROLE_MANAGE_SALESORDER',0),
+ (106,'2024-01-04 17:30:54',0,'2024-01-04 17:30:54',0,'ROLE_CREATE_SALESORDER',0),
+ (107,'2024-01-04 17:31:30',0,'2024-01-04 17:31:30',0,'ROLE_UPDATE_SALESORDER',0),
+ (108,'2024-01-04 17:32:01',0,'2024-01-04 17:32:01',0,'ROLE_VIEW_SALESORDER',0),
+ (109,'2024-01-04 17:32:34',0,'2024-01-04 17:32:34',0,'ROLE_DELETE_SALESORDER',0),
+ (110,'2024-01-04 17:33:17',0,'2024-01-04 17:33:17',0,'ROLE_MANAGE_PROJECT',0),
+ (111,'2024-01-04 17:33:54',0,'2024-01-04 17:33:54',0,'ROLE_CREATE_PROJECT',0),
+ (112,'2024-01-04 17:34:20',0,'2024-01-04 17:34:20',0,'ROLE_UPDATE_PROJECT',0),
+ (113,'2024-01-04 17:34:42',0,'2024-01-04 17:34:42',0,'ROLE_VIEW_PROJECT',0),
+ (114,'2024-01-04 17:35:06',0,'2024-01-04 17:35:06',0,'ROLE_DELETE_PROJECT',0),
+ (115,'2024-01-04 17:35:30',0,'2024-01-04 17:35:30',0,'ROLE_MANAGE_CASE',0),
+ (116,'2024-01-04 17:35:53',0,'2024-01-04 17:35:53',0,'ROLE_CREATE_CASE',0),
+ (117,'2024-01-04 17:36:23',0,'2024-01-04 17:36:23',0,'ROLE_UPDATE_CASE',0),
+ (118,'2024-01-04 17:36:46',0,'2024-01-04 17:36:46',0,'ROLE_VIEW_CASE',0),
+ (119,'2024-01-04 17:37:09',0,'2024-01-04 17:37:09',0,'ROLE_DELETE_CASE',0),
+ (120,'2024-01-04 17:37:42',0,'2024-01-04 17:37:42',0,'ROLE_MANAGE_CUSTOMER',0),
+ (121,'2024-01-04 11:06:44',0,'2024-01-04 11:06:44',0,'ROLE_CREATE_CUSTOMER',0),
+ (122,'2024-01-04 11:06:54',0,'2024-01-04 11:06:54',0,'ROLE_UPDATE_CUSTOMER',0),
+ (123,'2024-01-04 11:07:03',0,'2024-01-04 11:07:03',0,'ROLE_VIEW_CUSTOMER',0),
+ (124,'2024-01-04 11:07:12',0,'2024-01-04 11:07:12',0,'ROLE_DELETE_CUSTOMER',0),
+ (125,'2024-01-04 11:07:39',0,'2024-01-04 11:07:39',0,'ROLE_MANAGE_SOLUTION',0),
+ (126,'2024-01-04 11:07:50',0,'2024-01-04 11:07:50',0,'ROLE_CREATE_SOLUTION',0),
+ (127,'2024-01-04 11:07:59',0,'2024-01-04 11:07:59',0,'ROLE_UPDATE_SOLUTION',0),
+ (128,'2024-01-04 11:08:07',0,'2024-01-04 11:08:07',0,'ROLE_VIEW_SOLUTION',0),
+ (129,'2024-01-04 11:08:16',0,'2024-01-04 11:08:16',0,'ROLE_DELETE_SOLUTION',0),
+ (130,'2024-01-04 11:08:47',0,'2024-01-04 11:08:47',0,'ROLE_MANAGE_REPORTS',0),
+ (131,'2024-01-04 11:09:02',0,'2024-01-04 11:09:02',0,'ROLE_CREATE_REPORTS',0),
+ (132,'2024-01-04 11:09:13',0,'2024-01-04 11:09:13',0,'ROLE_UPDATE_REPORTS',0),
+ (133,'2024-01-04 11:09:22',0,'2024-01-04 11:09:22',0,'ROLE_VIEW_REPORTS',0),
+ (134,'2024-01-04 11:09:31',0,'2024-01-04 11:09:31',0,'ROLE_DELETE_REPORTS',0),
+ (135,'2024-01-04 11:30:30',0,'2024-01-04 11:30:30',0,'ROLE_MANAGE_INVOICE',0),
+ (136,'2024-01-04 11:30:41',0,'2024-01-04 11:30:41',0,'ROLE_CREATE_INVOICE',0),
+ (137,'2024-01-04 11:30:51',0,'2024-01-04 11:30:51',0,'ROLE_UPDATE_INVOICE',0),
+ (138,'2024-01-04 11:31:07',0,'2024-01-04 11:31:07',0,'ROLE_DELETE_INVOICE',0),
+ (139,'2024-01-04 11:31:27',0,'2024-01-04 11:31:27',0,'ROLE_VIEW_INVOICE',0),
+ (140,'2024-01-04 11:39:55',0,'2024-01-04 11:39:55',0,'ROLE_MANAGE_SELFCOMPANY',0),
+ (141,'2024-01-04 11:40:06',0,'2024-01-04 11:40:06',0,'ROLE_CREATE_SELFCOMPANY',0),
+ (142,'2024-01-04 11:40:18',0,'2024-01-04 11:40:18',0,'ROLE_UPDATE_SELFCOMPANY',0),
+ (143,'2024-01-04 11:40:28',0,'2024-01-04 11:40:28',0,'ROLE_VIEW_SELFCOMPANY',0),
+ (144,'2024-01-04 11:40:42',0,'2024-01-04 11:40:42',0,'ROLE_DELETE_SELFCOMPANY',0),
+ (145,'2024-01-24 16:55:52',0,'2024-01-24 16:55:52',0,'ROLE_LEADS_REPORTS',0),
+ (146,'2024-01-24 16:51:06',0,'2024-01-24 16:51:06',0,'ROLE_OPPORTUNITY_REPORTS',0),
+ (147,'2024-01-24 16:51:26',0,'2024-01-24 16:51:26',0,'ROLE_SALES_REPORTS',0),
+ (148,'2024-01-24 16:51:26',0,'2024-01-24 16:51:26',0,'ROLE_ADMIN',0),
+ (149,'2024-01-26 17:54:25',0,'2024-01-26 17:54:25',0,'ROLE_COMPANY',0),
+ (151,'2025-02-15 15:56:05',0,'2025-02-15 15:56:05',0,'Role_Testerr',0),
+ (152,'2025-02-17 16:12:18',0,'2025-02-17 16:12:18',0,'RoLe_dev_&',0),
+ (153,'2025-02-17 16:12:05',0,'2025-02-17 16:12:05',0,'Role__&',0),
+ (154,'2025-02-17 16:10:20',0,'2025-02-17 16:10:20',0,'Role&',0),
+ (155,'2024-02-22 15:50:33',0,'2024-02-22 15:50:33',0,'vffff',0),
+ (156,'2024-02-22 16:45:48',0,'2024-02-22 16:45:48',0,'mani',0);
+/*!40000 ALTER TABLE `accesss` ENABLE KEYS */;
+
+
+--
+-- Definition of table `accounts`
+--
+
+DROP TABLE IF EXISTS `accounts`;
+CREATE TABLE `accounts` (
+  `ACCOUNT_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) NOT NULL,
+  `maxRecord` int(11) NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) NOT NULL,
+  `recordIndex` int(11) NOT NULL,
+  `SIC_CODE` int(11) DEFAULT NULL,
+  `ACCOUNT_NAME` varchar(255) DEFAULT NULL,
+  `ACCOUNT_OWNER` varchar(255) DEFAULT NULL,
+  `ACCOUNT_SOURCE` bigint(20) DEFAULT NULL,
+  `ANNUAL_REVENUE` float DEFAULT NULL,
+  `BILLING_CITY` varchar(255) DEFAULT NULL,
+  `BILLING_COUNTRY` varchar(255) DEFAULT NULL,
+  `BILLING_COUNTRY_CODE` varchar(255) DEFAULT NULL,
+  `BILLING_POSTAL_CODE` varchar(255) DEFAULT NULL,
+  `BILLING_STATE` varchar(255) DEFAULT NULL,
+  `BILLING_STATE_CODE` varchar(255) DEFAULT NULL,
+  `BILLING_STREET` varchar(255) DEFAULT NULL,
+  `CLEAN_STATUS` varchar(255) DEFAULT NULL,
+  `CONNECTION_RECEIVED_ID` int(11) DEFAULT NULL,
+  `CONNECTION_SENT_ID` int(11) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DUNS_NUMBER` varchar(255) DEFAULT NULL,
+  `E_MAIL` varchar(255) DEFAULT NULL,
+  `FAX` bigint(20) DEFAULT NULL,
+  `GROUP_BY` varchar(255) DEFAULT NULL,
+  `INDUSTRY` varchar(255) DEFAULT NULL,
+  `IS_DELETED` tinyint(1) DEFAULT NULL,
+  `IS_PERSON_ACCOUNT` tinyint(1) DEFAULT NULL,
+  `IS_PARTNER` tinyint(1) DEFAULT NULL,
+  `JIGSAW` varchar(255) DEFAULT NULL,
+  `LAST_ACTIVITY_DATE` varchar(255) DEFAULT NULL,
+  `MASTER_RECORD_ID` int(11) DEFAULT NULL,
+  `NAICS_CODE` varchar(255) DEFAULT NULL,
+  `NAICS_DESC` varchar(255) DEFAULT NULL,
+  `NUMBER_OF_EMPL0YEES` int(11) DEFAULT NULL,
+  `OWNER_ID` int(11) DEFAULT NULL,
+  `OWNER_SHIP` varchar(255) DEFAULT NULL,
+  `PARENT_ACCOUNT` varchar(255) DEFAULT NULL,
+  `PARENT_ID` int(11) DEFAULT NULL,
+  `PHONE` bigint(20) DEFAULT NULL,
+  `RATING` varchar(255) DEFAULT NULL,
+  `RECORD_TYPE_ID` int(11) DEFAULT NULL,
+  `ROLE` varchar(255) DEFAULT NULL,
+  `SALUTATION` varchar(255) DEFAULT NULL,
+  `SHIPPING_CITY` varchar(255) DEFAULT NULL,
+  `SHIPPING_COUNTRY` varchar(255) DEFAULT NULL,
+  `SHIPPING_COUNTRY_CODE` varchar(255) DEFAULT NULL,
+  `SHIPPING_POSTAL_CODE` varchar(255) DEFAULT NULL,
+  `SHIPPING_STATE` varchar(255) DEFAULT NULL,
+  `SHIPPING_STATE_CODE` varchar(255) DEFAULT NULL,
+  `SHIPPING_STREET` varchar(255) DEFAULT NULL,
+  `SIC` varchar(255) DEFAULT NULL,
+  `SIC_DESC` varchar(255) DEFAULT NULL,
+  `SITE` varchar(255) DEFAULT NULL,
+  `Street` varchar(255) DEFAULT NULL,
+  `TICKER_SYMBOL` varchar(255) DEFAULT NULL,
+  `TRADE_STYLE` varchar(255) DEFAULT NULL,
+  `TYPE` varchar(255) DEFAULT NULL,
+  `WEB_SITE` varchar(255) DEFAULT NULL,
+  `YEAR_STARTED` varchar(255) DEFAULT NULL,
+  `USER_ID` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`ACCOUNT_ID`),
+  UNIQUE KEY `UK_huoc952x583n971ix1ppo4syh` (`E_MAIL`),
+  KEY `FK_nyrb53wxcy2ectbuetag55uo7` (`USER_ID`),
+  CONSTRAINT `FK_nyrb53wxcy2ectbuetag55uo7` FOREIGN KEY (`USER_ID`) REFERENCES `login` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `accounts`
+--
+
+/*!40000 ALTER TABLE `accounts` DISABLE KEYS */;
+INSERT INTO `accounts` (`ACCOUNT_ID`,`companyId`,`created`,`createdBy`,`maxRecord`,`modified`,`modifiedBy`,`recordIndex`,`SIC_CODE`,`ACCOUNT_NAME`,`ACCOUNT_OWNER`,`ACCOUNT_SOURCE`,`ANNUAL_REVENUE`,`BILLING_CITY`,`BILLING_COUNTRY`,`BILLING_COUNTRY_CODE`,`BILLING_POSTAL_CODE`,`BILLING_STATE`,`BILLING_STATE_CODE`,`BILLING_STREET`,`CLEAN_STATUS`,`CONNECTION_RECEIVED_ID`,`CONNECTION_SENT_ID`,`DESCRIPTION`,`DUNS_NUMBER`,`E_MAIL`,`FAX`,`GROUP_BY`,`INDUSTRY`,`IS_DELETED`,`IS_PERSON_ACCOUNT`,`IS_PARTNER`,`JIGSAW`,`LAST_ACTIVITY_DATE`,`MASTER_RECORD_ID`,`NAICS_CODE`,`NAICS_DESC`,`NUMBER_OF_EMPL0YEES`,`OWNER_ID`,`OWNER_SHIP`,`PARENT_ACCOUNT`,`PARENT_ID`,`PHONE`,`RATING`,`RECORD_TYPE_ID`,`ROLE`,`SALUTATION`,`SHIPPING_CITY`,`SHIPPING_COUNTRY`,`SHIPPING_COUNTRY_CODE`,`SHIPPING_POSTAL_CODE`,`SHIPPING_STATE`,`SHIPPING_STATE_CODE`,`SHIPPING_STREET`,`SIC`,`SIC_DESC`,`SITE`,`Street`,`TICKER_SYMBOL`,`TRADE_STYLE`,`TYPE`,`WEB_SITE`,`YEAR_STARTED`,`USER_ID`) VALUES 
+ (1,1,NULL,1,0,NULL,0,0,0,'business','benil',NULL,1500000,'thuraiyur','india','564738','621004','tamilnadu',NULL,'sengattupatti',NULL,0,0,'lkjaorwer',NULL,'benil@gmail.com',0,NULL,'softtwig',0,NULL,NULL,NULL,NULL,0,NULL,NULL,10,0,NULL,'business',0,99528288883,NULL,0,NULL,'Mr',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'SMS',NULL,NULL,2),
+ (2,1,NULL,1,0,NULL,0,0,0,'lo','iooo',NULL,34324300,'dsadda','dsadadas','65577','56655','asdsadsdd',NULL,'adsdsa',NULL,0,0,'dasdadas!\"£££$12233',NULL,'gandhiii@gmail.com',0,NULL,'31233312',1,NULL,NULL,NULL,NULL,0,NULL,NULL,4,0,NULL,'NA',0,67565564665,NULL,0,NULL,'Mrs',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'SMS',NULL,NULL,2),
+ (3,1,NULL,1,0,NULL,0,0,0,'54535435345','44353535',NULL,6566,'tetree','trttrette','78899','67555','trtttt',NULL,'tttrtt',NULL,0,0,'tretrtrtet\'1111',NULL,'kumara.77@gmail.com',0,NULL,'6546',0,NULL,NULL,NULL,NULL,0,NULL,NULL,5,0,NULL,'',0,65654644665,NULL,0,NULL,'Mrs',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Whatsapp',NULL,NULL,3),
+ (4,1,NULL,1,0,NULL,0,0,0,'alt gr','cena',NULL,56556,'Tiruchirapalli','India','123344','543211','Tamil Nadu',NULL,'Agra Street',NULL,0,0,'dsakthi',NULL,'ganesh@gmail.com',0,NULL,'godown',0,NULL,NULL,NULL,NULL,0,NULL,NULL,4,0,NULL,'NA',0,74125588552,NULL,0,NULL,'Mr',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'SMS',NULL,NULL,2),
+ (5,2,NULL,4,0,NULL,0,0,0,'Prajith','Prajith',NULL,50000000,'Chennai','India','001','600001','Tamilnadu',NULL,'Porur',NULL,0,0,'Good',NULL,'prajith@gmail.com',0,NULL,'IT',0,NULL,NULL,NULL,NULL,0,NULL,NULL,250,0,NULL,'',0,78326487468,NULL,0,NULL,'Mr',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'SMS',NULL,NULL,4),
+ (6,3,NULL,6,0,NULL,0,0,0,'Savings','Robert',NULL,1200000,'Velachery','India','234354','234432','Tamilnadu',NULL,'Madippakkam',NULL,0,0,'asadafas',NULL,'mani@gmail.com',0,NULL,'IT',0,NULL,NULL,NULL,NULL,0,NULL,NULL,250,0,NULL,'Yes',0,80721630071,NULL,0,NULL,'Mr',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Whatsapp',NULL,NULL,6),
+ (7,3,NULL,6,0,NULL,0,0,0,'eete','Robert',NULL,1200000,'Velachery','India','','234567','Tamilnadu',NULL,'Madhanandhapuram',NULL,0,0,'sdafdaf',NULL,'eagle@gmail.com',0,NULL,'IT',0,NULL,NULL,NULL,NULL,0,NULL,NULL,75675,0,NULL,'Yes',0,80721630071,NULL,0,NULL,'Mr',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Whatsapp',NULL,NULL,6),
+ (8,2,NULL,4,0,NULL,0,0,0,'veera','sibisundar',NULL,1500000,'trichy','india','','621004','tamilnadu',NULL,'Sengattupatti',NULL,0,0,'dfghjkl',NULL,'techsengai@gmail.com',0,NULL,'it',0,NULL,NULL,NULL,NULL,0,NULL,NULL,12,0,NULL,'',0,99528288889,NULL,0,NULL,'Mr',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Whatsapp',NULL,NULL,5),
+ (9,1,NULL,1,0,NULL,0,0,0,'iob','122133',NULL,10000000,'thuraiyur','India','522','766777','tamil',NULL,'cdkdaddksdsd',NULL,0,0,'The world is the totality of entities, the whole of reality, or everything that exists',NULL,'venkata@gmal.com',0,NULL,'xcxc',0,NULL,NULL,NULL,NULL,0,NULL,NULL,4,0,NULL,'',0,76555321230,NULL,0,NULL,'Mr',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Whatsapp',NULL,NULL,3),
+ (10,1,NULL,1,0,NULL,0,0,0,'iob','122133',NULL,876543,'addgfdgdfd','India','455','543211','Tamil Nadu',NULL,'Agra Street',NULL,0,0,'The world is the totality of entities, the whole of reality, or everything that exists',NULL,'kumara.qa77@gmail.com',0,NULL,'godown',0,NULL,NULL,NULL,NULL,0,NULL,NULL,5,0,NULL,'',0,36985214795,NULL,0,NULL,'Mrs',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Email',NULL,NULL,7),
+ (11,1,NULL,1,0,NULL,0,0,0,'hdfc','dsas',NULL,876543,'Tiruchirapalli','India','45','543211','tamil',NULL,'mainstreet',NULL,0,0,'The world is the totality of entities, the whole of reality, or everything that exists',NULL,'ravichandran@gmail.com',0,NULL,'fdddd',0,NULL,NULL,NULL,NULL,0,NULL,NULL,4,0,NULL,'',0,76555321231,NULL,0,NULL,'Mr',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Whatsapp',NULL,NULL,7),
+ (12,1,NULL,1,0,NULL,0,0,0,'iob','cena',NULL,56556,'Tiruchirapalli','India','45','567899','Tamil Nadu',NULL,'Agra Street',NULL,0,0,'The world is the totality of entities, the whole of reality, or everything that exists',NULL,'ravichandrands@gmail.com',0,NULL,'godown',0,NULL,NULL,NULL,NULL,0,NULL,NULL,4,0,NULL,'',0,74123654784,NULL,0,NULL,'Mr',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Whatsapp',NULL,NULL,7);
+/*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
+
+
+--
+-- Definition of table `activity_history_status`
+--
+
+DROP TABLE IF EXISTS `activity_history_status`;
+CREATE TABLE `activity_history_status` (
+  `log_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `action_type` varchar(255) DEFAULT NULL,
+  `companyId` bigint(20) DEFAULT NULL,
+  `entity_id` bigint(20) DEFAULT NULL,
+  `entity_type` varchar(255) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`log_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2025 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `activity_history_status`
+--
+
+/*!40000 ALTER TABLE `activity_history_status` DISABLE KEYS */;
+INSERT INTO `activity_history_status` (`log_id`,`action_type`,`companyId`,`entity_id`,`entity_type`,`user_id`) VALUES 
+ (1767,'Create',1,48,'ProductService',1),
+ (1768,'Create',1,49,'ProductService',1),
+ (1769,'Create',1,1,'Leads',1),
+ (1770,'Create',2,50,'ProductService',4),
+ (1771,'Create',2,2,'Leads',4),
+ (1772,'View',2,2,'Leads',4),
+ (1773,'Create',2,3,'Leads',4),
+ (1774,'View',2,50,'ProductService',4),
+ (1775,'View',2,50,'ProductService',4),
+ (1776,'View',2,50,'ProductService',4),
+ (1777,'View',2,50,'ProductService',4),
+ (1778,'View',2,50,'ProductService',4),
+ (1779,'View',2,50,'ProductService',4),
+ (1780,'Create',1,1,'Campaign',1),
+ (1781,'View',1,1,'Campaign',1),
+ (1782,'Update',1,1,'Campaign',1),
+ (1783,'Create',1,1,'Supplier',1),
+ (1784,'View',1,1,'Company',1),
+ (1785,'Create',1,2,'Supplier',1),
+ (1786,'Create',1,3,'Supplier',1),
+ (1787,'Create',1,4,'Supplier',1),
+ (1788,'Create',1,5,'Supplier',1),
+ (1789,'Create',1,6,'Supplier',1),
+ (1790,'Create',1,7,'Supplier',1),
+ (1791,'Create',1,8,'Supplier',1),
+ (1792,'Create',1,9,'Supplier',1),
+ (1793,'Create',1,1,'Procurement',1),
+ (1794,'View',1,1,'Procurement',1),
+ (1795,'View',1,1,'Procurement',1),
+ (1796,'View',1,1,'Procurement',1),
+ (1797,'View',1,1,'Procurement',1),
+ (1798,'View',1,1,'Procurement',1),
+ (1799,'Create',1,2,'Procurement',1),
+ (1800,'View',1,2,'Procurement',1),
+ (1801,'Create',1,3,'Procurement',1),
+ (1802,'View',1,3,'Procurement',1),
+ (1803,'View',1,3,'Procurement',1),
+ (1804,'Create',1,4,'Procurement',1),
+ (1805,'View',1,4,'Procurement',1),
+ (1806,'Create',2,10,'Supplier',4),
+ (1807,'View',2,10,'Supplier',4),
+ (1808,'View',2,10,'Supplier',4),
+ (1809,'Create',1,5,'Procurement',1),
+ (1810,'Create',2,6,'Procurement',4),
+ (1811,'Create',1,2,'Campaign',1),
+ (1812,'Update',1,2,'Campaign',1),
+ (1813,'Delete',1,2,'Campaign',1),
+ (1814,'Create',1,4,'Leads',1),
+ (1815,'View',1,4,'Leads',1),
+ (1816,'View',1,4,'Leads',1),
+ (1817,'View',1,4,'Leads',1),
+ (1818,'View',1,4,'Leads',1),
+ (1819,'View',1,4,'Leads',1),
+ (1820,'Delete',1,4,'Leads',1),
+ (1821,'View',1,1,'Leads',1),
+ (1822,'Create',1,5,'Leads',1),
+ (1823,'View',1,5,'Leads',1),
+ (1824,'View',1,5,'Leads',1),
+ (1825,'View',1,5,'Leads',1),
+ (1826,'Create',1,1,'Opportunity',1),
+ (1827,'View',1,1,'Opportunity',1),
+ (1828,'View',1,1,'Opportunity',1),
+ (1829,'View',1,1,'Opportunity',1),
+ (1830,'Update',1,1,'Opportunity',1),
+ (1831,'Delete',1,1,'Opportunity',1),
+ (1832,'View',1,5,'Leads',1),
+ (1833,'View',1,5,'Leads',1),
+ (1834,'View',1,5,'Leads',1),
+ (1835,'Create',1,2,'Opportunity',1),
+ (1836,'Delete',1,2,'Opportunity',1),
+ (1837,'Create',1,3,'Opportunity',1),
+ (1838,'Create',2,51,'ProductService',4),
+ (1839,'View',2,6,'Procurement',4),
+ (1840,'View',2,6,'Procurement',4),
+ (1841,'View',2,6,'Procurement',4),
+ (1842,'View',2,6,'Procurement',4),
+ (1843,'View',2,6,'Procurement',4),
+ (1844,'View',2,6,'Procurement',4),
+ (1845,'View',2,6,'Procurement',4),
+ (1846,'View',2,3,'Leads',4),
+ (1847,'Update',2,3,'Leads',4),
+ (1848,'View',2,6,'Procurement',4),
+ (1849,'View',2,6,'Procurement',4),
+ (1850,'View',2,6,'Procurement',4),
+ (1851,'View',2,6,'Procurement',4),
+ (1852,'View',2,6,'Procurement',4),
+ (1853,'View',2,3,'Leads',4),
+ (1854,'View',2,3,'Leads',4),
+ (1855,'Update',2,3,'Leads',4),
+ (1856,'View',2,3,'Leads',4),
+ (1857,'View',2,3,'Leads',4),
+ (1858,'View',2,2,'Leads',4),
+ (1859,'View',2,3,'Leads',4),
+ (1860,'View',2,3,'Leads',4),
+ (1861,'View',2,3,'Leads',4),
+ (1862,'Update',2,2,'Company',4),
+ (1863,'Update',2,2,'Company',4),
+ (1864,'Update',2,2,'Company',4),
+ (1865,'View',2,2,'Company',1),
+ (1866,'View',2,3,'Leads',4),
+ (1867,'View',2,3,'Leads',4),
+ (1868,'Create',1,52,'ProductService',1),
+ (1869,'Create',1,3,'Campaign',1),
+ (1870,'Create',1,6,'Leads',1),
+ (1871,'Create',1,4,'Opportunity',1),
+ (1872,'Create',2,4,'Campaign',4),
+ (1873,'View',2,4,'Campaign',4),
+ (1874,'View',2,4,'Campaign',4),
+ (1875,'View',1,6,'Leads',1),
+ (1876,'View',1,3,'Opportunity',1),
+ (1877,'Update',2,2,'Company',4),
+ (1878,'View',2,2,'Company',4),
+ (1879,'View',2,10,'Supplier',4),
+ (1880,'View',2,4,'Campaign',4),
+ (1881,'View',2,2,'Leads',4),
+ (1882,'View',2,4,'Campaign',4),
+ (1883,'Update',2,2,'Company',4),
+ (1884,'View',2,10,'Supplier',4),
+ (1885,'View',2,10,'Supplier',4),
+ (1886,'View',2,10,'Supplier',4),
+ (1887,'Create',3,53,'ProductService',6),
+ (1888,'Create',2,11,'Supplier',4),
+ (1889,'View',2,11,'Supplier',4),
+ (1890,'Create',2,12,'Supplier',4),
+ (1891,'Create',2,13,'Supplier',4),
+ (1892,'View',2,11,'Supplier',4),
+ (1893,'Update',2,11,'Supplier',4),
+ (1894,'Create',2,54,'ProductService',4),
+ (1895,'View',2,54,'ProductService',4),
+ (1896,'View',2,50,'ProductService',4),
+ (1897,'View',2,54,'ProductService',4),
+ (1898,'Create',2,55,'ProductService',4),
+ (1899,'View',2,54,'ProductService',4),
+ (1900,'Update',2,55,'ProductService',4),
+ (1901,'Delete',2,54,'ProductService',4),
+ (1902,'Create',2,7,'Procurement',4),
+ (1903,'View',2,6,'Procurement',4),
+ (1904,'View',2,6,'Procurement',4),
+ (1905,'View',2,6,'Procurement',4),
+ (1906,'View',2,6,'Procurement',4),
+ (1907,'View',2,6,'Procurement',4),
+ (1908,'View',2,7,'Procurement',4),
+ (1909,'View',2,7,'Procurement',4),
+ (1910,'Update',2,7,'Procurement',4),
+ (1911,'View',2,7,'Procurement',4),
+ (1912,'View',2,7,'Procurement',4),
+ (1913,'View',2,7,'Procurement',4),
+ (1914,'View',2,7,'Procurement',4),
+ (1915,'View',2,7,'Procurement',4),
+ (1916,'View',1,13,'Supplier',1),
+ (1917,'View',1,52,'ProductService',1),
+ (1918,'View',3,3,'Company',6),
+ (1919,'View',3,3,'Company',6),
+ (1920,'View',1,4,'Campaign',1),
+ (1921,'View',2,4,'Campaign',4),
+ (1922,'View',1,1,'Leads',1),
+ (1923,'View',3,10,'Supplier',6),
+ (1924,'View',3,10,'Supplier',6),
+ (1925,'View',3,10,'Supplier',6),
+ (1926,'View',3,10,'Supplier',6),
+ (1927,'View',3,10,'Supplier',6),
+ (1928,'View',3,10,'Supplier',6),
+ (1929,'View',3,6,'Leads',6),
+ (1930,'View',3,6,'Leads',6),
+ (1931,'View',3,6,'Leads',6),
+ (1932,'View',3,6,'Leads',6),
+ (1933,'View',3,10,'Supplier',6),
+ (1934,'View',3,10,'Supplier',6),
+ (1935,'View',3,10,'Supplier',6),
+ (1936,'View',3,10,'Supplier',6),
+ (1937,'View',3,10,'Supplier',6),
+ (1938,'View',3,10,'Supplier',6),
+ (1939,'View',3,10,'Supplier',6),
+ (1940,'View',3,10,'Supplier',6),
+ (1941,'View',3,10,'Supplier',6),
+ (1942,'Create',1,56,'ProductService',1),
+ (1943,'Create',1,57,'ProductService',1),
+ (1944,'View',2,7,'Procurement',4),
+ (1945,'View',2,7,'Procurement',4),
+ (1946,'View',2,7,'Procurement',4),
+ (1947,'View',2,7,'Procurement',4),
+ (1948,'Create',3,5,'Campaign',6),
+ (1949,'Create',3,7,'Leads',6),
+ (1950,'View',2,7,'Procurement',4),
+ (1951,'View',2,7,'Procurement',4),
+ (1952,'View',2,7,'Procurement',4),
+ (1953,'View',2,7,'Procurement',4),
+ (1954,'View',2,7,'Procurement',4),
+ (1955,'View',3,7,'Leads',6),
+ (1956,'View',2,7,'Procurement',4),
+ (1957,'Create',2,8,'Leads',4),
+ (1958,'View',2,8,'Leads',4),
+ (1959,'View',3,7,'Leads',6),
+ (1960,'View',2,3,'Leads',4),
+ (1961,'Create',2,9,'Leads',4),
+ (1962,'Create',2,10,'Leads',4),
+ (1963,'Create',1,58,'ProductService',1),
+ (1964,'Create',1,59,'ProductService',1),
+ (1965,'Create',1,60,'ProductService',1),
+ (1966,'Create',1,61,'ProductService',1),
+ (1967,'Create',1,62,'ProductService',1),
+ (1968,'Create',1,63,'ProductService',1),
+ (1969,'Create',1,8,'Procurement',1),
+ (1970,'Create',1,9,'Procurement',1),
+ (1971,'Create',1,10,'Procurement',1),
+ (1972,'Create',1,11,'Procurement',1),
+ (1977,'View',2,12,'Supplier',4),
+ (1979,'Create',1,11,'Leads',1),
+ (1980,'View',2,12,'Supplier',4),
+ (1981,'View',2,13,'Supplier',4),
+ (1982,'Create',1,12,'Leads',1),
+ (1983,'View',2,12,'Supplier',4),
+ (1984,'View',2,13,'Supplier',4),
+ (1985,'View',2,13,'Supplier',4),
+ (1986,'View',2,11,'Supplier',4),
+ (1987,'View',2,11,'Supplier',4),
+ (1988,'View',2,11,'Supplier',4),
+ (1989,'View',2,11,'Supplier',4),
+ (1990,'View',2,11,'Supplier',4),
+ (1991,'View',2,11,'Supplier',4),
+ (1992,'View',3,7,'Leads',6),
+ (1993,'View',3,7,'Leads',6),
+ (1994,'View',3,7,'Leads',6),
+ (1995,'View',3,7,'Leads',6),
+ (1996,'View',3,7,'Leads',6),
+ (1997,'View',2,12,'Supplier',4),
+ (1998,'View',2,13,'Supplier',4),
+ (1999,'View',1,5,'Campaign',1),
+ (2000,'Create',1,6,'Campaign',1),
+ (2001,'Create',1,7,'Campaign',1),
+ (2002,'Create',1,8,'Campaign',1),
+ (2003,'Create',1,9,'Campaign',1),
+ (2004,'Create',1,10,'Campaign',1),
+ (2005,'Create',2,64,'ProductService',4),
+ (2006,'View',2,64,'ProductService',4),
+ (2007,'Create',1,11,'Campaign',1),
+ (2008,'Create',1,12,'Campaign',1),
+ (2009,'Create',1,5,'Opportunity',1),
+ (2010,'Create',1,6,'Opportunity',1),
+ (2011,'Create',1,7,'Opportunity',1),
+ (2012,'Create',1,8,'Opportunity',1),
+ (2013,'Create',1,9,'Opportunity',1),
+ (2014,'Create',1,10,'Opportunity',1),
+ (2015,'Create',1,11,'Opportunity',1),
+ (2016,'Create',1,12,'Opportunity',1),
+ (2017,'Create',1,13,'Opportunity',1),
+ (2018,'Create',1,13,'Leads',1),
+ (2019,'View',2,64,'ProductService',4),
+ (2020,'View',2,10,'Leads',4),
+ (2021,'View',1,13,'Leads',1),
+ (2022,'View',1,5,'Opportunity',1),
+ (2023,'View',1,13,'Leads',1),
+ (2024,'View',3,7,'Leads',6);
+/*!40000 ALTER TABLE `activity_history_status` ENABLE KEYS */;
+
+
+--
+-- Definition of table `activity_status`
+--
+
+DROP TABLE IF EXISTS `activity_status`;
+CREATE TABLE `activity_status` (
+  `activity_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) NOT NULL,
+  `maxRecord` int(11) NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) NOT NULL,
+  `recordIndex` int(11) NOT NULL,
+  `converted_date` varchar(255) DEFAULT NULL,
+  `createdDate` varchar(255) DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `description` text,
+  `descriptions` varchar(255) DEFAULT NULL,
+  `endTimeSlot` varchar(255) DEFAULT NULL,
+  `entity_id` bigint(20) DEFAULT NULL,
+  `entity_type` varchar(255) DEFAULT NULL,
+  `followup_date` varchar(255) DEFAULT NULL,
+  `modifyDate` varchar(255) DEFAULT NULL,
+  `next_action_date` varchar(255) DEFAULT NULL,
+  `timeSlot` varchar(255) DEFAULT NULL,
+  `upload_file` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`activity_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `activity_status`
+--
+
+/*!40000 ALTER TABLE `activity_status` DISABLE KEYS */;
+INSERT INTO `activity_status` (`activity_id`,`companyId`,`created`,`createdBy`,`maxRecord`,`modified`,`modifiedBy`,`recordIndex`,`converted_date`,`createdDate`,`date`,`description`,`descriptions`,`endTimeSlot`,`entity_id`,`entity_type`,`followup_date`,`modifyDate`,`next_action_date`,`timeSlot`,`upload_file`) VALUES 
+ (1,1,NULL,0,0,NULL,0,0,'05/28/2024',NULL,NULL,'fgghjkb!3456',NULL,'8:30 AM',1,'Opportunity','05/31/2024',NULL,NULL,'8:00 AM',NULL),
+ (2,2,NULL,0,0,NULL,0,0,NULL,NULL,'03/25/2024','sdfsdfsdfsdfsd',NULL,NULL,3,'Leads',NULL,NULL,'05/01/2024','6:30 AM',NULL),
+ (3,2,NULL,0,0,NULL,0,0,NULL,NULL,'06/03/2024','2ihgidsiaf',NULL,'8:30 AM',4,'Campaign',NULL,NULL,NULL,'8:00 AM','3.png'),
+ (4,2,NULL,0,0,NULL,0,0,NULL,'',NULL,'',NULL,'Select',6,'procurement',NULL,'',NULL,NULL,NULL),
+ (5,2,NULL,0,0,NULL,0,0,NULL,'',NULL,'',NULL,'Select',6,'procurement',NULL,'',NULL,NULL,NULL),
+ (6,2,NULL,0,0,NULL,0,0,NULL,'',NULL,'',NULL,'Select',6,'procurement',NULL,'',NULL,NULL,NULL),
+ (7,2,NULL,0,0,NULL,0,0,NULL,'',NULL,'',NULL,'Select',7,'procurement',NULL,'',NULL,NULL,NULL),
+ (8,2,NULL,0,0,NULL,0,0,NULL,'',NULL,'',NULL,'Select',7,'procurement',NULL,'',NULL,NULL,NULL),
+ (9,2,NULL,0,0,NULL,0,0,NULL,'',NULL,'',NULL,'Select',7,'procurement',NULL,'',NULL,NULL,NULL),
+ (10,2,NULL,0,0,NULL,0,0,NULL,'',NULL,'',NULL,'Select',7,'procurement',NULL,'',NULL,NULL,NULL),
+ (11,3,NULL,0,0,NULL,0,0,NULL,NULL,'06/24/2024','Testing',NULL,NULL,6,'Leads',NULL,NULL,'06/18/2024','10:00 AM',NULL),
+ (12,2,NULL,0,0,NULL,0,0,NULL,'',NULL,'',NULL,'Select',7,'procurement',NULL,'',NULL,NULL,NULL),
+ (13,2,NULL,0,0,NULL,0,0,NULL,'',NULL,'',NULL,'Select',7,'procurement',NULL,'',NULL,NULL,NULL),
+ (14,2,NULL,0,0,NULL,0,0,NULL,'06/07/2024',NULL,'well',NULL,'8:00 AM',7,'procurement',NULL,'06/08/2024',NULL,NULL,NULL),
+ (15,2,NULL,0,0,NULL,0,0,NULL,'',NULL,'',NULL,'Select',7,'procurement',NULL,'',NULL,NULL,NULL),
+ (16,2,NULL,0,0,NULL,0,0,NULL,'',NULL,'',NULL,'Select',7,'procurement',NULL,'',NULL,NULL,NULL),
+ (17,2,NULL,0,0,NULL,0,0,NULL,'',NULL,'',NULL,'Select',7,'procurement',NULL,'',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `activity_status` ENABLE KEYS */;
+
+
+--
+-- Definition of table `approve_procurement`
+--
+
+DROP TABLE IF EXISTS `approve_procurement`;
+CREATE TABLE `approve_procurement` (
+  `approveId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `Description` varchar(255) DEFAULT NULL,
+  `approvalStatus` varchar(255) DEFAULT NULL,
+  `isDelete` tinyint(1) DEFAULT NULL,
+  `sentTo` varchar(255) DEFAULT NULL,
+  `procurementId` bigint(20) DEFAULT NULL,
+  `expectedDate` varchar(255) DEFAULT NULL,
+  `productServiceVO_service_id` bigint(20) DEFAULT NULL,
+  `supplierVO_supplier_id` bigint(20) DEFAULT NULL,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`approveId`),
+  KEY `FK_iydsn9cy4jb6qxytpjxe9rirr` (`procurementId`),
+  KEY `FK_jb3xvvyg0lhdt208uly66m1co` (`productServiceVO_service_id`),
+  KEY `FK_n97wqq6nys1ns47t1vog70jsw` (`supplierVO_supplier_id`),
+  CONSTRAINT `FK_iydsn9cy4jb6qxytpjxe9rirr` FOREIGN KEY (`procurementId`) REFERENCES `procurement` (`procurementId`),
+  CONSTRAINT `FK_jb3xvvyg0lhdt208uly66m1co` FOREIGN KEY (`productServiceVO_service_id`) REFERENCES `manage_products` (`service_id`),
+  CONSTRAINT `FK_n97wqq6nys1ns47t1vog70jsw` FOREIGN KEY (`supplierVO_supplier_id`) REFERENCES `supplier_info` (`supplier_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `approve_procurement`
+--
+
+/*!40000 ALTER TABLE `approve_procurement` DISABLE KEYS */;
+INSERT INTO `approve_procurement` (`approveId`,`Description`,`approvalStatus`,`isDelete`,`sentTo`,`procurementId`,`expectedDate`,`productServiceVO_service_id`,`supplierVO_supplier_id`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`) VALUES 
+ (1,'','Approved',0,'Select',1,'02/01/2024',49,8,1,NULL,0,NULL,0),
+ (2,'','Approved',0,'Select',2,'05/23/2024',48,8,1,NULL,0,NULL,0),
+ (3,'','Approved',0,'Select',3,'05/23/2024',49,7,1,NULL,0,NULL,0),
+ (4,'','Approved',0,'Select',4,'05/07/2024',48,9,1,NULL,0,NULL,0),
+ (5,'','Approved',0,'Select',6,'02/01/2024',50,10,2,NULL,0,NULL,0);
+/*!40000 ALTER TABLE `approve_procurement` ENABLE KEYS */;
+
+
+--
+-- Definition of table `campaign`
+--
+
+DROP TABLE IF EXISTS `campaign`;
+CREATE TABLE `campaign` (
+  `CampaignId` int(11) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) NOT NULL,
+  `maxRecord` int(11) NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) NOT NULL,
+  `recordIndex` int(11) NOT NULL,
+  `Actual_Cost` double DEFAULT NULL,
+  `Budgeted_Cost` double DEFAULT NULL,
+  `Campaign_Mode` varchar(255) DEFAULT NULL,
+  `Campaign_Name` varchar(255) DEFAULT NULL,
+  `Campaign_Owner` varchar(255) DEFAULT NULL,
+  `Description` varchar(255) NOT NULL,
+  `End_Time` varchar(255) NOT NULL,
+  `Expected_Response` varchar(255) DEFAULT NULL,
+  `Expected_Revenue` double DEFAULT NULL,
+  `IsDelete` tinyint(1) DEFAULT NULL,
+  `Number_Sent` int(11) DEFAULT NULL,
+  `Started_Time` varchar(255) DEFAULT NULL,
+  `Campaign_Status` varchar(255) NOT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
+  `loginId` bigint(20) DEFAULT NULL,
+  `actualCost` bigint(20) NOT NULL,
+  `budgetedCost` bigint(20) NOT NULL,
+  `expectedResponse` varchar(255) NOT NULL,
+  `expectedRevenue` bigint(20) NOT NULL,
+  PRIMARY KEY (`CampaignId`),
+  KEY `FK_1pidnh2ikkhck99yagyx0yayi` (`product_id`),
+  KEY `FK_kvun5xiovos7gi36cxh6ge1ey` (`loginId`),
+  CONSTRAINT `FK_1pidnh2ikkhck99yagyx0yayi` FOREIGN KEY (`product_id`) REFERENCES `manage_products` (`service_id`),
+  CONSTRAINT `FK_kvun5xiovos7gi36cxh6ge1ey` FOREIGN KEY (`loginId`) REFERENCES `login` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `campaign`
+--
+
+/*!40000 ALTER TABLE `campaign` DISABLE KEYS */;
+INSERT INTO `campaign` (`CampaignId`,`companyId`,`created`,`createdBy`,`maxRecord`,`modified`,`modifiedBy`,`recordIndex`,`Actual_Cost`,`Budgeted_Cost`,`Campaign_Mode`,`Campaign_Name`,`Campaign_Owner`,`Description`,`End_Time`,`Expected_Response`,`Expected_Revenue`,`IsDelete`,`Number_Sent`,`Started_Time`,`Campaign_Status`,`product_id`,`loginId`,`actualCost`,`budgetedCost`,`expectedResponse`,`expectedRevenue`) VALUES 
+ (1,1,NULL,1,0,'2024-05-21 00:00:00',0,0,NULL,NULL,'Sms','digitalprosd','sakthivel','Digital marketing is the component of marketing that uses the Internet and online-based digital technologies such as desktop computers, mobile phones, and other digital media and platforms to promote products and services','05/23/2024',NULL,NULL,0,2,'05/21/2024','Initialize',49,1,0,25000,'normal',30000),
+ (2,1,NULL,1,0,'2024-05-27 00:00:00',0,0,NULL,NULL,'WhatsApp','343434jnjnlk','jayaprakash','egeggd!11111111121','05/29/2024',NULL,NULL,1,2,'05/28/2024','Process',49,1,0,25000,'normal',30000),
+ (3,1,NULL,1,0,NULL,0,0,NULL,NULL,'Sms','digitalprosd','sibiajay','sonnaal','06/30/2024',NULL,NULL,0,4,'06/18/2024','Complete',52,5,0,25000,'normal',30000),
+ (4,2,NULL,4,0,NULL,0,0,NULL,NULL,'Sms','headphone','Udhayan','2ihgidsiaf','06/25/2024',NULL,NULL,0,23,'06/25/2024','Initialize',50,4,0,2340,'90990080',230),
+ (5,3,NULL,6,0,NULL,0,0,NULL,NULL,'WhatsApp','Airtel ','Manibharathi','hgfhfhtt','06/30/2024',NULL,NULL,0,36,'06/26/2024','Process',53,6,0,70000,'45000',50000),
+ (6,1,NULL,1,0,NULL,0,0,NULL,NULL,'Sms','digitalprosd','kumar','The world is the totality of entities, the whole of reality, or everything that exists','06/30/2024',NULL,NULL,0,2,'06/30/2024','Process',61,16,0,25000,'normal',30000),
+ (7,1,NULL,1,0,NULL,0,0,NULL,NULL,'WhatsApp','digital','praveen','The world is the totality of entities, the whole of reality, or everything that exists','06/24/2024',NULL,NULL,0,3,'06/10/2024','Process',62,12,0,25000,'normal',30000),
+ (8,1,NULL,1,0,NULL,0,0,NULL,NULL,'Sms','software','Sakthi','The world is the totality of entities, the whole of reality, or everything that exists','06/17/2024',NULL,NULL,0,4,'06/11/2024','Initialize',59,11,0,25000,'normal',30000),
+ (9,1,NULL,1,0,NULL,0,0,NULL,NULL,'WhatsApp','phone','kumar','The world is the totality of entities, the whole of reality, or everything that exists','06/17/2024',NULL,NULL,0,3,'06/10/2024','Complete',59,9,0,25000,'normal',30000),
+ (10,1,NULL,1,0,NULL,0,0,NULL,NULL,'Email','digitalprosdeee','kumaran','The world is the totality of entities, the whole of reality, or everything that exists\r\n','06/23/2024',NULL,NULL,0,5,'06/17/2024','Not complete',60,14,0,25000,'normal',30000),
+ (11,1,NULL,1,0,NULL,0,0,NULL,NULL,'WhatsApp','phones','Sakthi','The world is the totality of entities, the whole of reality, or everything that exists','06/23/2024',NULL,NULL,0,3,'06/17/2024','Process',60,11,0,25000,'normal',30000),
+ (12,1,NULL,1,0,NULL,0,0,NULL,NULL,'Sms','softwared','kumar','The world is the totality of entities, the whole of reality, or everything that exists','06/30/2024',NULL,NULL,0,3,'06/17/2024','Process',57,13,0,25000,'normal',30000);
+/*!40000 ALTER TABLE `campaign` ENABLE KEYS */;
+
+
+--
+-- Definition of table `campaign_update_status`
+--
+
+DROP TABLE IF EXISTS `campaign_update_status`;
+CREATE TABLE `campaign_update_status` (
+  `updatecampaign_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) NOT NULL,
+  `maxRecord` int(11) NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) NOT NULL,
+  `recordIndex` int(11) NOT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `isDelete` tinyint(1) DEFAULT NULL,
+  `description` text,
+  `upload_files` varchar(255) DEFAULT NULL,
+  `campaign_id` int(11) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`updatecampaign_id`),
+  KEY `FK_1cc6pigodj5i7xxhye2cklixv` (`campaign_id`),
+  KEY `FK_sq8e272sokevmompbn630isgo` (`user_id`),
+  CONSTRAINT `FK_1cc6pigodj5i7xxhye2cklixv` FOREIGN KEY (`campaign_id`) REFERENCES `campaign` (`CampaignId`),
+  CONSTRAINT `FK_sq8e272sokevmompbn630isgo` FOREIGN KEY (`user_id`) REFERENCES `login` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `campaign_update_status`
+--
+
+/*!40000 ALTER TABLE `campaign_update_status` DISABLE KEYS */;
+/*!40000 ALTER TABLE `campaign_update_status` ENABLE KEYS */;
+
+
+--
+-- Definition of table `casemanagement`
+--
+
+DROP TABLE IF EXISTS `casemanagement`;
+CREATE TABLE `casemanagement` (
+  `caseId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `Type` varchar(255) DEFAULT NULL,
+  `caseOrigin` varchar(255) DEFAULT NULL,
+  `caseReason` varchar(255) DEFAULT NULL,
+  `casesolution` varchar(255) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `claimingDate` varchar(255) DEFAULT NULL,
+  `commend` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `expireDate` varchar(255) DEFAULT NULL,
+  `isdelete` tinyint(1) DEFAULT NULL,
+  `phoneNo` bigint(20) DEFAULT NULL,
+  `priority` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `warrantyDate` varchar(255) DEFAULT NULL,
+  `customer_id` bigint(20) DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`caseId`),
+  KEY `FK_ivxr7rkjg8vujc41qv8tvt913` (`customer_id`),
+  KEY `FK_ffu0fksguippkqjly85rek1g3` (`product_id`),
+  CONSTRAINT `FK_ffu0fksguippkqjly85rek1g3` FOREIGN KEY (`product_id`) REFERENCES `manage_products` (`service_id`),
+  CONSTRAINT `FK_ivxr7rkjg8vujc41qv8tvt913` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `casemanagement`
+--
+
+/*!40000 ALTER TABLE `casemanagement` DISABLE KEYS */;
+INSERT INTO `casemanagement` (`caseId`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`Type`,`caseOrigin`,`caseReason`,`casesolution`,`category`,`claimingDate`,`commend`,`description`,`email`,`expireDate`,`isdelete`,`phoneNo`,`priority`,`status`,`warrantyDate`,`customer_id`,`product_id`) VALUES 
+ (1,1,NULL,0,NULL,0,'reserved','Website','bad','good product ,very high','Procurement product','04/02/2024','solutions','fddccvvswqqw','ganesh@gmail.com','08/31/2026',0,7654555444,'high','Incomplete','06/30/2024',1,49),
+ (2,1,NULL,0,NULL,0,'reserved','Whatsp','bad','good product','Procurement product','06/06/2024','solutions','12th Standard','samyy@gmail.com','06/23/2024',0,7654555444,'high','Incomplete','06/17/2024',2,52),
+ (3,1,NULL,0,NULL,0,'reserved','Website','bad','good product','Procurement product','06/03/2024','solutions','unit test','samyy@gmail.com','06/11/2024',0,7654555444,'high','Incomplete','06/25/2024',4,49),
+ (4,1,NULL,0,NULL,0,'reserved','Website','bad','good product ,very high','Procurement product','06/10/2024','solutions','unit test','venkata@gmal.com','06/03/2024',0,7654555444,'high','complete','12/23/2024',1,49),
+ (5,1,NULL,0,NULL,0,'reserved','Email','bad','good product','Procurement product','06/11/2024','solutions','unit test','ganesh@gmail.com','06/24/2024',0,7654555444,'high','complete','06/17/2024',4,49),
+ (6,1,NULL,0,NULL,0,'reserved','Website','bad','good product','Procurement product','06/11/2024','solutions','unit test','ravichandran@gmail.com','06/03/2024',0,7654555444,'high','Incomplete','06/30/2024',2,52),
+ (7,1,NULL,0,NULL,0,'reserved','Email','bad','good product','Procurement product','06/11/2024','solutions','1','ganesh@gmail.com','06/03/2024',0,7654555444,'high','Incomplete','06/03/2024',4,49),
+ (8,1,NULL,0,NULL,0,'reserved','Website','bad','good product','Procurement product','06/18/2024','solutions','1','ravichandran@gmail.com','06/11/2024',0,7654555444,'high','complete','06/11/2024',2,52),
+ (9,1,NULL,0,NULL,0,'reserved','Website','bad','good product','Procurement product','06/04/2024','solutions','CBSE','ganesh@gmail.com','06/11/2024',0,7654555444,'high','complete','06/17/2024',1,49),
+ (10,1,NULL,0,NULL,0,'reserved','Email','bad','good product','Procurement product','06/11/2024','solutions','12th Standard','ravichandran@gmail.com','06/11/2024',0,7654555444,'high','Incomplete','06/11/2024',2,52),
+ (11,1,NULL,0,NULL,0,'reserved','Email','bad','good product ,very high','Procurement product','06/11/2024','solutions','B.A','ravichandran@gmail.com','06/11/2024',0,7654555444,'high','complete','06/11/2024',2,52),
+ (12,1,NULL,0,NULL,0,'reserved','Email','bad','good product ,very high','Procurement product','04/02/2024','solutions','1-5','ravichandran@gmail.com','06/03/2024',0,7654555444,'high','complete','06/17/2024',2,52);
+/*!40000 ALTER TABLE `casemanagement` ENABLE KEYS */;
+
+
+--
+-- Definition of table `company`
+--
+
+DROP TABLE IF EXISTS `company`;
+CREATE TABLE `company` (
+  `companyId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `adminChecked` tinyint(1) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `companyGstNo` varchar(255) DEFAULT NULL,
+  `companyLogo` varchar(255) DEFAULT NULL,
+  `companies_name` varchar(255) DEFAULT NULL,
+  `company_profile` text,
+  `confirmPassword` varchar(255) DEFAULT NULL,
+  `contact_no` varchar(255) DEFAULT NULL,
+  `contactPerson` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) NOT NULL,
+  `district` varchar(255) DEFAULT NULL,
+  `email_address` varchar(255) DEFAULT NULL,
+  `industryType` varchar(255) DEFAULT NULL,
+  `is_active_invitation` tinyint(1) DEFAULT NULL,
+  `isDeleted` tinyint(1) NOT NULL,
+  `mobile_no` varchar(255) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `postalCode` varchar(255) DEFAULT NULL,
+  `rank` int(11) NOT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `street` varchar(255) DEFAULT NULL,
+  `website` varchar(255) DEFAULT NULL,
+  `companyOwner` tinyint(1) NOT NULL,
+  PRIMARY KEY (`companyId`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `company`
+--
+
+/*!40000 ALTER TABLE `company` DISABLE KEYS */;
+INSERT INTO `company` (`companyId`,`adminChecked`,`city`,`companyGstNo`,`companyLogo`,`companies_name`,`company_profile`,`confirmPassword`,`contact_no`,`contactPerson`,`country`,`created`,`createdBy`,`district`,`email_address`,`industryType`,`is_active_invitation`,`isDeleted`,`mobile_no`,`modified`,`modifiedBy`,`password`,`postalCode`,`rank`,`state`,`street`,`website`,`companyOwner`) VALUES 
+ (1,0,'Poonamalee','8689898',NULL,'RedBus',NULL,'8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5','7868069302','sathishs','India','2023-12-01 11:50:42',0,'Kanchipuram','mysales@softtwig.com','Non IT Sector',0,0,'9047212130','2023-12-01 11:50:42',1,'8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5','326897',0,'TamilNadu','32/8798','mysales@softtwig.com',0),
+ (2,0,'thuraiyur','765hdu467843756',NULL,'TechUdhay',NULL,'8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5','94856788456','Udhayan','india','2024-06-05 15:18:28',0,'trichy','softtwig@gmail.com','IT Sector',0,0,'9845628736','2024-06-05 15:18:28',4,'8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5','621002',0,'tamilnadu','SEngattupatti','www.softtwig.com',0),
+ (3,0,'Velachery','is98767asxiu8w8',NULL,'Appstore',NULL,'njG1H7PdQUoM1zDd5ZF/QsVS6P0iXYqapOd4E74JoTYdCyBOoCSKLR6XyCJkO80xybo79h+boIuDOG8QOG/MoA==','80721630077','Manibharathi','India','2024-06-03 13:03:33',1,'Chennai','appstore@softtwig.com','IT Sector',0,0,'8072163007','2024-06-03 13:03:33',0,'njG1H7PdQUoM1zDd5ZF/QsVS6P0iXYqapOd4E74JoTYdCyBOoCSKLR6XyCJkO80xybo79h+boIuDOG8QOG/MoA==','034567',0,'Tamilnadu','Madippakkam','www.appstore.com',1),
+ (4,0,'ffsdfhdsf','349434244343423',NULL,'mlksfkfsf',NULL,'F8l7xnRQ/7ewByi8VLApwG4C5tEUjvaxgY1oS/gCY/ivZt1pM/RTQBBILhKN1fI5','35845755756','dwdsada','dfdfsff','2024-06-05 12:55:32',1,'sdfdsfdsdf','saddkd@gmail.com','Non IT Sector',0,0,'6568656586','2024-06-05 12:55:32',0,'F8l7xnRQ/7ewByi8VLApwG4C5tEUjvaxgY1oS/gCY/ivZt1pM/RTQBBILhKN1fI5','543554',0,'fdsffs','mainstreet','rajaguru.com',1),
+ (5,0,'tab','789456123078945',NULL,'INFOSYS Technology',NULL,'J5xlOxY13IWwQwGSJSLwSqEobW4Gn2jZqhvcisRFUX+vZt1pM/RTQBBILhKN1fI5','87889455122','kumar','window','2024-06-06 11:20:42',1,'insert','unfo@gmail.com','Non IT Sector',0,0,'7478855441','2024-06-06 11:20:42',0,'J5xlOxY13IWwQwGSJSLwSqEobW4Gn2jZqhvcisRFUX+vZt1pM/RTQBBILhKN1fI5','822128',0,'num lock','shift street ,caps nagar(po),tab.633721','www.info.com',1),
+ (6,0,'chennai','789456123078948',NULL,'adobedesign ',NULL,'84DElMVUjUiT8w2QAM67iyQZXlQuQouFUt7fv0Q7/kCvZt1pM/RTQBBILhKN1fI5','98765434433','boss','india','2024-06-06 15:26:02',1,'big size','support@creation.com','IT Sector',0,0,'9876543443','2024-06-06 15:26:02',0,'84DElMVUjUiT8w2QAM67iyQZXlQuQouFUt7fv0Q7/kCvZt1pM/RTQBBILhKN1fI5','543211',0,'tamil','size street','kamakshi.com',1),
+ (7,0,'Tiruchirapalli','ifi970979dffyfi',NULL,'Testing',NULL,'oPuJbSMfPPB2Z6MT7nkg01v2N1zNxQ720n5z4tCwt3uvZt1pM/RTQBBILhKN1fI5','75678775434','Sakthi','India','2024-06-06 15:51:06',1,'big size','sakthi@gmail.com','IT Sector',0,0,'6976937695','2024-06-06 15:51:06',0,'oPuJbSMfPPB2Z6MT7nkg01v2N1zNxQ720n5z4tCwt3uvZt1pM/RTQBBILhKN1fI5','543211',0,'Tamil Nadu','Agra Street','www.orchids.com',1),
+ (8,0,'chennai','777455885511222',NULL,'sat company',NULL,'6pvIsZ6AfwrqvKE2Z7aPfB9RLuuyawn3tDqsCmdZhkyvZt1pM/RTQBBILhKN1fI5','88996655117','kumar','India','2024-06-10 11:41:59',1,'big size','dev@gmail.com','Non IT Sector',0,0,'7777734444','2024-06-10 11:41:59',0,'6pvIsZ6AfwrqvKE2Z7aPfB9RLuuyawn3tDqsCmdZhkyvZt1pM/RTQBBILhKN1fI5','567899',0,'Tamil Nadu','mainstreet','hn.com',1),
+ (9,0,'devarakonda','777455885511227',NULL,'sat company',NULL,'OTdMbcb+t9q5c3o6oJsxStB/Ycxt/iXjF2brz+lpNJKvZt1pM/RTQBBILhKN1fI5','79777798771','kumaran','India','2024-06-10 11:44:06',1,'big size','dev1@gmail.com','Non IT Sector',0,0,'7777734447','2024-06-10 11:44:06',0,'OTdMbcb+t9q5c3o6oJsxStB/Ycxt/iXjF2brz+lpNJKvZt1pM/RTQBBILhKN1fI5','567899',0,'Tamil Nadu','roll street','ranga.com',1),
+ (10,0,'Tiruchirapalli','777455885511228',NULL,'sat company',NULL,'FjBepuYlxXN14d35iD7ekMdxRi3ctonzms1wb6HB3m2vZt1pM/RTQBBILhKN1fI5','79777798772','sunil menon','India','2024-06-10 11:45:50',1,'fdfdff','beermd@gmail.com','Non IT Sector',0,0,'7777734445','2024-06-10 11:45:50',0,'FjBepuYlxXN14d35iD7ekMdxRi3ctonzms1wb6HB3m2vZt1pM/RTQBBILhKN1fI5','543211',0,'Tamil Nadu','Agra Street','rajagurp.com',1),
+ (11,0,'Tiruchirapalli','777455885511226',NULL,'INFOSYS Technology',NULL,'MFT7PduAwEFgdJv/BkcGSpf3io3WHGza5CIgFm/OzbmvZt1pM/RTQBBILhKN1fI5','79777798774','kumar','India','2024-06-10 11:48:39',1,'big size','support@creationl.com','IT Sector',0,0,'7575755757','2024-06-10 11:48:39',0,'MFT7PduAwEFgdJv/BkcGSpf3io3WHGza5CIgFm/OzbmvZt1pM/RTQBBILhKN1fI5','543211',0,'Tamil Nadu','mainstreet','sbioa.com',1);
+/*!40000 ALTER TABLE `company` ENABLE KEYS */;
+
+
+--
+-- Definition of table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+CREATE TABLE `contact` (
+  `contact_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `firstname` varchar(255) DEFAULT NULL,
+  `isDeleted` tinyint(1) DEFAULT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
+  `phone` bigint(20) DEFAULT NULL,
+  `salutation` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `street` varchar(255) DEFAULT NULL,
+  `account_id` int(11) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `opportunityId` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`contact_id`),
+  KEY `FK_ihchgfc3ndm28ddt6sr4jhvcx` (`account_id`),
+  KEY `FK_cjqqxjkly5hj40axc1whq4yec` (`user_id`),
+  KEY `FK_to0qaum8iccds47l4fatsd2gt` (`opportunityId`),
+  CONSTRAINT `FK_cjqqxjkly5hj40axc1whq4yec` FOREIGN KEY (`user_id`) REFERENCES `login` (`id`),
+  CONSTRAINT `FK_ihchgfc3ndm28ddt6sr4jhvcx` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`ACCOUNT_ID`),
+  CONSTRAINT `FK_to0qaum8iccds47l4fatsd2gt` FOREIGN KEY (`opportunityId`) REFERENCES `opportunity_list` (`OPPORTUNITY_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contact`
+--
+
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT INTO `contact` (`contact_id`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`city`,`country`,`email`,`firstname`,`isDeleted`,`lastname`,`phone`,`salutation`,`state`,`street`,`account_id`,`user_id`,`opportunityId`) VALUES 
+ (1,1,NULL,1,NULL,0,'thuraiyur','india','benil@gmail.com','business',0,NULL,99528288883,'Mr','tamilnadu','sengattupatti',1,NULL,NULL),
+ (2,1,NULL,0,NULL,0,'dsadda','dsadadas','gandhiii@gmail.com','lo',1,NULL,67565564665,'Mrs','asdsadsdd','adsdsa',2,NULL,NULL),
+ (3,1,NULL,1,NULL,0,'tetree','trttrette','kumara.77@gmail.com','54535435345',0,NULL,65654644665,'Mrs','trtttt','tttrtt',3,NULL,NULL),
+ (4,1,NULL,1,NULL,0,'Tiruchirapalli','India','ganesh@gmail.com','alt gr',0,NULL,74125588552,'Mr','Tamil Nadu','Agra Street',4,NULL,NULL),
+ (5,2,NULL,4,NULL,0,'Chennai','India','prajith@gmail.com','Prajith',0,NULL,78326487468,'Mr','Tamilnadu','Porur',5,NULL,NULL),
+ (6,3,NULL,6,NULL,0,'Velachery','India','mani@gmail.com','Savings',0,NULL,80721630071,'Mr','Tamilnadu','Madippakkam',6,NULL,NULL),
+ (7,3,NULL,6,NULL,0,'Velachery','India','eagle@gmail.com','eete',0,NULL,80721630071,'Mr','Tamilnadu','Madhanandhapuram',7,NULL,NULL),
+ (8,2,NULL,4,NULL,0,'trichy','india','techsengai@gmail.com','veera',0,NULL,99528288889,'Mr','tamilnadu','Sengattupatti',8,NULL,NULL),
+ (9,1,NULL,1,NULL,0,'thuraiyur','India','venkata@gmal.com','iob',0,NULL,76555321230,'Mr','tamil','cdkdaddksdsd',9,NULL,NULL),
+ (10,1,NULL,1,NULL,0,'addgfdgdfd','India','kumara.qa77@gmail.com','iob',0,NULL,36985214795,'Mrs','Tamil Nadu','Agra Street',10,NULL,NULL),
+ (11,1,NULL,1,NULL,0,'Tiruchirapalli','India','ravichandran@gmail.com','hdfc',0,NULL,76555321231,'Mr','tamil','mainstreet',11,NULL,NULL),
+ (12,1,NULL,1,NULL,0,'Tiruchirapalli','India','ravichandrands@gmail.com','iob',0,NULL,74123654784,'Mr','Tamil Nadu','Agra Street',12,NULL,NULL);
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
+
+
+--
+-- Definition of table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE `customer` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `assigned_to` bigint(20) DEFAULT NULL,
+  `companyLogo` longblob,
+  `company_Name` varchar(255) DEFAULT NULL,
+  `company_Type` varchar(255) DEFAULT NULL,
+  `contact_Number` varchar(255) DEFAULT NULL,
+  `deletedBy` bigint(20) NOT NULL,
+  `deletedDate` datetime DEFAULT NULL,
+  `email_Id` varchar(255) DEFAULT NULL,
+  `first_Name` varchar(255) DEFAULT NULL,
+  `industry_Type` varchar(255) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL,
+  `isDelete` tinyint(1) DEFAULT NULL,
+  `last_Name` varchar(255) DEFAULT NULL,
+  `migrationStatus` tinyint(1) NOT NULL,
+  `mobile_Number` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `termsConditionsAgreed` tinyint(1) DEFAULT NULL,
+  `update_status` tinyint(1) DEFAULT NULL,
+  `warrantyDate` varchar(255) DEFAULT NULL,
+  `website` varchar(255) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_j7ja2xvrxudhvssosd4nu1o92` (`user_id`),
+  CONSTRAINT `FK_j7ja2xvrxudhvssosd4nu1o92` FOREIGN KEY (`user_id`) REFERENCES `login` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer`
+--
+
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` (`id`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`address`,`assigned_to`,`companyLogo`,`company_Name`,`company_Type`,`contact_Number`,`deletedBy`,`deletedDate`,`email_Id`,`first_Name`,`industry_Type`,`isActive`,`isDelete`,`last_Name`,`migrationStatus`,`mobile_Number`,`status`,`termsConditionsAgreed`,`update_status`,`warrantyDate`,`website`,`user_id`) VALUES 
+ (1,1,'2024-06-04 00:00:00',1,'2024-06-04 00:00:00',1,'bbbbbb',1,NULL,'1 & end the best way',NULL,'78455222336',0,NULL,'ravi12@gmail.com','ravichandran','apps',1,0,'s',0,'8541122236','opened',NULL,0,'06/30/2024',NULL,6),
+ (2,1,'2024-06-04 00:00:00',1,'2024-06-04 00:00:00',1,'dev caps lock.',1,NULL,'shiftctrl',NULL,'99911222929',0,NULL,'ksam@gmail.com','kumarasamy','count',1,0,'g',0,'8912344499','opened',NULL,0,'06/30/2024',NULL,2),
+ (3,2,'2024-06-05 00:00:00',4,'2024-06-05 00:00:00',4,'sengattupatti',4,NULL,'softtwig',NULL,'08147238463',0,NULL,'sibi@gmail.com','sibi','it',1,0,'sundar',0,'8756437563','opened',NULL,0,'06/05/2024','www.tech.com',4),
+ (4,1,'2024-06-06 00:00:00',1,'2024-06-06 00:00:00',1,'dharapuram',1,NULL,'rebornity Technology pvt ltd',NULL,'78459632146',0,NULL,'chellapa.s@myjobbie.com','kumara','count',1,0,'d',0,'9876543876','opened',NULL,0,'06/30/2024',NULL,9),
+ (5,1,'2024-06-10 00:00:00',1,'2024-06-10 00:00:00',1,'salem',1,NULL,'sat company',NULL,'76555321230',0,NULL,'sakthi@gmail.com','sakthivel','apps',1,0,'s',0,'9876543874','opened',NULL,0,'06/24/2024','ranga.com',15),
+ (6,1,'2024-06-10 00:00:00',1,'2024-06-10 00:00:00',1,'salem',1,NULL,'INFOSYS Technology',NULL,'76555321237',0,NULL,'sakthi0@gmail.com','kumara','apps',1,0,'d',0,'9876543333','opened',NULL,0,'06/30/2024','ranga.com',12),
+ (7,1,'2024-06-10 00:00:00',1,'2024-06-10 00:00:00',1,'perambalur',1,NULL,'sat company',NULL,'36985214790',0,NULL,'ksamm@gmail.com','sakthivel','apps',1,0,'d',0,'9876543870','opened',NULL,0,'06/30/2024','ranga.com',13),
+ (8,1,'2024-06-10 00:00:00',1,'2024-06-10 00:00:00',1,'perambalur',1,NULL,'creation Technology',NULL,'76555321231',0,NULL,'hji@gmail.com','sakthivel','apps',1,0,'k',0,'9876543339','opened',NULL,0,'06/30/2024','amigo.com',13),
+ (9,1,'2024-06-10 00:00:00',1,'2024-06-10 00:00:00',1,'perambalur',1,NULL,'rebornity Technology pvt ltd',NULL,'22834847471',0,NULL,'sakthi56@gmail.com','ravichandran','count',1,0,'d',0,'8999999119','opened',NULL,0,'06/17/2024','rajaguru.com',10),
+ (10,1,'2024-06-10 00:00:00',1,'2024-06-10 00:00:00',1,'salem',1,NULL,'rebornity Technology pvt ltd',NULL,'36985214795',0,NULL,'kriz@gmail.com','kumara','apps',1,0,'d',0,'6589098765','opened',NULL,0,'06/24/2024','kamakshi.com',13),
+ (11,1,'2024-06-10 00:00:00',1,'2024-06-10 00:00:00',1,'perambalur',1,NULL,'adobedesign ',NULL,'76555321238',0,NULL,'sakthi85@gmail.com','sakthi','count',1,0,'k',0,'9876543330','opened',NULL,0,'06/23/2024',NULL,12);
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+
+
+--
+-- Definition of table `customer_update_status`
+--
+
+DROP TABLE IF EXISTS `customer_update_status`;
+CREATE TABLE `customer_update_status` (
+  `updateid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `description` text,
+  `endTimeSlot` varchar(255) DEFAULT NULL,
+  `next_action_date` varchar(255) DEFAULT NULL,
+  `timeSlot` varchar(255) DEFAULT NULL,
+  `customer_id` bigint(20) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`updateid`),
+  KEY `FK_eub25xhc44lh1h9f3fe78hks9` (`customer_id`),
+  KEY `FK_lqkyddig820mvk9g6gok66dn3` (`user_id`),
+  CONSTRAINT `FK_eub25xhc44lh1h9f3fe78hks9` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`),
+  CONSTRAINT `FK_lqkyddig820mvk9g6gok66dn3` FOREIGN KEY (`user_id`) REFERENCES `login` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer_update_status`
+--
+
+/*!40000 ALTER TABLE `customer_update_status` DISABLE KEYS */;
+INSERT INTO `customer_update_status` (`updateid`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`date`,`description`,`endTimeSlot`,`next_action_date`,`timeSlot`,`customer_id`,`user_id`) VALUES 
+ (1,NULL,NULL,0,NULL,0,'03/25/2024','ok','12:30 PM','06/25/2024','12:00 PM',3,4);
+/*!40000 ALTER TABLE `customer_update_status` ENABLE KEYS */;
+
+
+--
+-- Definition of table `customers_products`
+--
+
+DROP TABLE IF EXISTS `customers_products`;
+CREATE TABLE `customers_products` (
+  `customer_Id` bigint(20) NOT NULL,
+  `product_Id` bigint(20) NOT NULL,
+  KEY `FK_6mjl33unwok0rvd5amwx7ri14` (`customer_Id`),
+  KEY `UK_fnpyc6d2qb6hunxb660hdiwk5` (`product_Id`) USING BTREE,
+  CONSTRAINT `FK_6mjl33unwok0rvd5amwx7ri14` FOREIGN KEY (`customer_Id`) REFERENCES `customer` (`id`),
+  CONSTRAINT `FK_fnpyc6d2qb6hunxb660hdiwk5` FOREIGN KEY (`product_Id`) REFERENCES `manage_products` (`service_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customers_products`
+--
+
+/*!40000 ALTER TABLE `customers_products` DISABLE KEYS */;
+INSERT INTO `customers_products` (`customer_Id`,`product_Id`) VALUES 
+ (1,49),
+ (2,52),
+ (3,50),
+ (4,49),
+ (5,52),
+ (6,48),
+ (7,48),
+ (8,59),
+ (9,52),
+ (10,60),
+ (11,49);
+/*!40000 ALTER TABLE `customers_products` ENABLE KEYS */;
+
+
+--
+-- Definition of table `email_management`
+--
+
+DROP TABLE IF EXISTS `email_management`;
+CREATE TABLE `email_management` (
+  `sendId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
+  `emailAddress` varchar(255) DEFAULT NULL,
+  `mail_to` bigint(20) DEFAULT NULL,
+  `mail_by` bigint(20) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`sendId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `email_management`
+--
+
+/*!40000 ALTER TABLE `email_management` DISABLE KEYS */;
+/*!40000 ALTER TABLE `email_management` ENABLE KEYS */;
+
+
+--
+-- Definition of table `employee_skills`
+--
+
+DROP TABLE IF EXISTS `employee_skills`;
+CREATE TABLE `employee_skills` (
+  `id` bigint(20) NOT NULL,
+  `skillsId` bigint(20) NOT NULL,
+  KEY `FK_77fjs6hb0ivitgh8xd6tx9q7u` (`skillsId`),
+  KEY `FK_hkqrqiwtslh25gqd055ky6uy0` (`id`),
+  CONSTRAINT `FK_77fjs6hb0ivitgh8xd6tx9q7u` FOREIGN KEY (`skillsId`) REFERENCES `skills` (`skillsId`),
+  CONSTRAINT `FK_hkqrqiwtslh25gqd055ky6uy0` FOREIGN KEY (`id`) REFERENCES `login` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employee_skills`
+--
+
+/*!40000 ALTER TABLE `employee_skills` DISABLE KEYS */;
+INSERT INTO `employee_skills` (`id`,`skillsId`) VALUES 
+ (1,32),
+ (2,32),
+ (5,34),
+ (7,32),
+ (7,33),
+ (12,34),
+ (17,36),
+ (18,32),
+ (18,33),
+ (18,35),
+ (3,32),
+ (3,40);
+/*!40000 ALTER TABLE `employee_skills` ENABLE KEYS */;
+
+
+--
+-- Definition of table `gst`
+--
+
+DROP TABLE IF EXISTS `gst`;
+CREATE TABLE `gst` (
+  `gst_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) NOT NULL,
+  `maxRecord` int(11) NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) NOT NULL,
+  `recordIndex` int(11) NOT NULL,
+  `cgst` varchar(255) NOT NULL,
+  `isActive` tinyint(1) DEFAULT NULL,
+  `isDelete` tinyint(1) DEFAULT NULL,
+  `sgst` varchar(255) NOT NULL,
+  `start_Date` datetime NOT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`gst_id`),
+  KEY `FK_jamhdnsjg2gk8ql86lkrt27nw` (`user_id`),
+  KEY `FK_d8nt87qi1yf9kf4xq7m1th492` (`product_id`),
+  CONSTRAINT `FK_d8nt87qi1yf9kf4xq7m1th492` FOREIGN KEY (`product_id`) REFERENCES `manage_products` (`service_id`),
+  CONSTRAINT `FK_jamhdnsjg2gk8ql86lkrt27nw` FOREIGN KEY (`user_id`) REFERENCES `login` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gst`
+--
+
+/*!40000 ALTER TABLE `gst` DISABLE KEYS */;
+INSERT INTO `gst` (`gst_id`,`companyId`,`created`,`createdBy`,`maxRecord`,`modified`,`modifiedBy`,`recordIndex`,`cgst`,`isActive`,`isDelete`,`sgst`,`start_Date`,`user_id`,`product_id`) VALUES 
+ (139,1,NULL,1,0,NULL,0,0,'54',1,0,'34','2024-05-20 00:00:00',1,48),
+ (140,2,NULL,4,0,NULL,0,0,'5',1,0,'5','2024-05-28 00:00:00',NULL,50),
+ (141,2,NULL,4,0,NULL,0,0,'15%',0,1,'15%','2024-06-05 00:00:00',NULL,50),
+ (142,2,NULL,4,0,NULL,0,0,'11',1,0,'14','2024-06-09 00:00:00',NULL,51),
+ (143,2,NULL,4,0,NULL,0,0,'14',1,0,'16','2024-06-10 00:00:00',NULL,50),
+ (144,2,NULL,4,0,NULL,0,0,'42',1,0,'14','2024-06-16 00:00:00',NULL,51),
+ (145,2,NULL,4,0,NULL,0,0,'15%',1,0,'12','2024-06-17 00:00:00',NULL,50),
+ (146,2,NULL,4,0,NULL,0,0,'15',1,0,'15','2024-06-30 00:00:00',NULL,50),
+ (147,2,NULL,4,0,NULL,0,0,'15%',1,0,'15%','2024-06-30 00:00:00',NULL,50),
+ (148,2,NULL,4,0,NULL,0,0,'15%',1,0,'15%','2024-06-30 00:00:00',NULL,50),
+ (149,2,NULL,4,0,NULL,0,0,'12',1,0,'14','2024-06-23 00:00:00',NULL,51),
+ (150,2,NULL,4,0,NULL,0,0,'14',1,0,'15%','2024-06-23 00:00:00',NULL,51),
+ (151,2,NULL,4,0,NULL,0,0,'15%',1,0,'12%','2024-06-23 00:00:00',NULL,51),
+ (152,2,NULL,4,0,NULL,0,0,'200',1,0,'100','2024-06-04 00:00:00',NULL,50),
+ (153,2,NULL,4,0,NULL,0,0,'20%',1,0,'10%','2024-06-06 00:00:00',NULL,51),
+ (154,1,NULL,1,0,NULL,0,0,'15%',1,0,'15%','2024-06-24 00:00:00',1,49),
+ (155,2,NULL,4,0,NULL,0,0,'23',1,0,'5','2021-07-12 00:00:00',NULL,50),
+ (156,3,NULL,6,0,NULL,0,0,'13',1,0,'5','2024-06-18 00:00:00',NULL,53),
+ (157,1,NULL,1,0,NULL,0,0,'23',1,0,'5','2024-06-30 00:00:00',1,48);
+/*!40000 ALTER TABLE `gst` ENABLE KEYS */;
+
+
+--
+-- Definition of table `leads`
+--
+
+DROP TABLE IF EXISTS `leads`;
+CREATE TABLE `leads` (
+  `Leads_Id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) NOT NULL,
+  `maxRecord` int(11) NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) NOT NULL,
+  `recordIndex` int(11) NOT NULL,
+  `Annual_Revenue` double DEFAULT NULL,
+  `City` varchar(255) DEFAULT NULL,
+  `Company_Name` varchar(255) DEFAULT NULL,
+  `Contact_No` varchar(255) NOT NULL,
+  `Converted_Cusotmer` tinyint(1) DEFAULT NULL,
+  `Country` varchar(255) DEFAULT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  `Designation` varchar(255) DEFAULT NULL,
+  `District` varchar(255) DEFAULT NULL,
+  `Email_Address` varchar(255) DEFAULT NULL,
+  `Fax` varchar(255) DEFAULT NULL,
+  `First_Name` varchar(255) DEFAULT NULL,
+  `Industry_Type` varchar(255) DEFAULT NULL,
+  `IsDelete` tinyint(1) DEFAULT NULL,
+  `Last_Name` varchar(255) DEFAULT NULL,
+  `Mobile_No` varchar(255) DEFAULT NULL,
+  `No_Of_Employees` int(11) DEFAULT NULL,
+  `Postal_Code` int(11) DEFAULT NULL,
+  `Rating` varchar(255) DEFAULT NULL,
+  `Salutation` varchar(255) DEFAULT NULL,
+  `State` varchar(255) DEFAULT NULL,
+  `Status` varchar(255) DEFAULT NULL,
+  `Street` varchar(255) DEFAULT NULL,
+  `Website` varchar(255) DEFAULT NULL,
+  `Campaign_Id` int(11) DEFAULT NULL,
+  `Lead_Owner` bigint(20) DEFAULT NULL,
+  `Product_Service_Id` bigint(20) DEFAULT NULL,
+  `Project_Id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`Leads_Id`),
+  KEY `FK_jfxk6orx78qg8sivwqm0wc4ef` (`Campaign_Id`),
+  KEY `FK_cwj8627tp4kugwp7emtonufi7` (`Lead_Owner`),
+  KEY `FK_lvj2d8ni2his6o6gnr7jnyyqt` (`Product_Service_Id`),
+  KEY `FK_8cnt3fw5c4368v1628an00mni` (`Project_Id`),
+  CONSTRAINT `FK_8cnt3fw5c4368v1628an00mni` FOREIGN KEY (`Project_Id`) REFERENCES `project` (`projectId`),
+  CONSTRAINT `FK_cwj8627tp4kugwp7emtonufi7` FOREIGN KEY (`Lead_Owner`) REFERENCES `login` (`id`),
+  CONSTRAINT `FK_jfxk6orx78qg8sivwqm0wc4ef` FOREIGN KEY (`Campaign_Id`) REFERENCES `campaign` (`CampaignId`),
+  CONSTRAINT `FK_lvj2d8ni2his6o6gnr7jnyyqt` FOREIGN KEY (`Product_Service_Id`) REFERENCES `manage_products` (`service_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `leads`
+--
+
+/*!40000 ALTER TABLE `leads` DISABLE KEYS */;
+INSERT INTO `leads` (`Leads_Id`,`companyId`,`created`,`createdBy`,`maxRecord`,`modified`,`modifiedBy`,`recordIndex`,`Annual_Revenue`,`City`,`Company_Name`,`Contact_No`,`Converted_Cusotmer`,`Country`,`Description`,`Designation`,`District`,`Email_Address`,`Fax`,`First_Name`,`Industry_Type`,`IsDelete`,`Last_Name`,`Mobile_No`,`No_Of_Employees`,`Postal_Code`,`Rating`,`Salutation`,`State`,`Status`,`Street`,`Website`,`Campaign_Id`,`Lead_Owner`,`Product_Service_Id`,`Project_Id`) VALUES 
+ (1,1,NULL,0,0,NULL,0,0,987654,'thuraiyur','Softtwig','09578345834',0,'india','ggdfgdfg','well','chennai','sibiasok@gmail.com','758yfr43','sibisundar','it',0,'asokan','8473675865',40,621002,'N/A','Mr','tamilnadu','working','sengattupatti','www.mysales.com',NULL,3,NULL,20),
+ (2,2,NULL,0,0,NULL,0,0,1500000,'trichy',' IT','89890077666',0,'India','eoirjyieujitjytryjioetjyoirjyejyio','lead','chennai','sibi@gmail.com','33423rrer','Sibisundar','N/A',0,'asokan','9875334753',0,621007,'N/A','Mr','Tamilnadu','new','Sengattupatti','www.techytect.com',NULL,4,NULL,NULL),
+ (3,2,NULL,0,0,'2024-05-29 00:00:00',0,0,1500000,'thuraiyur','softtwig','99528288881',0,'india','sdfsdfsdfsdfsd','employee','trichy','employee@softtwig.com','N/A','Udhayan','N/A',0,'kumar','0987654321',0,621004,'4','Mr','tamilnadu','new','sengattupatti','www.mysales.com',NULL,4,NULL,NULL),
+ (4,1,NULL,0,0,NULL,0,0,56556,'dfdfdffdfdf','N/A','55667765432',0,'fdfff','bfvxcvvxcvx!fds1222','23323','fdfdff','asssdd@gmail.com','N/A','dfffsf','N/A',1,'fdffdf','7656554443',5555,455665,'N/A','Mrs/Ms','fdfdf','working','fdffdfdf','N/A',1,2,NULL,20),
+ (5,1,NULL,0,0,NULL,0,0,56556,'devarakonda','N/A','76555321231',0,'india','sddsccssc','desgin','fdfdff','aravinthm641@gmail.com','N/A','bdf','N/A',0,'k','9876543333',4,766777,'N/A','Mr','Tamil Nadu','new','mainstreet','N/A',1,2,NULL,20),
+ (6,3,NULL,0,0,NULL,0,0,74100,'big city','creation Technology','85213465788',0,'big country','dsa','desgin','big size','asd@gmail.com','N/A','kumara','apps',0,'s','7894561230',7,456877,'N/A','Mr','small state','new','size street','N/A',3,2,NULL,20),
+ (7,3,NULL,0,0,NULL,0,0,1200000,'Velachery','Softtwig','80721630071',0,'India','etewe5w5645','tyrty','Chennai','eagle@gmail.com','353','tyrt','IT',0,'ytry','8072163007',0,234567,'2','Mr','Tamilnadu','new','Madhanandhapuram','www.appstore.com',5,6,NULL,NULL),
+ (8,2,NULL,0,0,NULL,0,0,1500000,'trichy','N/A','99528288889',0,'india','asedfghjkl','developer','chennai','techsengai@gmail.com','N/A','veera','N/A',0,'j','9688761220',0,621004,'N/A','Mr','tamilnadu','working','Sengattupatti','N/A',4,5,NULL,NULL),
+ (9,2,NULL,0,0,NULL,0,0,1500000,'thuraiyur',' Softtwig','99528288881',0,'india','dfghgfadgf','developer','chennai','dsesrfd@gmail.com','33423rrer','nihas','softtwig',0,'t','9877665544',0,621004,'4','Mr','tamilnadu','new','Sengattupatti','www.sibi.com',4,4,NULL,NULL),
+ (10,2,NULL,0,0,NULL,0,0,123456,'Thuraiyur',' Softtwig','99528288881',0,'india','awsertdfyghujiokp','developer','Trichy','karthick.emp@finagg.ac.in','545355','jp','softtwig',0,'jp','9688761225',0,621002,'N/A','Mr','tamilnadu','new','trichy','www.softtwig.com',4,12,NULL,NULL),
+ (11,1,NULL,0,0,NULL,0,0,876543,'Tiruchirapalli','N/A','76555321230',0,'India','fghjkl;vv@~@1','desgin','big size','aravindseeker1@gmail.com','N/A','sakthivel','N/A',0,'d','9876543876',20,543211,'N/A','Mr','Tamil Nadu','working','mainstreet','N/A',NULL,7,NULL,25),
+ (12,1,NULL,0,0,NULL,0,0,876543,'Tiruchirapalli','N/A','76555321230',0,'India','fghjsfgyrtwretrtyy!£\"\"\"\"\"\"\"\"\"%2\"^144785','desgin','big size','aravindseeker1@gmail.com','N/A','sakthivel','N/A',0,'s','9876543876',12,567899,'N/A','Madam','Tamil Nadu','working','Agra Street','N/A',NULL,2,NULL,23),
+ (13,1,NULL,0,0,NULL,0,0,876543,'chennai','N/A','36985214793',0,'India','product dropdown not working the list is hidden','desgin','big size','softtwig2@gmail.com','N/A','kumara','N/A',0,'g','8940058089',5,567899,'N/A','Mr','Tamil Nadu','working','Agra Street','N/A',NULL,7,NULL,24);
+/*!40000 ALTER TABLE `leads` ENABLE KEYS */;
+
+
+--
+-- Definition of table `leads_update_status`
+--
+
+DROP TABLE IF EXISTS `leads_update_status`;
+CREATE TABLE `leads_update_status` (
+  `updateleads_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) NOT NULL,
+  `maxRecord` int(11) NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) NOT NULL,
+  `recordIndex` int(11) NOT NULL,
+  `isActive` tinyint(1) DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `isDelete` tinyint(1) DEFAULT NULL,
+  `description` text,
+  `next_action_date` varchar(255) DEFAULT NULL,
+  `lead_id` bigint(20) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`updateleads_id`),
+  KEY `FK_c4ujtaeyooxqvfb9say1qgur4` (`lead_id`),
+  KEY `FK_p976llmjow8bvvikfcm6hf9rt` (`user_id`),
+  CONSTRAINT `FK_c4ujtaeyooxqvfb9say1qgur4` FOREIGN KEY (`lead_id`) REFERENCES `leads` (`Leads_Id`),
+  CONSTRAINT `FK_p976llmjow8bvvikfcm6hf9rt` FOREIGN KEY (`user_id`) REFERENCES `login` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `leads_update_status`
+--
+
+/*!40000 ALTER TABLE `leads_update_status` DISABLE KEYS */;
+/*!40000 ALTER TABLE `leads_update_status` ENABLE KEYS */;
+
+
+--
+-- Definition of table `login`
+--
+
+DROP TABLE IF EXISTS `login`;
+CREATE TABLE `login` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `confirmpassword` varchar(255) DEFAULT NULL,
+  `email_Id` varchar(255) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL,
+  `isDelete` tinyint(1) DEFAULT NULL,
+  `mobileno` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `primarySkill` varchar(255) DEFAULT NULL,
+  `skillsVO` tinyblob,
+  `companyId` bigint(20) DEFAULT NULL,
+  `Product_Id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_8rkgy5e779qe9ughl3a5jwsgo` (`companyId`),
+  KEY `FK_rx9ax69twqde4kwmx18794yub` (`Product_Id`),
+  CONSTRAINT `FK_8rkgy5e779qe9ughl3a5jwsgo` FOREIGN KEY (`companyId`) REFERENCES `company` (`companyId`),
+  CONSTRAINT `FK_rx9ax69twqde4kwmx18794yub` FOREIGN KEY (`Product_Id`) REFERENCES `manage_products` (`service_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login`
+--
+
+/*!40000 ALTER TABLE `login` DISABLE KEYS */;
+INSERT INTO `login` (`id`,`created`,`createdBy`,`modified`,`modifiedBy`,`confirmpassword`,`email_Id`,`isActive`,`isDelete`,`mobileno`,`name`,`password`,`primarySkill`,`skillsVO`,`companyId`,`Product_Id`) VALUES 
+ (1,'2023-12-26 19:52:02',0,'2024-05-17 17:31:08',0,'8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5','mysales@softtwig.com',1,0,'9003713707','Selva.S','8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5',NULL,NULL,1,48),
+ (2,'2024-05-17 17:32:10',0,'2024-05-17 17:32:10',0,'8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5','sakthi@gmail.com',1,0,'3483764753','sakthivel','8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5',NULL,NULL,1,48),
+ (3,'2024-05-20 11:34:18',0,'2024-06-11 16:51:36',0,'8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5','jayaprakash@gmail.com',1,0,'8765767547','jayaprakash','8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5',NULL,NULL,1,64),
+ (4,'2024-05-20 18:45:10',0,'2024-05-20 18:45:10',0,'8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5','softtwig@gmail.com',1,0,'9845628736','Udhayan','8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5',NULL,NULL,2,NULL),
+ (5,'2024-05-20 18:50:37',0,'2024-05-20 18:50:37',0,'8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5','sibiajay@gmail.com',1,0,'9688761225','sibiajay','8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5',NULL,NULL,2,50),
+ (6,'2024-06-03 13:03:33',0,'2024-06-03 13:03:33',0,'njG1H7PdQUoM1zDd5ZF/QsVS6P0iXYqapOd4E74JoTYdCyBOoCSKLR6XyCJkO80xybo79h+boIuDOG8QOG/MoA==','appstore@softtwig.com',1,0,'8072163007','Manibharathi','njG1H7PdQUoM1zDd5ZF/QsVS6P0iXYqapOd4E74JoTYdCyBOoCSKLR6XyCJkO80xybo79h+boIuDOG8QOG/MoA==',NULL,NULL,3,NULL),
+ (7,'2024-06-04 12:41:05',0,'2024-06-04 12:41:05',0,'32d9aNrOf+Hc3GCgLyeHTpgtLFqj1bA6jEB3lWpgUAevZt1pM/RTQBBILhKN1fI5','kriz@gmail.com',1,1,'8451332307','dharapuram','32d9aNrOf+Hc3GCgLyeHTpgtLFqj1bA6jEB3lWpgUAevZt1pM/RTQBBILhKN1fI5',NULL,NULL,1,49),
+ (8,'2024-06-05 12:55:32',0,'2024-06-05 12:55:32',0,'F8l7xnRQ/7ewByi8VLApwG4C5tEUjvaxgY1oS/gCY/ivZt1pM/RTQBBILhKN1fI5','saddkd@gmail.com',1,0,'6568656586','dwdsada','F8l7xnRQ/7ewByi8VLApwG4C5tEUjvaxgY1oS/gCY/ivZt1pM/RTQBBILhKN1fI5',NULL,NULL,4,NULL),
+ (9,'2024-06-06 11:20:42',0,'2024-06-06 11:20:42',0,'J5xlOxY13IWwQwGSJSLwSqEobW4Gn2jZqhvcisRFUX+vZt1pM/RTQBBILhKN1fI5','unfo@gmail.com',1,0,'7478855441','kumar','J5xlOxY13IWwQwGSJSLwSqEobW4Gn2jZqhvcisRFUX+vZt1pM/RTQBBILhKN1fI5',NULL,NULL,5,NULL),
+ (10,'2024-06-06 15:26:02',0,'2024-06-06 15:26:02',0,'84DElMVUjUiT8w2QAM67iyQZXlQuQouFUt7fv0Q7/kCvZt1pM/RTQBBILhKN1fI5','support@creation.com',1,0,'9876543443','boss','84DElMVUjUiT8w2QAM67iyQZXlQuQouFUt7fv0Q7/kCvZt1pM/RTQBBILhKN1fI5',NULL,NULL,6,NULL),
+ (11,'2024-06-06 15:51:06',0,'2024-06-06 15:51:06',0,'oPuJbSMfPPB2Z6MT7nkg01v2N1zNxQ720n5z4tCwt3uvZt1pM/RTQBBILhKN1fI5','sakthi@gmail.com',1,0,'6976937695','Sakthi','oPuJbSMfPPB2Z6MT7nkg01v2N1zNxQ720n5z4tCwt3uvZt1pM/RTQBBILhKN1fI5',NULL,NULL,7,NULL),
+ (12,'2024-06-08 15:48:55',0,'2024-06-08 15:48:55',0,'8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5','praveen@gmail.com',1,0,'9876543345','praveen','8sbMBUhbt42n1zMl4xQewEc6RBM1ib0qxeAq+/FP8+uvZt1pM/RTQBBILhKN1fI5',NULL,NULL,2,51),
+ (13,'2024-06-10 11:41:59',0,'2024-06-10 11:41:59',0,'6pvIsZ6AfwrqvKE2Z7aPfB9RLuuyawn3tDqsCmdZhkyvZt1pM/RTQBBILhKN1fI5','dev@gmail.com',1,0,'7777734444','kumar','6pvIsZ6AfwrqvKE2Z7aPfB9RLuuyawn3tDqsCmdZhkyvZt1pM/RTQBBILhKN1fI5',NULL,NULL,8,NULL),
+ (14,'2024-06-10 11:44:06',0,'2024-06-10 11:44:06',0,'OTdMbcb+t9q5c3o6oJsxStB/Ycxt/iXjF2brz+lpNJKvZt1pM/RTQBBILhKN1fI5','dev1@gmail.com',1,0,'7777734447','kumaran','OTdMbcb+t9q5c3o6oJsxStB/Ycxt/iXjF2brz+lpNJKvZt1pM/RTQBBILhKN1fI5',NULL,NULL,9,NULL),
+ (15,'2024-06-10 11:45:50',0,'2024-06-10 11:45:50',0,'FjBepuYlxXN14d35iD7ekMdxRi3ctonzms1wb6HB3m2vZt1pM/RTQBBILhKN1fI5','beermd@gmail.com',1,0,'7777734445','sunil menon','FjBepuYlxXN14d35iD7ekMdxRi3ctonzms1wb6HB3m2vZt1pM/RTQBBILhKN1fI5',NULL,NULL,10,NULL),
+ (16,'2024-06-10 11:48:39',0,'2024-06-10 11:48:39',0,'MFT7PduAwEFgdJv/BkcGSpf3io3WHGza5CIgFm/OzbmvZt1pM/RTQBBILhKN1fI5','support@creationl.com',1,0,'7575755757','kumar','MFT7PduAwEFgdJv/BkcGSpf3io3WHGza5CIgFm/OzbmvZt1pM/RTQBBILhKN1fI5',NULL,NULL,11,NULL),
+ (17,'2024-06-11 11:27:49',0,'2024-06-11 11:27:49',0,'v/nNxYmamnXltFTWF3XncL4huc5l45TyiOAhyGNCwjpy9Z/z8xvh6M3fDIXpZyoD+UxcBiEFY+JP+SIgCs0a9w==','ramya@gmail.com',1,0,'9823754897','Ramya','v/nNxYmamnXltFTWF3XncL4huc5l45TyiOAhyGNCwjpy9Z/z8xvh6M3fDIXpZyoD+UxcBiEFY+JP+SIgCs0a9w==',NULL,NULL,1,49),
+ (18,'2024-06-11 16:50:50',0,'2024-06-11 16:50:50',0,'TB95eXk+QA3cD5huDmg6I9z2RkvG3fJO+YKZ2QrKQhSvZt1pM/RTQBBILhKN1fI5','saddy@gmail.com',1,0,'8773733737','saddy','TB95eXk+QA3cD5huDmg6I9z2RkvG3fJO+YKZ2QrKQhSvZt1pM/RTQBBILhKN1fI5',NULL,NULL,1,63);
+/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+
+
+--
+-- Definition of table `login_status`
+--
+
+DROP TABLE IF EXISTS `login_status`;
+CREATE TABLE `login_status` (
+  `login_status_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `activity` varchar(255) DEFAULT NULL,
+  `end_time` datetime DEFAULT NULL,
+  `start_time` datetime DEFAULT NULL,
+  `status` tinyint(1) DEFAULT NULL,
+  `user_type` varchar(255) DEFAULT NULL,
+  `user_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`login_status_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login_status`
+--
+
+/*!40000 ALTER TABLE `login_status` DISABLE KEYS */;
+/*!40000 ALTER TABLE `login_status` ENABLE KEYS */;
+
+
+--
+-- Definition of table `manage_products`
+--
+
+DROP TABLE IF EXISTS `manage_products`;
+CREATE TABLE `manage_products` (
+  `service_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `Service_Specification` varchar(255) NOT NULL,
+  `availableStocks` bigint(20) NOT NULL,
+  `end_Date` varchar(255) DEFAULT NULL,
+  `fees` double NOT NULL,
+  `isActive` tinyint(1) NOT NULL,
+  `isDelete` tinyint(1) NOT NULL,
+  `maximumStocks` bigint(20) NOT NULL,
+  `minimumStocks` bigint(20) NOT NULL,
+  `service_Name` varchar(255) NOT NULL,
+  `start_Date` varchar(255) DEFAULT NULL,
+  `product_type` bigint(20) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`service_id`),
+  KEY `FK_l1h7xu342ko8fk93w9baec9k6` (`product_type`),
+  KEY `FK_2k3mhf5vmma1iifjmqjfr4n91` (`user_id`),
+  CONSTRAINT `FK_2k3mhf5vmma1iifjmqjfr4n91` FOREIGN KEY (`user_id`) REFERENCES `login` (`id`),
+  CONSTRAINT `FK_l1h7xu342ko8fk93w9baec9k6` FOREIGN KEY (`product_type`) REFERENCES `product_types` (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `manage_products`
+--
+
+/*!40000 ALTER TABLE `manage_products` DISABLE KEYS */;
+INSERT INTO `manage_products` (`service_id`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`Service_Specification`,`availableStocks`,`end_Date`,`fees`,`isActive`,`isDelete`,`maximumStocks`,`minimumStocks`,`service_Name`,`start_Date`,`product_type`,`user_id`) VALUES 
+ (48,1,NULL,1,NULL,0,'quality good',23,'05/23/2024',0,1,0,89,23,'selva appartments ','05/15/2024',43,1),
+ (49,1,NULL,1,NULL,0,'mobile',22,'05/13/2024',0,1,0,100,6,'software','12/07/2021',43,1),
+ (50,2,NULL,4,NULL,0,'useful',20,'05/27/2024',0,1,0,40,10,'software','05/20/2024',44,1),
+ (51,2,NULL,4,NULL,0,'useful',30,'05/31/2024',0,1,0,50,6,'hardware','05/28/2024',44,NULL),
+ (52,1,NULL,1,NULL,0,'apps',20,'06/30/2024',0,1,0,50,5,'apps','06/17/2024',43,1),
+ (53,3,NULL,6,NULL,0,'good',32,'06/17/2024',0,1,0,80,34,'Iphone 11','06/09/2024',46,NULL),
+ (54,2,NULL,4,NULL,0,'shopping',1000,'06/30/2024',0,1,1,10000000,600,'apps','06/03/2024',47,NULL),
+ (55,2,NULL,0,NULL,0,'shopping',20,'06/24/2024',0,1,0,1000000,6002,'apps','06/10/2024',45,NULL),
+ (56,1,NULL,1,NULL,0,'cleaness',22,'06/24/2024',0,1,0,23,6,'cpu','06/23/2024',43,1),
+ (57,1,NULL,1,NULL,0,'cleaness',22,'06/24/2024',0,1,0,23,6,'cpu','06/23/2024',43,1),
+ (58,1,NULL,1,NULL,0,'shopping',20,'08/13/2024',0,1,0,50,5,'apps','08/13/2024',54,1),
+ (59,1,NULL,1,NULL,0,'shopping',1000,'06/17/2024',0,1,0,50,8,'apps','06/10/2024',54,1),
+ (60,1,NULL,1,NULL,0,'shopping',20,'06/18/2024',0,1,0,50,8,'apps','06/10/2024',51,1),
+ (61,1,NULL,1,NULL,0,'shopping',20,'06/11/2024',0,1,0,50,8,'apps','06/10/2024',52,1),
+ (62,1,NULL,1,NULL,0,'shopping',20,'06/24/2024',0,1,0,50,8,'apps','06/11/2024',43,1),
+ (63,1,NULL,1,NULL,0,'shopping',20,'06/11/2024',0,1,0,50,8,'apps','06/06/2024',51,1),
+ (64,2,NULL,4,NULL,0,'RBY',1000,'06/11/2024',0,1,0,500,100,'Chip','06/01/2024',44,NULL);
+/*!40000 ALTER TABLE `manage_products` ENABLE KEYS */;
+
+
+--
+-- Definition of table `manage_wi_skills`
+--
+
+DROP TABLE IF EXISTS `manage_wi_skills`;
+CREATE TABLE `manage_wi_skills` (
+  `workItemSkillId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `is_Active` tinyint(1) DEFAULT NULL,
+  `is_Delete` tinyint(1) DEFAULT NULL,
+  `Work_Item_Id` bigint(20) DEFAULT NULL,
+  `skillsId` bigint(20) DEFAULT NULL,
+  `companyId` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`workItemSkillId`),
+  KEY `FK_plc6ifsx1qntx5ho4l3u5900x` (`Work_Item_Id`),
+  KEY `FK_kti3gx4isvfnv2on8yjejio8h` (`skillsId`),
+  CONSTRAINT `FK_kti3gx4isvfnv2on8yjejio8h` FOREIGN KEY (`skillsId`) REFERENCES `skills` (`skillsId`),
+  CONSTRAINT `FK_plc6ifsx1qntx5ho4l3u5900x` FOREIGN KEY (`Work_Item_Id`) REFERENCES `workitem` (`workItemId`)
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `manage_wi_skills`
+--
+
+/*!40000 ALTER TABLE `manage_wi_skills` DISABLE KEYS */;
+INSERT INTO `manage_wi_skills` (`workItemSkillId`,`created`,`createdBy`,`modified`,`modifiedBy`,`is_Active`,`is_Delete`,`Work_Item_Id`,`skillsId`,`companyId`) VALUES 
+ (58,NULL,0,NULL,0,1,0,38,NULL,1),
+ (59,NULL,0,NULL,0,1,0,38,NULL,1),
+ (60,NULL,0,NULL,0,1,0,46,NULL,1),
+ (61,NULL,0,NULL,0,1,0,41,NULL,1),
+ (62,NULL,0,NULL,0,1,0,46,NULL,1),
+ (63,NULL,0,NULL,0,1,0,46,NULL,1),
+ (64,NULL,0,NULL,0,1,0,48,NULL,1),
+ (65,NULL,0,NULL,0,1,0,48,NULL,1),
+ (66,NULL,0,NULL,0,1,0,48,NULL,1),
+ (67,NULL,0,NULL,0,1,0,49,NULL,1),
+ (68,NULL,0,NULL,0,1,0,48,NULL,1),
+ (69,NULL,0,NULL,0,1,0,42,NULL,1),
+ (70,NULL,0,NULL,0,1,0,43,NULL,2),
+ (71,NULL,0,NULL,0,1,0,45,NULL,3);
+/*!40000 ALTER TABLE `manage_wi_skills` ENABLE KEYS */;
+
+
+--
+-- Definition of table `manage_wi_skills_skills`
+--
+
+DROP TABLE IF EXISTS `manage_wi_skills_skills`;
+CREATE TABLE `manage_wi_skills_skills` (
+  `manage_wi_skills_workItemSkillId` bigint(20) NOT NULL,
+  `skillsListVO_skillsId` bigint(20) NOT NULL,
+  KEY `FK_apbem011kpxnuc5ra0p3ghnp5` (`skillsListVO_skillsId`),
+  KEY `FK_8vr2nx479a0vg2821xvd4wl97` (`manage_wi_skills_workItemSkillId`),
+  CONSTRAINT `FK_8vr2nx479a0vg2821xvd4wl97` FOREIGN KEY (`manage_wi_skills_workItemSkillId`) REFERENCES `manage_wi_skills` (`workItemSkillId`),
+  CONSTRAINT `FK_apbem011kpxnuc5ra0p3ghnp5` FOREIGN KEY (`skillsListVO_skillsId`) REFERENCES `skills` (`skillsId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `manage_wi_skills_skills`
+--
+
+/*!40000 ALTER TABLE `manage_wi_skills_skills` DISABLE KEYS */;
+INSERT INTO `manage_wi_skills_skills` (`manage_wi_skills_workItemSkillId`,`skillsListVO_skillsId`) VALUES 
+ (58,32),
+ (59,33),
+ (60,32),
+ (60,35),
+ (60,36),
+ (60,39),
+ (61,41),
+ (61,42),
+ (62,36),
+ (62,37),
+ (62,42),
+ (63,39),
+ (63,40),
+ (63,41),
+ (64,36),
+ (64,37),
+ (64,39),
+ (64,40),
+ (65,37),
+ (65,39),
+ (65,40),
+ (65,41),
+ (66,35),
+ (66,36),
+ (66,37),
+ (67,37),
+ (67,39),
+ (67,40),
+ (68,36),
+ (68,37),
+ (68,39),
+ (68,41),
+ (69,41),
+ (70,34),
+ (71,38);
+/*!40000 ALTER TABLE `manage_wi_skills_skills` ENABLE KEYS */;
+
+
+--
+-- Definition of table `manage_wi_sla`
+--
+
+DROP TABLE IF EXISTS `manage_wi_sla`;
+CREATE TABLE `manage_wi_sla` (
+  `WI_SLA_Id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL,
+  `isDelete` tinyint(1) DEFAULT NULL,
+  `wISLACode` varchar(255) DEFAULT NULL,
+  `sla_id` bigint(20) DEFAULT NULL,
+  `workItem_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`WI_SLA_Id`),
+  KEY `FK_q9spdpg9a7rfww6qwiffk3vy7` (`sla_id`),
+  KEY `FK_kmwd6m5s3pjipbcmv0aenuxvk` (`workItem_id`),
+  CONSTRAINT `FK_kmwd6m5s3pjipbcmv0aenuxvk` FOREIGN KEY (`workItem_id`) REFERENCES `workitem` (`workItemId`),
+  CONSTRAINT `FK_q9spdpg9a7rfww6qwiffk3vy7` FOREIGN KEY (`sla_id`) REFERENCES `sla` (`slaId`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `manage_wi_sla`
+--
+
+/*!40000 ALTER TABLE `manage_wi_sla` DISABLE KEYS */;
+INSERT INTO `manage_wi_sla` (`WI_SLA_Id`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`isActive`,`isDelete`,`wISLACode`,`sla_id`,`workItem_id`) VALUES 
+ (13,1,'2024-05-17 17:56:23',0,'2024-05-17 17:56:23',0,1,0,'766',20,38),
+ (14,1,NULL,0,NULL,0,1,0,'1243',20,38),
+ (15,1,NULL,0,NULL,0,1,0,'99',20,38),
+ (16,1,NULL,0,NULL,0,1,0,'6544',21,44),
+ (17,1,NULL,0,NULL,0,1,0,'6544',21,44),
+ (18,1,NULL,0,NULL,0,1,0,'6544',26,47);
+/*!40000 ALTER TABLE `manage_wi_sla` ENABLE KEYS */;
+
+
+--
+-- Definition of table `opportunity_list`
+--
+
+DROP TABLE IF EXISTS `opportunity_list`;
+CREATE TABLE `opportunity_list` (
+  `OPPORTUNITY_ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) NOT NULL,
+  `maxRecord` int(11) NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) NOT NULL,
+  `recordIndex` int(11) NOT NULL,
+  `AMOUNT` double DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `CLOSING_DATE` varchar(255) DEFAULT NULL,
+  `FIRST_NAME` varchar(255) DEFAULT NULL,
+  `isActive` tinyint(1) NOT NULL,
+  `isDelete` tinyint(1) DEFAULT NULL,
+  `LAST_NAME` varchar(255) DEFAULT NULL,
+  `loginVO` tinyblob,
+  `NEXT_STEP` varchar(255) DEFAULT NULL,
+  `PROBABILITY` double DEFAULT NULL,
+  `SALES_STAGE` varchar(255) DEFAULT NULL,
+  `SALUTATION` varchar(255) DEFAULT NULL,
+  `ACCOUNT_SOURCE` int(11) DEFAULT NULL,
+  `LEAD_ID` bigint(20) DEFAULT NULL,
+  `PRODUCT_ID` bigint(20) DEFAULT NULL,
+  `USER_ID` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`OPPORTUNITY_ID`),
+  KEY `FK_mwudvomlrseo047up8x9jxj8p` (`ACCOUNT_SOURCE`),
+  KEY `FK_12o03c67he4peyd6anchwnm01` (`LEAD_ID`),
+  KEY `FK_16jqhbyxixgjhbg9mbdaldeuc` (`PRODUCT_ID`),
+  KEY `FK_17sox7o14iwu8mpc7c8uyxqq6` (`USER_ID`),
+  CONSTRAINT `FK_12o03c67he4peyd6anchwnm01` FOREIGN KEY (`LEAD_ID`) REFERENCES `leads` (`Leads_Id`),
+  CONSTRAINT `FK_16jqhbyxixgjhbg9mbdaldeuc` FOREIGN KEY (`PRODUCT_ID`) REFERENCES `manage_products` (`service_id`),
+  CONSTRAINT `FK_17sox7o14iwu8mpc7c8uyxqq6` FOREIGN KEY (`USER_ID`) REFERENCES `login` (`id`),
+  CONSTRAINT `FK_mwudvomlrseo047up8x9jxj8p` FOREIGN KEY (`ACCOUNT_SOURCE`) REFERENCES `accounts` (`ACCOUNT_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `opportunity_list`
+--
+
+/*!40000 ALTER TABLE `opportunity_list` DISABLE KEYS */;
+INSERT INTO `opportunity_list` (`OPPORTUNITY_ID`,`companyId`,`created`,`createdBy`,`maxRecord`,`modified`,`modifiedBy`,`recordIndex`,`AMOUNT`,`DESCRIPTION`,`CLOSING_DATE`,`FIRST_NAME`,`isActive`,`isDelete`,`LAST_NAME`,`loginVO`,`NEXT_STEP`,`PROBABILITY`,`SALES_STAGE`,`SALUTATION`,`ACCOUNT_SOURCE`,`LEAD_ID`,`PRODUCT_ID`,`USER_ID`) VALUES 
+ (1,1,NULL,1,0,NULL,1,0,54236,'fgghjkb!3456','05/29/2024','hhghjght',0,1,'o',NULL,'2345',234567,'Follow','Mrs',1,1,48,3),
+ (2,1,NULL,1,0,NULL,1,0,23333,'fghjkl','05/28/2024','sakthivel',0,1,'k',NULL,'sdasdsadad',45677,'Follow','Ms',3,1,49,2),
+ (3,1,NULL,1,0,NULL,1,0,534530,'wdfhjkl\'plkyjuty','05/20/2024','sibi',0,0,'a',NULL,'done',98765432,'Follow','Mr',1,1,48,3),
+ (4,1,NULL,1,0,NULL,1,0,54122,'xrtyguhuvg','06/30/2024','Haris',0,0,'h',NULL,'frtgyh',122,'Initiate','Mr',4,1,49,3),
+ (5,1,NULL,1,0,NULL,1,0,54434,'if i click the dropdown it\'s not working connect to campaign name then search it','06/24/2024','sakthivel',0,0,'d',NULL,'esdsd',45677,'Follow','Ms',1,1,59,17),
+ (6,1,NULL,1,0,NULL,1,0,876542,'if i click the dropdown it\'s not working connect to campaign name then search it','06/24/2024','sakthivels',0,0,'s',NULL,'frtgyh',6544,'Initiate','Ms',1,11,58,3),
+ (7,1,NULL,1,0,NULL,1,0,876542,'if i click the dropdown it\'s not working connect to campaign name then search it','06/17/2024','sakthivel',0,0,'s',NULL,'sdasdsadad',6544,'Follow','Mrs',3,5,61,17),
+ (8,1,NULL,1,0,NULL,1,0,54434,'if i click the dropdown it\'s not working connect to campaign name then search it','06/26/2024','Haris',0,0,'s',NULL,'sdasdsadad',45677,'Follow','Ms',9,5,61,2),
+ (9,1,NULL,1,0,NULL,1,0,876542,'if i click the dropdown it\'s not working connect to campaign name then search it','06/25/2024','ravichandran',0,0,'s',NULL,'sdasdsadad',55444,'Follow','Others',9,1,61,7),
+ (10,1,NULL,1,0,NULL,1,0,876542,'if i click the dropdown it\'s not working connect to campaign name then search it','06/25/2024','dhurai',0,0,'s',NULL,'dddd',55444,'Follow','Mrs',1,11,61,3),
+ (11,1,NULL,1,0,NULL,1,0,23333,'if i click the dropdown it\'s not working connect to campaign name then search it','06/17/2024','sarasu',0,0,'s',NULL,'frtgyh',55444,'Completed','Mrs',4,1,62,17),
+ (12,1,NULL,1,0,NULL,1,0,54434,'if i click the dropdown it\'s not working connect to campaign name then search it','06/24/2024','sakthivel',0,0,'k',NULL,'frtgyh',55444,'Follow','Ms',4,1,49,2),
+ (13,1,NULL,1,0,NULL,1,0,54434,'if i click the dropdown it\'s not working connect to campaign name then search it','06/17/2024','saran',0,0,'k',NULL,'sdasdsadad',67886,'Follow','Mr',1,11,60,3);
+/*!40000 ALTER TABLE `opportunity_list` ENABLE KEYS */;
+
+
+--
+-- Definition of table `payment`
+--
+
+DROP TABLE IF EXISTS `payment`;
+CREATE TABLE `payment` (
+  `transactionId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `checkNo` bigint(20) NOT NULL,
+  `date` datetime DEFAULT NULL,
+  `paymentmode` varchar(255) DEFAULT NULL,
+  `salesOrderId` bigint(20) NOT NULL,
+  `salesOrderNo` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`transactionId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `payment`
+--
+
+/*!40000 ALTER TABLE `payment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `payment` ENABLE KEYS */;
+
+
+--
+-- Definition of table `plot`
+--
+
+DROP TABLE IF EXISTS `plot`;
+CREATE TABLE `plot` (
+  `plotId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `isDelete` tinyint(1) DEFAULT NULL,
+  `length` int(11) DEFAULT NULL,
+  `plotNumbers` varchar(255) DEFAULT NULL,
+  `plotSquareFeet` int(11) DEFAULT NULL,
+  `sNo` int(11) NOT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `width` int(11) DEFAULT NULL,
+  PRIMARY KEY (`plotId`)
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `plot`
+--
+
+/*!40000 ALTER TABLE `plot` DISABLE KEYS */;
+INSERT INTO `plot` (`plotId`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`isDelete`,`length`,`plotNumbers`,`plotSquareFeet`,`sNo`,`status`,`width`) VALUES 
+ (35,1,NULL,0,NULL,0,0,60,'143',105,0,'sold',77),
+ (36,2,NULL,4,NULL,0,0,30,'1',340,0,'available',20),
+ (37,2,NULL,4,NULL,0,1,10,'4',10,0,'available',10),
+ (38,1,NULL,1,NULL,0,0,65,'43',100,0,'available',75),
+ (39,1,NULL,1,NULL,0,0,60,'149',100,0,'sold',77),
+ (40,1,NULL,1,NULL,0,0,60,'150',100,0,'available',75),
+ (41,1,NULL,1,NULL,0,0,85,'123',150,0,'available',45),
+ (42,1,NULL,1,NULL,0,0,60,'147',105,0,'sold',75),
+ (43,1,NULL,1,NULL,0,0,60,'151',105,0,'sold',75),
+ (44,1,NULL,1,NULL,0,0,65,'127',100,0,'available',75),
+ (45,1,NULL,1,NULL,0,0,65,'140',100,0,'sold',45),
+ (46,1,NULL,1,NULL,0,0,65,'155',100,0,'available',75);
+/*!40000 ALTER TABLE `plot` ENABLE KEYS */;
+
+
+--
+-- Definition of table `price_book`
+--
+
+DROP TABLE IF EXISTS `price_book`;
+CREATE TABLE `price_book` (
+  `PRICE_BOOK_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) NOT NULL,
+  `maxRecord` int(11) NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) NOT NULL,
+  `recordIndex` int(11) NOT NULL,
+  `ACTIVE` tinyint(1) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `IS_DELETED` tinyint(1) DEFAULT NULL,
+  `price` double DEFAULT NULL,
+  `PRICE_BOOK_NAME` varchar(255) DEFAULT NULL,
+  `PRICE_BOOK_OWNER` varchar(255) DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
+  `supplier_id` bigint(20) DEFAULT NULL,
+  `loginId` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`PRICE_BOOK_ID`),
+  KEY `FK_hp3sjfxnyf4v7my8cfys8g6xs` (`product_id`),
+  KEY `FK_2u3sdy93mdjwum3fvcg1it06v` (`supplier_id`),
+  KEY `FK_ojaseeijn36uwxewnj6lodq6d` (`loginId`),
+  CONSTRAINT `FK_2u3sdy93mdjwum3fvcg1it06v` FOREIGN KEY (`supplier_id`) REFERENCES `supplier_info` (`supplier_id`),
+  CONSTRAINT `FK_hp3sjfxnyf4v7my8cfys8g6xs` FOREIGN KEY (`product_id`) REFERENCES `manage_products` (`service_id`),
+  CONSTRAINT `FK_ojaseeijn36uwxewnj6lodq6d` FOREIGN KEY (`loginId`) REFERENCES `login` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `price_book`
+--
+
+/*!40000 ALTER TABLE `price_book` DISABLE KEYS */;
+INSERT INTO `price_book` (`PRICE_BOOK_ID`,`companyId`,`created`,`createdBy`,`maxRecord`,`modified`,`modifiedBy`,`recordIndex`,`ACTIVE`,`DESCRIPTION`,`IS_DELETED`,`price`,`PRICE_BOOK_NAME`,`PRICE_BOOK_OWNER`,`product_id`,`supplier_id`,`loginId`) VALUES 
+ (1,2,NULL,4,0,NULL,4,0,1,'well',0,450,'softwig',NULL,50,10,4),
+ (2,1,NULL,1,0,NULL,0,0,1,'sfsdfdsfsdf!\"£££1222',0,56789,'srtick','2',48,9,2),
+ (3,2,NULL,4,0,NULL,4,0,1,'jhsdfghjk',1,56789,'softt',NULL,50,12,5),
+ (4,1,NULL,1,0,NULL,0,0,1,'thijnnk',0,457,'protectt','2',49,7,2),
+ (5,1,NULL,1,0,NULL,0,0,1,'sahtgu,fdascvghi.',0,852369985,'protectt','7',48,9,7),
+ (6,1,NULL,1,0,NULL,0,0,1,'shift,ctrl .',0,147852,'protect','1',49,6,1),
+ (7,1,NULL,1,0,NULL,0,0,1,'lock,shift.',0,56789,'protectug','7',49,6,7),
+ (8,1,NULL,1,0,NULL,0,0,1,'gdsanki',0,56789,'softt','3',49,7,3),
+ (9,1,NULL,1,0,NULL,0,0,1,'sajujklo',0,56789,'shift','3',49,7,3),
+ (10,1,NULL,1,0,NULL,0,0,1,'shift fn',0,147852,'protectt','1',49,7,1),
+ (11,1,NULL,1,0,NULL,0,0,1,'ctrl shift',0,457,'protectt','7',49,8,7),
+ (12,1,NULL,1,0,NULL,0,0,1,'dcvxczzxx',0,2541,'softt','3',49,6,3);
+/*!40000 ALTER TABLE `price_book` ENABLE KEYS */;
+
+
+--
+-- Definition of table `privileges`
+--
+
+DROP TABLE IF EXISTS `privileges`;
+CREATE TABLE `privileges` (
+  `privilegeId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `isDeleted` tinyint(1) NOT NULL,
+  `privileges_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`privilegeId`)
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `privileges`
+--
+
+/*!40000 ALTER TABLE `privileges` DISABLE KEYS */;
+INSERT INTO `privileges` (`privilegeId`,`created`,`createdBy`,`modified`,`modifiedBy`,`isDeleted`,`privileges_name`) VALUES 
+ (1,'2023-11-21 14:58:35',0,'2023-11-21 14:58:35',0,1,'ROLE_ADMIN'),
+ (2,'2024-01-03 13:53:33',0,'2024-01-03 13:53:33',0,1,'ROLE_CAMPAIGN'),
+ (3,'2024-01-03 13:53:40',0,'2024-01-03 13:53:40',0,1,'ROLE_LEAD'),
+ (4,'2024-01-05 09:45:56',0,'2024-01-05 09:45:56',0,1,'ROLE_WORKITEM'),
+ (5,'2024-01-04 13:01:46',0,'2024-01-04 13:01:46',0,1,'ROLE_WI&SLA'),
+ (6,'2024-01-04 18:22:03',0,'2024-01-04 18:22:03',0,1,'ROLE_WI&SKILLS'),
+ (7,'2024-03-18 12:43:42',0,'2024-03-18 12:43:42',0,0,'ROLE_TASK'),
+ (8,'2024-01-03 17:39:54',0,'2024-01-03 17:39:54',0,0,'ROLE_SLA'),
+ (9,'2024-01-04 18:23:08',0,'2024-01-04 18:23:08',0,0,'ROLE_SKILLS'),
+ (10,'2024-01-04 18:23:50',0,'2024-01-04 18:23:50',0,0,'ROLE_SELFCOMPANY'),
+ (11,'2024-06-06 15:55:24',0,'2024-06-06 15:55:24',0,0,'ROLE_COMPANY'),
+ (12,'2024-01-04 18:24:31',0,'2024-01-04 18:24:31',0,0,'ROLE_GST'),
+ (13,'2024-01-04 18:26:31',0,'2024-01-04 18:26:31',0,0,'ROLE_SUPPLIERS'),
+ (14,'2024-01-04 18:28:46',0,'2024-01-04 18:28:46',0,0,'ROLE_PRODUCTTYPE'),
+ (15,'2024-01-04 18:29:26',0,'2024-01-04 18:29:26',0,0,'ROLE_PRODUCT'),
+ (16,'2024-01-04 18:29:57',0,'2024-01-04 18:29:57',0,0,'ROLE_PROCUREMENT'),
+ (17,'2024-01-04 18:30:34',0,'2024-01-04 18:30:34',0,0,'ROLE_PRICEBOOK'),
+ (18,'2024-01-04 18:31:22',0,'2024-01-04 18:31:22',0,0,'ROLE_OPPORTUNITY'),
+ (19,'2024-01-04 18:34:31',0,'2024-01-04 18:34:31',0,0,'ROLE_ACCOUNT'),
+ (20,'2024-01-04 18:34:58',0,'2024-01-04 18:34:58',0,0,'ROLE_SALESORDER'),
+ (21,'2024-01-04 18:35:27',0,'2024-01-04 18:35:27',0,0,'ROLE_PROJECT'),
+ (22,'2024-01-04 18:35:59',0,'2024-01-04 18:35:59',0,0,'ROLE_CASE'),
+ (23,'2024-01-04 18:36:25',0,'2024-01-04 18:36:25',0,0,'ROLE_CUSTOMER'),
+ (24,'2024-01-04 18:36:57',0,'2024-01-04 18:36:57',0,0,'ROLE_SOLUTION'),
+ (25,'2024-01-04 18:37:31',0,'2024-01-04 18:37:31',0,0,'ROLE_INVOICE'),
+ (26,'2024-01-05 09:49:19',0,'2024-01-05 09:49:19',0,0,'ROLE_WORKITEM'),
+ (27,'2024-03-05 18:28:08',0,'2024-03-05 18:28:08',0,0,'ROLE_ADMIN'),
+ (28,'2024-01-26 16:18:34',0,'2024-01-26 16:18:34',0,1,'Role_admin'),
+ (29,'2024-01-26 16:19:13',0,'2024-01-26 16:19:13',0,1,'Role_Admin'),
+ (30,'2024-01-26 16:47:01',0,'2024-01-26 16:47:01',0,1,'ROLE_TASK'),
+ (31,'2024-01-26 17:01:44',0,'2024-01-26 17:01:44',0,1,'ROLE_ADMIN'),
+ (32,'2024-01-26 19:13:21',0,'2024-01-26 19:13:21',0,1,'ROLE_SKILLS'),
+ (33,'2024-01-27 11:45:14',0,'2024-01-27 11:45:14',0,1,'Role_Reports'),
+ (34,'2024-01-27 11:38:41',0,'2024-01-27 11:38:41',0,1,'Role_Vertm'),
+ (35,'2024-01-27 12:11:48',0,'2024-01-27 12:11:48',0,1,'ROLE_WI& sla'),
+ (36,'2024-01-27 12:37:20',0,'2024-01-27 12:37:20',0,1,'checking'),
+ (37,'2024-01-27 12:32:07',0,'2024-01-27 12:32:07',0,1,'msni'),
+ (38,'2024-01-27 12:36:38',0,'2024-01-27 12:36:38',0,1,'Role testing'),
+ (39,'2024-01-27 12:55:46',0,'2024-01-27 12:55:46',0,1,'Role Salesorder'),
+ (40,'2024-01-29 17:10:32',0,'2024-01-29 17:10:32',0,1,'role_sibi'),
+ (41,'2024-01-29 15:21:48',0,'2024-01-29 15:21:48',0,1,'role_mani'),
+ (42,'2024-01-27 19:40:30',0,'2024-01-27 19:40:30',0,1,'abcd'),
+ (43,'2024-01-27 19:43:24',0,'2024-01-27 19:43:24',0,1,'zxvbn'),
+ (44,'2024-02-02 12:50:41',0,'2024-02-02 12:50:41',0,1,'Role_Testings'),
+ (45,'2024-01-30 11:10:24',0,'2024-01-30 11:10:24',0,1,'ROLE_WI&SKILLS'),
+ (46,'2024-01-30 11:11:29',0,'2024-01-30 11:11:29',0,1,'ROLE_WI&SKILLS'),
+ (47,'2024-01-30 16:08:17',0,'2024-01-30 16:08:17',0,1,'ROLE_WI&SLA'),
+ (48,'2024-01-30 16:09:34',0,'2024-01-30 16:09:34',0,1,'Role_developer'),
+ (49,'2024-02-01 17:59:12',0,'2024-02-01 17:59:12',0,1,'Role_developer'),
+ (50,'2024-01-30 16:54:08',0,'2024-01-30 16:54:08',0,1,'ROLE_WISLA'),
+ (51,'2024-02-01 10:42:52',0,'2024-02-01 10:42:52',0,1,'ROLE_TASK'),
+ (52,'2024-02-02 12:59:08',0,'2024-02-02 12:59:08',0,1,'ROLE_WI&SLA'),
+ (53,'2024-02-02 18:31:55',0,'2024-02-02 18:31:55',0,1,'Role_developer'),
+ (54,'2024-02-02 18:46:14',0,'2024-02-02 18:46:14',0,1,'Role_developer'),
+ (55,'2024-02-02 18:46:43',0,'2024-02-02 18:46:43',0,1,'Role_developer'),
+ (56,'2024-02-02 19:02:47',0,'2024-02-02 19:02:47',0,1,'Role_developer'),
+ (57,'2024-02-02 19:04:05',0,'2024-02-02 19:04:05',0,1,'Role_developer'),
+ (58,'2024-02-03 11:46:49',0,'2024-02-03 11:46:49',0,1,'ROLE_WI&SLA'),
+ (59,'2024-02-03 15:15:11',0,'2024-02-03 15:15:11',0,1,'Role_identity'),
+ (60,'2024-02-03 15:20:20',0,'2024-02-03 15:20:20',0,1,'ROLE_WI&SLA'),
+ (61,'2024-02-05 15:51:12',0,'2024-02-05 15:51:12',0,1,'ddfgdgf'),
+ (62,'2024-02-07 16:32:47',0,'2024-02-07 16:32:47',0,1,'ROLE_TASK'),
+ (63,'2024-02-07 16:44:46',0,'2024-02-07 16:44:46',0,1,'ROLE_ADMIN'),
+ (64,'2024-02-07 17:13:11',0,'2024-02-07 17:13:11',0,1,'ROLE_ADMIN'),
+ (65,'2024-02-07 17:13:11',0,'2024-02-07 17:13:11',0,1,'ROLE_ADMIN'),
+ (66,'2024-02-07 17:13:11',0,'2024-02-07 17:13:11',0,1,'ROLE_ADMIN'),
+ (67,'2024-02-07 17:13:12',0,'2024-02-07 17:13:12',0,1,'ROLE_ADMIN'),
+ (68,'2024-02-07 17:13:12',0,'2024-02-07 17:13:12',0,1,'ROLE_ADMIN'),
+ (69,'2024-02-14 10:47:54',0,'2024-02-14 10:47:54',0,1,'ROLE_ADMIN'),
+ (70,'2024-02-15 10:35:02',0,'2024-02-15 10:35:02',0,1,'ROLE_WI&SLA'),
+ (71,'2024-02-16 10:56:48',0,'2024-02-16 10:56:48',0,1,'ROLE_WI&SLA	'),
+ (72,'2024-02-16 11:01:09',0,'2024-02-16 11:01:09',0,1,'role_&'),
+ (73,'2024-02-16 12:01:18',0,'2024-02-16 12:01:18',0,1,'ROLE_ADMIN'),
+ (74,'2024-02-16 12:01:48',0,'2024-02-16 12:01:48',0,1,'ROLE_ADMIN'),
+ (75,'2024-02-16 15:50:58',0,'2024-02-16 15:50:58',0,1,'ROLE_ADMIN'),
+ (76,'2024-02-16 15:51:43',0,'2024-02-16 15:51:43',0,1,'ROLE_TASK'),
+ (77,'2024-02-16 15:52:21',0,'2024-02-16 15:52:21',0,1,'ROLE_ADMIN'),
+ (78,'2024-02-16 15:52:54',0,'2024-02-16 15:52:54',0,1,'ROLE_TASK'),
+ (79,'2024-02-16 16:30:48',0,'2024-02-16 16:30:48',0,0,'ROLE_WI&SLA	'),
+ (80,'2024-02-16 16:31:34',0,'2024-02-16 16:31:34',0,0,'ROLE_WI&SKILLS'),
+ (81,'2024-02-17 14:09:46',0,'2024-02-17 14:09:46',0,1,'ROLE_TASK'),
+ (82,'2024-02-17 14:12:18',0,'2024-02-17 14:12:18',0,1,'ROLE_WI&SKILLS'),
+ (83,'2024-02-17 14:46:15',0,'2024-02-17 14:46:15',0,1,'Role_Admina'),
+ (84,'2025-02-17 15:23:20',0,'2025-02-17 15:23:20',0,1,'Role_Vendorrr'),
+ (85,'2024-02-17 15:58:34',0,'2024-02-17 15:58:34',0,1,'qq'),
+ (86,'2022-02-17 18:22:30',0,'2022-02-17 18:22:30',0,0,'role_cc'),
+ (87,'2022-02-17 18:22:50',0,'2022-02-17 18:22:50',0,1,'role_ee'),
+ (88,'2022-02-17 18:29:49',0,'2022-02-17 18:29:49',0,0,'role_ddd'),
+ (89,'2022-02-17 18:33:49',0,'2022-02-17 18:33:49',0,0,'role_yyy'),
+ (90,'2024-02-23 18:36:54',0,'2024-02-23 18:36:54',0,0,'role_yyy'),
+ (91,'2024-02-26 11:50:15',0,'2024-02-26 11:50:15',0,1,'alter'),
+ (92,'2024-03-18 12:44:06',0,'2024-03-18 12:44:06',0,0,'Role_VIPaaa'),
+ (93,'2024-03-12 14:57:37',0,'2024-03-12 14:57:37',0,1,'nv'),
+ (94,'2024-03-18 12:43:56',0,'2024-03-18 12:43:56',0,0,'ROLE_EMPLOYEE');
+/*!40000 ALTER TABLE `privileges` ENABLE KEYS */;
+
+
+--
+-- Definition of table `privileges_access`
+--
+
+DROP TABLE IF EXISTS `privileges_access`;
+CREATE TABLE `privileges_access` (
+  `privilege_Id` bigint(20) NOT NULL,
+  `access_Id` bigint(20) NOT NULL,
+  KEY `FK_s6ra0n69bbrbcnrmdrxsy6wwa` (`access_Id`),
+  KEY `FK_5wntun8t76q9b2h6fsg2oi5q4` (`privilege_Id`),
+  CONSTRAINT `FK_5wntun8t76q9b2h6fsg2oi5q4` FOREIGN KEY (`privilege_Id`) REFERENCES `privileges` (`privilegeId`),
+  CONSTRAINT `FK_s6ra0n69bbrbcnrmdrxsy6wwa` FOREIGN KEY (`access_Id`) REFERENCES `accesss` (`accessId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `privileges_access`
+--
+
+/*!40000 ALTER TABLE `privileges_access` DISABLE KEYS */;
+INSERT INTO `privileges_access` (`privilege_Id`,`access_Id`) VALUES 
+ (1,6),
+ (5,25),
+ (5,26),
+ (5,27),
+ (5,28),
+ (5,29),
+ (6,30),
+ (6,31),
+ (6,32),
+ (6,33),
+ (6,34),
+ (9,45),
+ (9,46),
+ (9,47),
+ (9,48),
+ (9,49),
+ (10,139),
+ (10,140),
+ (10,141),
+ (10,142),
+ (10,143),
+ (10,144),
+ (12,55),
+ (12,56),
+ (12,57),
+ (12,58),
+ (12,59),
+ (13,60),
+ (13,61),
+ (13,62),
+ (13,63),
+ (13,64),
+ (14,65),
+ (14,66),
+ (14,67),
+ (14,68),
+ (14,69),
+ (15,70),
+ (15,71),
+ (15,72),
+ (15,73),
+ (15,74),
+ (16,75),
+ (16,76),
+ (16,77),
+ (16,78),
+ (16,79),
+ (17,80),
+ (17,81),
+ (17,82),
+ (17,83),
+ (17,84),
+ (18,95),
+ (18,96),
+ (18,97),
+ (18,98),
+ (18,99),
+ (19,100),
+ (19,101),
+ (19,102),
+ (19,103),
+ (19,104),
+ (20,105),
+ (20,106),
+ (20,107),
+ (20,108),
+ (20,109),
+ (21,110),
+ (21,111),
+ (21,112),
+ (21,113),
+ (21,114),
+ (22,115),
+ (22,116),
+ (22,117),
+ (22,118),
+ (22,119),
+ (23,120),
+ (23,121),
+ (23,122),
+ (23,123),
+ (23,124),
+ (24,125),
+ (24,126),
+ (24,127),
+ (24,128),
+ (24,129),
+ (25,135),
+ (25,136),
+ (25,137),
+ (25,138),
+ (25,139),
+ (1,148),
+ (41,151),
+ (40,151),
+ (49,89),
+ (49,90),
+ (44,151),
+ (59,151),
+ (90,156),
+ (91,156),
+ (27,148),
+ (1,146),
+ (11,149);
+/*!40000 ALTER TABLE `privileges_access` ENABLE KEYS */;
+
+
+--
+-- Definition of table `procurement`
+--
+
+DROP TABLE IF EXISTS `procurement`;
+CREATE TABLE `procurement` (
+  `procurementId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `availableStock` int(11) DEFAULT NULL,
+  `expectedDate` varchar(255) DEFAULT NULL,
+  `isdelete` tinyint(1) DEFAULT NULL,
+  `maximumStock` int(11) DEFAULT NULL,
+  `minimumStock` int(11) DEFAULT NULL,
+  `quantityOfProducts` varchar(255) DEFAULT NULL,
+  `reject` varchar(255) DEFAULT NULL,
+  `totalCost` int(11) DEFAULT NULL,
+  `unitOfCost` int(11) DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
+  `supplier_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`procurementId`),
+  KEY `FK_8w712yw6wfm2i6knws8u3smfh` (`product_id`),
+  KEY `FK_5a6gjrjqn8f8n7r6lwvwflo4i` (`supplier_id`),
+  CONSTRAINT `FK_5a6gjrjqn8f8n7r6lwvwflo4i` FOREIGN KEY (`supplier_id`) REFERENCES `supplier_info` (`supplier_id`),
+  CONSTRAINT `FK_8w712yw6wfm2i6knws8u3smfh` FOREIGN KEY (`product_id`) REFERENCES `manage_products` (`service_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `procurement`
+--
+
+/*!40000 ALTER TABLE `procurement` DISABLE KEYS */;
+INSERT INTO `procurement` (`procurementId`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`availableStock`,`expectedDate`,`isdelete`,`maximumStock`,`minimumStock`,`quantityOfProducts`,`reject`,`totalCost`,`unitOfCost`,`product_id`,`supplier_id`) VALUES 
+ (1,NULL,NULL,0,NULL,0,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (2,NULL,NULL,0,NULL,0,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (3,NULL,NULL,0,NULL,0,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (4,NULL,NULL,0,NULL,0,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (5,1,NULL,1,NULL,0,20,'02/01/2024',0,60,40,'678',NULL,660,40,49,8),
+ (6,NULL,NULL,0,NULL,0,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+ (7,2,NULL,0,NULL,0,44,'06/05/2024',0,70,50,'55',NULL,678,5444,55,13),
+ (8,1,NULL,1,NULL,0,44,'06/02/2014',0,70,50,'55',NULL,678,5444,58,7),
+ (9,1,NULL,1,NULL,0,44,'06/11/2024',0,70,50,'55',NULL,12345,5444,62,6),
+ (10,1,NULL,1,NULL,0,44,'06/24/2024',0,70,50,'55',NULL,678,5444,61,9),
+ (11,1,NULL,1,NULL,0,44,'06/11/2024',0,67,29,'55',NULL,12345,5444,57,9);
+/*!40000 ALTER TABLE `procurement` ENABLE KEYS */;
+
+
+--
+-- Definition of table `product_types`
+--
+
+DROP TABLE IF EXISTS `product_types`;
+CREATE TABLE `product_types` (
+  `Id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) NOT NULL,
+  `maxRecord` int(11) NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) NOT NULL,
+  `recordIndex` int(11) NOT NULL,
+  `isDeleted` tinyint(1) DEFAULT NULL,
+  `product_type` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `product_types`
+--
+
+/*!40000 ALTER TABLE `product_types` DISABLE KEYS */;
+INSERT INTO `product_types` (`Id`,`companyId`,`created`,`createdBy`,`maxRecord`,`modified`,`modifiedBy`,`recordIndex`,`isDeleted`,`product_type`) VALUES 
+ (43,1,NULL,1,0,NULL,0,0,0,'real estate '),
+ (44,2,NULL,0,0,NULL,0,0,0,'softtware'),
+ (45,2,NULL,4,0,NULL,0,0,0,'Hibernet'),
+ (46,3,NULL,6,0,NULL,0,0,0,'Mobiles'),
+ (47,2,NULL,4,0,NULL,0,0,0,'technology'),
+ (48,2,NULL,0,0,NULL,0,0,1,'solutions'),
+ (49,1,NULL,1,0,NULL,0,0,0,'technology'),
+ (50,2,NULL,4,0,NULL,0,0,0,'Software'),
+ (51,1,NULL,1,0,NULL,0,0,0,'west indies'),
+ (52,1,NULL,1,0,NULL,0,0,0,'technologyo'),
+ (53,1,NULL,1,0,NULL,0,0,0,'solution'),
+ (54,1,NULL,1,0,NULL,0,0,0,'technologyoop');
+/*!40000 ALTER TABLE `product_types` ENABLE KEYS */;
+
+
+--
+-- Definition of table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE `products` (
+  `product_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `financial_amount` bigint(20) DEFAULT NULL,
+  `supplier_id` bigint(20) DEFAULT NULL,
+  `tech_ord` varchar(255) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL,
+  `isdelete` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `products`
+--
+
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` (`product_id`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`financial_amount`,`supplier_id`,`tech_ord`,`isActive`,`isdelete`) VALUES 
+ (1,NULL,NULL,0,NULL,0,NULL,0,NULL,NULL,NULL),
+ (2,NULL,NULL,0,NULL,0,NULL,0,NULL,NULL,NULL),
+ (3,NULL,NULL,0,NULL,0,NULL,0,NULL,NULL,NULL),
+ (4,NULL,NULL,0,NULL,0,NULL,0,NULL,NULL,NULL),
+ (5,NULL,NULL,0,NULL,0,NULL,120,NULL,NULL,NULL),
+ (6,NULL,NULL,0,NULL,0,NULL,120,NULL,NULL,NULL),
+ (7,NULL,NULL,0,NULL,0,150000,120,'iOS',NULL,NULL),
+ (8,4,NULL,0,NULL,0,100000,NULL,'iOS',0,0),
+ (9,4,NULL,0,NULL,0,150000,NULL,'iOS',0,0),
+ (10,4,NULL,0,NULL,0,150000,NULL,'iOS',0,0),
+ (11,4,NULL,0,NULL,0,150000,NULL,'iOS',0,0),
+ (12,4,NULL,0,NULL,0,0,NULL,'',0,0),
+ (13,4,NULL,0,NULL,0,150000,NULL,'iOS',0,0),
+ (14,4,NULL,0,NULL,0,150000,120,'iOS',0,0),
+ (16,4,NULL,0,NULL,0,150000,120,'iOS',0,0),
+ (17,4,NULL,0,NULL,0,150000,120,'iOS',0,0),
+ (18,4,NULL,0,NULL,0,150000,120,'iOS',0,0),
+ (19,4,NULL,0,NULL,0,50000,120,'mouse',0,0);
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+
+
+--
+-- Definition of table `project`
+--
+
+DROP TABLE IF EXISTS `project`;
+CREATE TABLE `project` (
+  `projectId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `amenities` varchar(255) DEFAULT NULL,
+  `approval` varchar(255) DEFAULT NULL,
+  `endDate` varchar(255) DEFAULT NULL,
+  `isDeleted` tinyint(1) NOT NULL,
+  `nearByLocalities` varchar(255) DEFAULT NULL,
+  `projectAreaInSqfts` varchar(255) DEFAULT NULL,
+  `projectLocation` varchar(255) DEFAULT NULL,
+  `projectName` varchar(255) DEFAULT NULL,
+  `projectStatus` varchar(255) DEFAULT NULL,
+  `projectType` varchar(255) DEFAULT NULL,
+  `sNo` int(11) NOT NULL,
+  `startDate` varchar(255) DEFAULT NULL,
+  `unit` varchar(255) DEFAULT NULL,
+  `entityid` bigint(20) NOT NULL,
+  PRIMARY KEY (`projectId`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `project`
+--
+
+/*!40000 ALTER TABLE `project` DISABLE KEYS */;
+INSERT INTO `project` (`projectId`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`amenities`,`approval`,`endDate`,`isDeleted`,`nearByLocalities`,`projectAreaInSqfts`,`projectLocation`,`projectName`,`projectStatus`,`projectType`,`sNo`,`startDate`,`unit`,`entityid`) VALUES 
+ (20,1,NULL,0,NULL,0,NULL,'CMDA Approved','05/16/2024',0,NULL,'1000','chennai','1 of the SBIOA','Completed Project','Apartments',0,'03/01/2024','Sq.Fts',0),
+ (21,3,NULL,0,NULL,0,NULL,'DTCP Approved','06/09/2024',0,NULL,'12','chennai','myjobbie11','Completed Project','Villas',0,'06/08/2024','Sq.Fts',0),
+ (22,2,NULL,0,NULL,0,NULL,'DTCP Approved','06/25/2024',0,NULL,'porur','Porur','Greens','Completed Project','Plots',0,'06/08/2024','Sq.Fts',0),
+ (23,1,NULL,0,NULL,0,NULL,'DTCP Approved','06/30/2024',0,NULL,'1000','chennai','SBIOA','OnGoing Project','Plots',0,'06/30/2024','Sq.Fts',0),
+ (24,1,NULL,0,NULL,0,NULL,'DTCP Approved','06/11/2024',0,NULL,'1000','chennai','mon vi','Completed Project','Plots',0,'06/04/2024','Sq.Fts',0),
+ (25,1,NULL,0,NULL,0,NULL,'DTCP Approved','06/30/2026',0,NULL,'100','chennai','ryzen tab','Upcoming Project','Apartments',0,'06/30/2026','Sq.Fts',0),
+ (26,1,NULL,0,NULL,0,NULL,'DTCP Approved','06/30/2024',0,NULL,'100','chennai','radeon','Completed Project','Apartments',0,'06/01/2024','Sq.Fts',0),
+ (27,1,NULL,0,NULL,0,NULL,'DTCP Approved','06/30/2024',0,NULL,'100','chennai','1 of the SBIOA','OnGoing Project','Farm Land',0,'06/04/2024','Sq.Fts',0),
+ (28,1,NULL,0,NULL,0,NULL,'CMDA Approved','06/24/2024',0,NULL,'100','chennai','SBIOA','Upcoming Project','Apartments',0,'06/11/2024','Acres',0),
+ (29,1,NULL,0,NULL,0,NULL,'CMDA Approved','06/25/2024',0,NULL,'100','chennai','SBIOA','Completed Project','Textile Industry',0,'06/04/2024','Sq.Fts',0),
+ (30,1,NULL,0,NULL,0,NULL,'DTCP Approved','06/30/2024',0,NULL,'1000','chennai','graphics ds','Upcoming Project','Textile Industry',0,'06/11/2024','Sq.Fts',0),
+ (31,1,NULL,0,NULL,0,NULL,'CMDA Approved','06/30/2024',0,NULL,'100','chennai','SBIOA','Completed Project','Plots',0,'2023-12-23','Sq.Fts',0),
+ (32,2,NULL,0,NULL,0,NULL,'DTCP Approved','12/25/2024',0,NULL,'Vandalur','chennai','Miro','Upcoming Project','Apartments',0,'06/02/2024','Sq.Fts',0);
+/*!40000 ALTER TABLE `project` ENABLE KEYS */;
+
+
+--
+-- Definition of table `project_status`
+--
+
+DROP TABLE IF EXISTS `project_status`;
+CREATE TABLE `project_status` (
+  `projectActivityid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) NOT NULL,
+  `maxRecord` int(11) NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) NOT NULL,
+  `recordIndex` int(11) NOT NULL,
+  `amenities` varchar(255) DEFAULT NULL,
+  `entityid` bigint(20) NOT NULL,
+  `nearByLocalities` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`projectActivityid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `project_status`
+--
+
+/*!40000 ALTER TABLE `project_status` DISABLE KEYS */;
+/*!40000 ALTER TABLE `project_status` ENABLE KEYS */;
+
+
+--
+-- Definition of table `reject_procurement`
+--
+
+DROP TABLE IF EXISTS `reject_procurement`;
+CREATE TABLE `reject_procurement` (
+  `rejectId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `reason` varchar(255) DEFAULT NULL,
+  `rejectStaus` varchar(255) DEFAULT NULL,
+  `procurementId` bigint(20) DEFAULT NULL,
+  `productServiceVO_service_id` bigint(20) DEFAULT NULL,
+  `supplierVO_supplier_id` bigint(20) DEFAULT NULL,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`rejectId`),
+  KEY `FK_dwk9fvcimjkp6scuqpx1wymug` (`procurementId`),
+  KEY `FK_7cim7d6xishrh3p9mggjuhnbk` (`productServiceVO_service_id`),
+  KEY `FK_gwxlqom3bi69m3l42uo866714` (`supplierVO_supplier_id`),
+  CONSTRAINT `FK_7cim7d6xishrh3p9mggjuhnbk` FOREIGN KEY (`productServiceVO_service_id`) REFERENCES `manage_products` (`service_id`),
+  CONSTRAINT `FK_dwk9fvcimjkp6scuqpx1wymug` FOREIGN KEY (`procurementId`) REFERENCES `procurement` (`procurementId`),
+  CONSTRAINT `FK_gwxlqom3bi69m3l42uo866714` FOREIGN KEY (`supplierVO_supplier_id`) REFERENCES `supplier_info` (`supplier_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reject_procurement`
+--
+
+/*!40000 ALTER TABLE `reject_procurement` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reject_procurement` ENABLE KEYS */;
+
+
+--
+-- Definition of table `role_privileges_role`
+--
+
+DROP TABLE IF EXISTS `role_privileges_role`;
+CREATE TABLE `role_privileges_role` (
+  `roleId` bigint(20) NOT NULL,
+  `privilegeId` bigint(20) NOT NULL,
+  KEY `FK_ncyw6nmva670ijbv8etfaqmbx` (`privilegeId`),
+  KEY `FK_286rulptmband3xqoexnkhha5` (`roleId`),
+  CONSTRAINT `FK_286rulptmband3xqoexnkhha5` FOREIGN KEY (`roleId`) REFERENCES `roles` (`roleId`),
+  CONSTRAINT `FK_ncyw6nmva670ijbv8etfaqmbx` FOREIGN KEY (`privilegeId`) REFERENCES `privileges` (`privilegeId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `role_privileges_role`
+--
+
+/*!40000 ALTER TABLE `role_privileges_role` DISABLE KEYS */;
+INSERT INTO `role_privileges_role` (`roleId`,`privilegeId`) VALUES 
+ (3,5),
+ (3,6),
+ (3,7),
+ (3,8),
+ (3,9),
+ (3,11),
+ (3,12),
+ (3,13),
+ (3,14),
+ (3,15),
+ (3,16),
+ (3,17),
+ (3,18),
+ (3,19),
+ (3,20),
+ (3,21),
+ (3,22),
+ (3,23),
+ (3,24),
+ (3,25),
+ (3,26),
+ (24,44),
+ (79,88),
+ (79,89),
+ (80,86),
+ (80,88),
+ (80,89),
+ (82,86),
+ (82,88),
+ (82,89),
+ (88,91),
+ (89,91),
+ (90,86),
+ (91,79),
+ (91,80),
+ (92,91),
+ (95,91),
+ (94,91),
+ (96,86),
+ (96,88),
+ (96,89),
+ (96,90),
+ (97,89),
+ (97,90),
+ (97,91),
+ (99,94),
+ (98,21),
+ (98,90),
+ (98,92),
+ (98,94),
+ (2,1),
+ (2,1),
+ (2,1),
+ (2,1),
+ (2,1),
+ (2,1),
+ (2,1),
+ (2,1);
+/*!40000 ALTER TABLE `role_privileges_role` ENABLE KEYS */;
+
+
+--
+-- Definition of table `roles`
+--
+
+DROP TABLE IF EXISTS `roles`;
+CREATE TABLE `roles` (
+  `roleId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL,
+  `privilegesVo` tinyblob,
+  `roleName` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`roleId`)
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `roles`
+--
+
+/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` (`roleId`,`created`,`createdBy`,`modified`,`modifiedBy`,`isActive`,`privilegesVo`,`roleName`) VALUES 
+ (2,'2024-06-05 15:14:07',0,'2024-06-05 15:14:07',0,0,NULL,'ROLE_ADMIN'),
+ (3,'2024-01-26 19:03:11',0,'2024-01-26 19:03:11',0,0,NULL,'ROLE_COMPANY'),
+ (4,'2023-12-30 20:15:06',0,'2023-12-30 20:15:06',0,0,NULL,'ROLE_REALESTATE'),
+ (5,'2023-12-30 20:15:40',0,'2023-12-30 20:15:40',0,0,NULL,'ROLE_CAMPAIGN_MANAGER'),
+ (6,'2023-12-30 20:21:57',0,'2023-12-30 20:21:57',0,0,NULL,'ROLE_LEAD_MANAGER'),
+ (7,'2023-12-30 20:22:55',0,'2023-12-30 20:22:55',0,0,NULL,'ROLE_LEAD_EXCUTIVE'),
+ (8,'2023-12-30 20:23:21',0,'2023-12-30 20:23:21',0,0,NULL,'ROLE_OPPORTUNITY_MANAGER'),
+ (9,'2023-12-30 20:24:01',0,'2023-12-30 20:24:01',0,0,NULL,'ROLE_SALES_MANAGER'),
+ (10,'2023-12-30 20:25:06',0,'2023-12-30 20:25:06',0,0,NULL,'ROLE_EXCUTIVE_TEAM'),
+ (11,'2023-12-30 20:27:29',0,'2023-12-30 20:27:29',0,0,NULL,'ROLE_SUPPORT_SERVICE_MANAGER'),
+ (12,'2024-01-27 19:25:16',0,'2024-01-27 19:25:16',0,1,NULL,'ROLE_SUPPORT_SERVICE_EXECUTIVE'),
+ (24,'2024-01-30 11:14:57',0,'2024-01-30 11:14:57',0,1,NULL,'ROLE_SALES_MANAGER'),
+ (39,'2024-02-01 13:54:38',0,'2024-02-01 13:54:38',0,0,NULL,'role _company'),
+ (58,'2022-02-17 18:12:35',0,'2022-02-17 18:12:35',0,1,NULL,'Role_managig'),
+ (74,'2022-02-17 18:32:46',0,'2022-02-17 18:32:46',0,0,NULL,'role_softt'),
+ (75,'2022-02-17 18:33:13',0,'2022-02-17 18:33:13',0,0,NULL,'role_dddddd'),
+ (79,'2024-02-17 18:42:45',0,'2024-02-17 18:42:45',0,1,NULL,NULL),
+ (80,'2024-02-22 12:48:39',0,'2024-02-22 12:48:39',0,1,NULL,NULL),
+ (81,'2024-02-22 12:53:39',0,'2024-02-22 12:53:39',0,0,NULL,'Role_Testing'),
+ (82,'2024-02-22 12:56:11',0,'2024-02-22 12:56:11',0,1,NULL,NULL),
+ (83,'2024-02-22 15:44:32',0,'2024-02-22 15:44:32',0,0,NULL,'Role_Mani'),
+ (85,'2024-02-22 15:49:16',0,'2024-02-22 15:49:16',0,0,NULL,'creare'),
+ (86,'2024-02-23 18:51:07',0,'2024-02-23 18:51:07',0,0,NULL,'abcd'),
+ (88,'2024-02-23 19:03:47',0,'2024-02-23 19:03:47',0,1,NULL,NULL),
+ (89,'2024-02-23 19:08:17',0,'2024-02-23 19:08:17',0,1,NULL,NULL),
+ (90,'2024-02-24 12:27:07',0,'2024-02-24 12:27:07',0,1,NULL,NULL),
+ (91,'2024-02-24 12:27:50',0,'2024-02-24 12:27:50',0,1,NULL,NULL),
+ (92,'2024-02-26 11:54:51',0,'2024-02-26 11:54:51',0,1,NULL,NULL),
+ (94,'2024-02-26 16:47:22',0,'2024-02-26 16:47:22',0,1,NULL,'Testing'),
+ (95,'2024-02-26 16:23:25',0,'2024-02-26 16:23:25',0,1,NULL,NULL),
+ (96,'2024-02-26 16:49:42',0,'2024-02-26 16:49:42',0,1,NULL,'Sales'),
+ (97,'2024-02-26 17:10:43',0,'2024-02-26 17:10:43',0,1,NULL,'Manager'),
+ (98,'2024-03-18 17:53:19',0,'2024-03-18 17:53:19',0,1,NULL,'Role_VIT'),
+ (99,'2024-03-13 16:20:41',0,'2024-03-13 16:20:41',0,1,NULL,'ROLE_EMPLOYEE');
+/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+
+
+--
+-- Definition of table `roles_privileges`
+--
+
+DROP TABLE IF EXISTS `roles_privileges`;
+CREATE TABLE `roles_privileges` (
+  `privilegeId` int(11) NOT NULL,
+  `roleId` int(11) NOT NULL,
+  PRIMARY KEY (`privilegeId`,`roleId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `roles_privileges`
+--
+
+/*!40000 ALTER TABLE `roles_privileges` DISABLE KEYS */;
+INSERT INTO `roles_privileges` (`privilegeId`,`roleId`) VALUES 
+ (1,2);
+/*!40000 ALTER TABLE `roles_privileges` ENABLE KEYS */;
+
+
+--
+-- Definition of table `sales_order`
+--
+
+DROP TABLE IF EXISTS `sales_order`;
+CREATE TABLE `sales_order` (
+  `sales_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) NOT NULL,
+  `maxRecord` int(11) NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) NOT NULL,
+  `recordIndex` int(11) NOT NULL,
+  `invoice_id` bigint(20) DEFAULT NULL,
+  `invoiceName` varchar(255) DEFAULT NULL,
+  `quantity` bigint(20) DEFAULT NULL,
+  `sales_order_no` varchar(255) DEFAULT NULL,
+  `account_id` int(11) DEFAULT NULL,
+  `gst_id` bigint(20) DEFAULT NULL,
+  `pricebook_id` int(11) DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
+  `grand_total` bigint(20) DEFAULT NULL,
+  `total_invoice` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`sales_id`),
+  KEY `FK_htcysdp5m7ekjp5dp9qsfnn3k` (`account_id`),
+  KEY `FK_i30f49w0udk13d4t1nr5q2lcp` (`gst_id`),
+  KEY `FK_t4v04oqu8w7om2ygc78x3lthh` (`pricebook_id`),
+  KEY `FK_mhhwi4c41g6gqysr7f5mveyd0` (`product_id`),
+  CONSTRAINT `FK_htcysdp5m7ekjp5dp9qsfnn3k` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`ACCOUNT_ID`),
+  CONSTRAINT `FK_i30f49w0udk13d4t1nr5q2lcp` FOREIGN KEY (`gst_id`) REFERENCES `gst` (`gst_id`),
+  CONSTRAINT `FK_mhhwi4c41g6gqysr7f5mveyd0` FOREIGN KEY (`product_id`) REFERENCES `manage_products` (`service_id`),
+  CONSTRAINT `FK_t4v04oqu8w7om2ygc78x3lthh` FOREIGN KEY (`pricebook_id`) REFERENCES `price_book` (`PRICE_BOOK_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sales_order`
+--
+
+/*!40000 ALTER TABLE `sales_order` DISABLE KEYS */;
+INSERT INTO `sales_order` (`sales_id`,`companyId`,`created`,`createdBy`,`maxRecord`,`modified`,`modifiedBy`,`recordIndex`,`invoice_id`,`invoiceName`,`quantity`,`sales_order_no`,`account_id`,`gst_id`,`pricebook_id`,`product_id`,`grand_total`,`total_invoice`) VALUES 
+ (1,1,'2024-05-27 13:01:58',1,0,NULL,1,0,0,NULL,NULL,'SONo1',3,NULL,NULL,NULL,NULL,NULL),
+ (2,1,'2024-05-27 13:05:33',1,0,NULL,1,0,0,NULL,NULL,'SONo2',3,NULL,NULL,NULL,NULL,NULL),
+ (3,1,'2024-05-27 15:54:37',1,0,NULL,1,0,0,NULL,NULL,'SONo3',1,NULL,NULL,NULL,113578,213526),
+ (4,1,'2024-05-28 11:43:54',1,0,NULL,1,0,0,NULL,NULL,'SONo4',1,NULL,NULL,NULL,113578,213526),
+ (5,1,'2024-05-30 15:59:01',1,0,NULL,1,0,0,NULL,NULL,'SONo5',1,NULL,NULL,NULL,227156,427052),
+ (6,3,'2024-06-06 15:31:23',1,0,NULL,1,0,0,NULL,NULL,'SONo6',1,NULL,NULL,NULL,NULL,NULL),
+ (7,1,'2024-06-11 12:47:28',1,0,NULL,1,0,0,NULL,NULL,'SONo6',1,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `sales_order` ENABLE KEYS */;
+
+
+--
+-- Definition of table `salesorder_product`
+--
+
+DROP TABLE IF EXISTS `salesorder_product`;
+CREATE TABLE `salesorder_product` (
+  `sales_order_product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `price` double NOT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `quantityPrice` double NOT NULL,
+  `gst_id` bigint(20) DEFAULT NULL,
+  `pricebook_id` int(11) DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
+  `salesorder_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`sales_order_product_id`),
+  KEY `FK_ni9vwrxuo8x10014vv1uombqt` (`gst_id`),
+  KEY `FK_tlfux9ymyiwfxtrigbb2kjuos` (`pricebook_id`),
+  KEY `FK_opserfl5yd7emmlketwvas4md` (`product_id`),
+  KEY `FK_kd7pa1eipjs7gxbal7ef84xvp` (`salesorder_id`),
+  CONSTRAINT `FK_kd7pa1eipjs7gxbal7ef84xvp` FOREIGN KEY (`salesorder_id`) REFERENCES `sales_order` (`sales_id`),
+  CONSTRAINT `FK_ni9vwrxuo8x10014vv1uombqt` FOREIGN KEY (`gst_id`) REFERENCES `gst` (`gst_id`),
+  CONSTRAINT `FK_opserfl5yd7emmlketwvas4md` FOREIGN KEY (`product_id`) REFERENCES `manage_products` (`service_id`),
+  CONSTRAINT `FK_tlfux9ymyiwfxtrigbb2kjuos` FOREIGN KEY (`pricebook_id`) REFERENCES `price_book` (`PRICE_BOOK_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `salesorder_product`
+--
+
+/*!40000 ALTER TABLE `salesorder_product` DISABLE KEYS */;
+INSERT INTO `salesorder_product` (`sales_order_product_id`,`price`,`quantity`,`quantityPrice`,`gst_id`,`pricebook_id`,`product_id`,`salesorder_id`) VALUES 
+ (1,1000000000,2,2000000000,145,49,48,99),
+ (2,1000000000,2,2000000000,147,NULL,48,103),
+ (3,450,3,1350,147,49,61,103),
+ (4,450,2,900,147,NULL,61,104),
+ (5,450,2,900,147,NULL,60,104),
+ (6,1000000000,2,2000000000,147,NULL,48,104),
+ (7,450,2,900,147,56,61,105),
+ (8,450,2,900,147,57,60,105),
+ (9,1000000000,6,6000000000,147,54,48,105),
+ (10,55000,1,55000,139,49,50,148),
+ (11,55000,5,275000,139,49,50,149),
+ (12,75000,2,150000,140,50,51,149),
+ (13,55000,3,165000,139,49,50,150),
+ (14,55000,6,330000,139,49,50,151),
+ (15,75000,3,225000,140,50,51,151),
+ (16,55000,4,220000,139,49,50,152),
+ (17,75000,2,150000,140,50,51,152),
+ (18,55000,3,165000,139,49,50,152),
+ (19,55000,6,330000,139,49,50,153),
+ (20,75000,5,375000,140,50,51,153),
+ (21,55000,6,330000,139,49,50,154),
+ (22,75000,7,525000,140,50,51,154),
+ (23,55000,1,55000,139,49,50,155),
+ (24,55000,1,55000,139,49,50,155),
+ (25,1000000000,1,1000000000,143,54,48,156),
+ (26,1000000000,1,1000000000,143,54,48,157),
+ (27,450,10,4500,143,84,48,158),
+ (28,56789,76,4315964,139,2,48,1),
+ (29,56789,43,2441927,139,2,48,2),
+ (30,56789,2,113578,139,2,48,3),
+ (31,56789,2,113578,139,2,48,4),
+ (32,56789,2,113578,139,2,48,5),
+ (33,56789,2,113578,139,2,48,5),
+ (34,56789,65,3691285,139,2,48,6),
+ (35,147852,54,7984008,154,6,49,7);
+/*!40000 ALTER TABLE `salesorder_product` ENABLE KEYS */;
+
+
+--
+-- Definition of table `skills`
+--
+
+DROP TABLE IF EXISTS `skills`;
+CREATE TABLE `skills` (
+  `skillsId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `descriptions` varchar(255) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL,
+  `isDelete` tinyint(1) DEFAULT NULL,
+  `skillsCode` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`skillsId`)
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `skills`
+--
+
+/*!40000 ALTER TABLE `skills` DISABLE KEYS */;
+INSERT INTO `skills` (`skillsId`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`descriptions`,`isActive`,`isDelete`,`skillsCode`) VALUES 
+ (31,1,'2024-05-17 16:09:54',0,'2024-05-17 16:09:54',0,'',1,1,''),
+ (32,1,'2024-05-17 16:14:57',0,'2024-05-17 16:14:57',0,'java',1,0,'123'),
+ (33,1,'2024-05-17 17:58:25',0,'2024-05-17 17:58:25',0,'testNG,selenium',1,0,'1434'),
+ (34,2,'2024-05-20 18:47:49',0,'2024-05-20 18:47:49',0,'java',1,0,'01'),
+ (35,1,'2024-05-21 12:34:52',0,'2024-05-21 12:34:52',0,'Shanjai',1,0,'ajs123'),
+ (36,1,'2024-05-21 12:35:41',0,'2024-05-21 12:35:41',0,'java',1,0,'1234'),
+ (37,1,'2024-06-06 12:11:43',0,'2024-06-06 12:11:43',0,'api testing',1,0,'143'),
+ (38,3,'2024-06-06 12:46:06',0,'2024-06-06 12:46:06',0,'Testing',1,0,'sk002'),
+ (39,1,'2024-06-10 15:06:56',0,'2024-06-10 15:06:56',0,'testNG',1,0,'14340'),
+ (40,1,'2024-06-10 15:07:20',0,'2024-06-10 15:07:20',0,'api testing nb',1,0,'14342'),
+ (41,1,'2024-06-10 15:08:06',0,'2024-06-10 15:08:06',0,'postman',1,0,'120'),
+ (42,1,'2024-06-10 15:08:35',0,'2024-06-10 15:08:35',0,'dev ',1,0,'150');
+/*!40000 ALTER TABLE `skills` ENABLE KEYS */;
+
+
+--
+-- Definition of table `sla`
+--
+
+DROP TABLE IF EXISTS `sla`;
+CREATE TABLE `sla` (
+  `slaId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `descriptions` varchar(255) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL,
+  `isDelete` tinyint(1) DEFAULT NULL,
+  `slaCode` varchar(255) DEFAULT NULL,
+  `slaName` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`slaId`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sla`
+--
+
+/*!40000 ALTER TABLE `sla` DISABLE KEYS */;
+INSERT INTO `sla` (`slaId`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`date`,`descriptions`,`isActive`,`isDelete`,`slaCode`,`slaName`) VALUES 
+ (19,1,'2024-05-17 16:44:01',0,'2024-05-17 16:44:01',0,'05/14/2024','htgfdthrtefe42435443',1,1,'sdggff','qwgfg'),
+ (20,1,'2024-05-17 17:41:26',0,'2024-05-17 17:41:26',0,'05/21/2024','ree online square footage calculator you to calculate the area of a room with a rectangular or a more complex shape. How',1,0,'6544','20'),
+ (21,1,'2024-06-06 12:02:53',0,'2024-06-06 12:02:53',0,'06/24/2024','hgfdsddddd',1,0,'34657','25days'),
+ (22,1,'2024-06-10 12:57:01',0,'2024-06-10 12:57:01',0,'06/11/2024','SOFTTWIG Technology Solutions Pvt Ltd',1,0,'6544','friday'),
+ (23,1,'2024-06-10 12:57:19',0,'2024-06-10 12:57:19',0,'06/11/2024','SOFTTWIG Technology Solutions Pvt Ltd',1,0,'6544','25days'),
+ (24,1,'2024-06-10 12:57:42',0,'2024-06-10 12:57:42',0,'06/11/2024','SOFTTWIG Technology Solutions Pvt Ltd',1,0,'6544','25days'),
+ (25,1,'2024-06-10 12:57:59',0,'2024-06-10 12:57:59',0,'06/11/2024','SOFTTWIG Technology Solutions Pvt Ltd',1,0,'65333','25days'),
+ (26,1,'2024-06-10 12:58:33',0,'2024-06-10 12:58:33',0,'06/11/2024','SOFTTWIG Technology Solutions Pvt Ltd',1,0,'5213','mondays'),
+ (27,1,'2024-06-10 12:59:05',0,'2024-06-10 12:59:05',0,'06/11/2024','SOFTTWIG Technology Solutions Pvt Ltd',1,0,'6544','100 days'),
+ (28,1,'2024-06-10 12:59:21',0,'2024-06-10 12:59:21',0,'06/11/2024','SOFTTWIG Technology Solutions Pvt Ltd',1,0,'123','friday'),
+ (29,1,'2024-06-10 13:00:01',0,'2024-06-10 13:00:01',0,'06/11/2024','SOFTTWIG Technology Solutions Pvt Ltd',1,0,'34657','friday'),
+ (30,1,'2024-06-10 13:00:27',0,'2024-06-10 13:00:27',0,'06/11/2024','SOFTTWIG Technology Solutions Pvt Ltd',1,0,'65333','350');
+/*!40000 ALTER TABLE `sla` ENABLE KEYS */;
+
+
+--
+-- Definition of table `solution`
+--
+
+DROP TABLE IF EXISTS `solution`;
+CREATE TABLE `solution` (
+  `solution_id` int(11) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `answer` varchar(255) DEFAULT NULL,
+  `category` varchar(255) DEFAULT NULL,
+  `comments` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `is_Delete` tinyint(1) DEFAULT NULL,
+  `question` varchar(255) DEFAULT NULL,
+  `solution_title` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `service_Id` bigint(20) DEFAULT NULL,
+  `user_Id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`solution_id`),
+  KEY `FK_n3tfk675sgn1qk5p7wqmp4928` (`service_Id`),
+  KEY `FK_cpvc7hntm3vlpyouowcql60ml` (`user_Id`),
+  CONSTRAINT `FK_cpvc7hntm3vlpyouowcql60ml` FOREIGN KEY (`user_Id`) REFERENCES `login` (`id`),
+  CONSTRAINT `FK_n3tfk675sgn1qk5p7wqmp4928` FOREIGN KEY (`service_Id`) REFERENCES `manage_products` (`service_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `solution`
+--
+
+/*!40000 ALTER TABLE `solution` DISABLE KEYS */;
+INSERT INTO `solution` (`solution_id`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`answer`,`category`,`comments`,`description`,`is_Delete`,`question`,`solution_title`,`status`,`service_Id`,`user_Id`) VALUES 
+ (1,1,NULL,0,NULL,0,'wertyuiopasdfghjkxvbnm!££$$12233','TEACHER','wertyuiopasdfghjkxvbnm!££$$12233','wertyuiopasdfghjkxvbnm!££$$12233',0,'wertyuiopasdfghjkxvbnm!££$$12233','The world is the totality of entities','All Solution',49,15),
+ (2,1,NULL,0,NULL,0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','TEACHERS','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation',0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','All Solution',49,13),
+ (3,1,NULL,0,NULL,0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','PT STAFF','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation',0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','My Solution',58,15),
+ (4,1,NULL,0,NULL,0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','PT STAFF','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation',0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Published Solution',52,5),
+ (5,1,NULL,0,NULL,0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','TEACHERS','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation',0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Published Solution',49,8),
+ (6,1,NULL,0,NULL,0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','TEACHERS','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation',0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','My Solution',52,7),
+ (7,1,NULL,0,NULL,0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','TEACHERS','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation',1,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','My Solution',56,11),
+ (8,1,NULL,0,NULL,0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','TEACHERS','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation',0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','My Solution',49,12),
+ (9,1,NULL,0,NULL,0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','TEACHERS','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation',0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','My Solution',49,9),
+ (10,1,NULL,0,NULL,0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','TEACHERS','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation',0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia','My Solution',56,4),
+ (11,1,NULL,0,NULL,0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','TEACHER','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation',0,'Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation','Wikipedia is a free online encyclopedia, c','All Solution',57,14);
+/*!40000 ALTER TABLE `solution` ENABLE KEYS */;
+
+
+--
+-- Definition of table `supplier_info`
+--
+
+DROP TABLE IF EXISTS `supplier_info`;
+CREATE TABLE `supplier_info` (
+  `supplier_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `financial_amount` double DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL,
+  `isdelete` tinyint(1) DEFAULT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `mobile_no` bigint(20) DEFAULT NULL,
+  `rating` double DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `supplier_name` varchar(255) DEFAULT NULL,
+  `tech_ord` varchar(255) DEFAULT NULL,
+  `web_site` varchar(255) DEFAULT NULL,
+  `buying_price` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`supplier_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `supplier_info`
+--
+
+/*!40000 ALTER TABLE `supplier_info` DISABLE KEYS */;
+INSERT INTO `supplier_info` (`supplier_id`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`address`,`city`,`country`,`email`,`financial_amount`,`isActive`,`isdelete`,`location`,`mobile_no`,`rating`,`state`,`supplier_name`,`tech_ord`,`web_site`,`buying_price`) VALUES 
+ (1,1,NULL,1,NULL,0,'sengattupatti','thuraiyur','india','cb@gmail.com',NULL,0,0,'chennai',9688761225,NULL,'tamilnadu','sibi',NULL,'www.softtwig.com',NULL),
+ (2,1,NULL,1,NULL,0,'sengattupatti','trichy','india','cb@gmail.com',12345678,0,0,'chennai',9688761225,3,'tamilnadu','sibi','fine','www.softtwig.com',NULL),
+ (3,1,NULL,1,NULL,0,'sengattupatti','trichy','india','cb@gmail.com',12345678,0,0,'chennai',9688761220,2,'tamilnadu','sibi','fine','www.selva.com',NULL),
+ (4,1,NULL,1,NULL,0,'thuraiyur','trichy','india','cbss@gmail.com',123,0,0,'salem',9688761220,3,'tnadu','aakash','milk','www.sibimilk.com',NULL),
+ (5,1,NULL,1,NULL,0,'Sengattupatti','Poonamalees','india','prakass@gmail.com',1234,0,0,'chennai',9688761220,2,'tamilnadu','Selvakumar','cement','www.soft.com',NULL),
+ (6,1,NULL,1,NULL,0,'Thammampatti','chennai','india','selvass@gmail.com',1234,0,0,'chennai',9076767565,1,'tnadu','robert','fine','www.soft.com',NULL),
+ (7,1,NULL,1,NULL,0,'Thammampatti','chennai','india','selvass@gmail.com',1234,0,0,'chennai',9076767565,1,'tnadu','robert','fine','www.soft.com',NULL),
+ (8,1,NULL,1,NULL,0,'sengattupatti','thuraiyur','India','shanjai@gmail.com',80,0,0,'chennai',9076767565,1,'tamilnadu','sibi','fine','www.sibimilk.com',NULL),
+ (9,1,NULL,1,NULL,0,'sengattupatti','trichy','India','ragava@gmail.com',12345,0,0,'chennai',9688761225,3,'tamilnadu','aakash','fine','www.softtwig.com',NULL),
+ (10,3,NULL,4,NULL,0,'Sengattupatti','trichy','india','cb@gmail.com',1234567,0,0,'chennai',9688761225,4,'tamilnadu','sibi','fine','www.softtwig.com',NULL),
+ (11,2,NULL,0,NULL,0,'perambalur','chennai','India','game@gmail.com',45000,0,0,'velacherry',7854455599,4,'Tamil Nadu','game','pc,lp','www.caps.com',NULL),
+ (12,2,NULL,4,NULL,0,'trichy','chennai','India','salt@gmail.com',47859,0,0,'porur',7859666544,4,'Tamil Nadu','salt','dev','www.salt.com',NULL),
+ (13,2,NULL,4,NULL,0,'dheeran nagar,thuraimangalam,perambalur.','devarakonda','India','root@gmail.com',75100,0,0,'perambalur',8547889666,4,'Tamil Nadu','root','tech','www.deva.com',NULL);
+/*!40000 ALTER TABLE `supplier_info` ENABLE KEYS */;
+
+
+--
+-- Definition of table `supplier_product`
+--
+
+DROP TABLE IF EXISTS `supplier_product`;
+CREATE TABLE `supplier_product` (
+  `supplier_id` bigint(20) NOT NULL,
+  `service_id` bigint(20) NOT NULL,
+  KEY `FK_cntxvuhqbgjwx3cp6r3q004g1` (`service_id`),
+  KEY `FK_97ou4ef5jtsmxixe3idd7drq3` (`supplier_id`),
+  CONSTRAINT `FK_97ou4ef5jtsmxixe3idd7drq3` FOREIGN KEY (`supplier_id`) REFERENCES `supplier_info` (`supplier_id`),
+  CONSTRAINT `FK_cntxvuhqbgjwx3cp6r3q004g1` FOREIGN KEY (`service_id`) REFERENCES `manage_products` (`service_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `supplier_product`
+--
+
+/*!40000 ALTER TABLE `supplier_product` DISABLE KEYS */;
+INSERT INTO `supplier_product` (`supplier_id`,`service_id`) VALUES 
+ (7,49),
+ (6,49),
+ (8,49),
+ (9,48),
+ (10,50),
+ (12,50),
+ (13,50),
+ (11,50);
+/*!40000 ALTER TABLE `supplier_product` ENABLE KEYS */;
+
+
+--
+-- Definition of table `supplierproducts`
+--
+
+DROP TABLE IF EXISTS `supplierproducts`;
+CREATE TABLE `supplierproducts` (
+  `supplier_product_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `financial_amount` bigint(20) DEFAULT NULL,
+  `tech_ord` varchar(255) DEFAULT NULL,
+  `supplier_id` bigint(20) DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL,
+  `isdelete` tinyint(1) DEFAULT NULL,
+  `buying_price` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`supplier_product_id`),
+  KEY `FK_evsv9qdyg6762m3p8j0tmke0i` (`supplier_id`),
+  KEY `FK_6wo5yutvck01h7ygq1xqq5vs` (`product_id`),
+  CONSTRAINT `FK_6wo5yutvck01h7ygq1xqq5vs` FOREIGN KEY (`product_id`) REFERENCES `manage_products` (`service_id`),
+  CONSTRAINT `FK_evsv9qdyg6762m3p8j0tmke0i` FOREIGN KEY (`supplier_id`) REFERENCES `supplier_info` (`supplier_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `supplierproducts`
+--
+
+/*!40000 ALTER TABLE `supplierproducts` DISABLE KEYS */;
+INSERT INTO `supplierproducts` (`supplier_product_id`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`financial_amount`,`tech_ord`,`supplier_id`,`product_id`,`isActive`,`isdelete`,`buying_price`) VALUES 
+ (1,3,NULL,0,NULL,0,6456,'yes',NULL,NULL,NULL,NULL,NULL),
+ (2,3,NULL,0,NULL,0,34567,'yes',NULL,50,NULL,NULL,NULL),
+ (3,3,NULL,0,NULL,0,34567,'yes',NULL,51,NULL,NULL,NULL),
+ (4,3,NULL,0,NULL,0,34567,'yes',NULL,51,0,0,NULL),
+ (5,3,NULL,0,NULL,0,2000000,'yes',NULL,50,0,0,NULL),
+ (6,3,NULL,0,NULL,0,34567,'yes',NULL,51,0,0,NULL),
+ (7,3,NULL,0,NULL,0,34567,'12',NULL,51,0,0,NULL),
+ (8,4,NULL,0,NULL,0,12345678,'fine',NULL,93,0,0,NULL),
+ (9,2,NULL,0,NULL,0,12345678,'fine',NULL,50,0,0,NULL),
+ (10,3,NULL,0,NULL,0,34567,'12',NULL,53,0,0,NULL),
+ (11,3,NULL,0,NULL,0,34567,'12',10,53,0,0,NULL),
+ (12,3,NULL,0,NULL,0,34567,'12',10,53,0,0,NULL),
+ (13,3,NULL,0,NULL,0,34567,'12',10,53,0,0,NULL),
+ (14,3,NULL,0,NULL,0,34567,'12',10,53,0,0,NULL),
+ (15,3,NULL,0,NULL,0,34567,'12',10,53,0,0,NULL),
+ (16,3,NULL,0,NULL,0,35456547888,'87978',10,53,0,0,NULL);
+/*!40000 ALTER TABLE `supplierproducts` ENABLE KEYS */;
+
+
+--
+-- Definition of table `supplierproductsinfo`
+--
+
+DROP TABLE IF EXISTS `supplierproductsinfo`;
+CREATE TABLE `supplierproductsinfo` (
+  `supplierProduct_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `buying_price` bigint(20) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL,
+  `isdelete` tinyint(1) DEFAULT NULL,
+  `tech_ord` varchar(255) DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
+  `supplier_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`supplierProduct_id`),
+  KEY `FK_k9i2ntnww3mioh0n47t1yuiiy` (`product_id`),
+  KEY `FK_jymj7vyw4ji2g1iobwa9l40s7` (`supplier_id`),
+  CONSTRAINT `FK_jymj7vyw4ji2g1iobwa9l40s7` FOREIGN KEY (`supplier_id`) REFERENCES `supplier_info` (`supplier_id`),
+  CONSTRAINT `FK_k9i2ntnww3mioh0n47t1yuiiy` FOREIGN KEY (`product_id`) REFERENCES `manage_products` (`service_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `supplierproductsinfo`
+--
+
+/*!40000 ALTER TABLE `supplierproductsinfo` DISABLE KEYS */;
+INSERT INTO `supplierproductsinfo` (`supplierProduct_id`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`buying_price`,`isActive`,`isdelete`,`tech_ord`,`product_id`,`supplier_id`) VALUES 
+ (1,2,NULL,0,NULL,0,50000,0,0,'iOS',50,13),
+ (2,2,NULL,0,NULL,0,50000,0,0,'iOS',51,13),
+ (3,2,NULL,0,NULL,0,50000,0,0,'iOS',51,13),
+ (4,2,NULL,0,NULL,0,50000,0,0,'iOS',51,12),
+ (5,2,NULL,0,NULL,0,50000,0,0,'iOS',51,12),
+ (6,2,NULL,0,NULL,0,100000,0,0,'mouse',50,12),
+ (7,2,NULL,0,NULL,0,20000,0,0,'iOS',50,13),
+ (9,2,NULL,0,NULL,0,70000,0,0,'mouse',51,13),
+ (10,2,NULL,0,NULL,0,40000,0,0,'iOS',51,12),
+ (11,2,NULL,0,NULL,0,50000,0,0,'iOS',50,12),
+ (12,2,NULL,0,NULL,0,30000,0,0,'mouse',51,12),
+ (13,2,NULL,0,NULL,0,40000,0,0,'mouse',51,13),
+ (14,2,NULL,0,NULL,0,60000,0,0,'iOS',50,12),
+ (15,2,NULL,0,NULL,0,70000,0,0,'iOS',50,11),
+ (16,2,NULL,0,NULL,0,50000,0,0,'mouse',51,11);
+/*!40000 ALTER TABLE `supplierproductsinfo` ENABLE KEYS */;
+
+
+--
+-- Definition of table `task_management`
+--
+
+DROP TABLE IF EXISTS `task_management`;
+CREATE TABLE `task_management` (
+  `taskId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  `closedTime` varchar(255) DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `dueDate` varchar(255) DEFAULT NULL,
+  `entityId` bigint(20) DEFAULT NULL,
+  `entityName` varchar(255) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT NULL,
+  `isDelete` tinyint(1) DEFAULT NULL,
+  `leadName` varchar(255) DEFAULT NULL,
+  `priority` varchar(255) DEFAULT NULL,
+  `relatedTo` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `workItemsId` bigint(20) DEFAULT NULL,
+  `leadsName` bigint(20) DEFAULT NULL,
+  `projectId` bigint(20) DEFAULT NULL,
+  `loginId` bigint(20) DEFAULT NULL,
+  `leadsId` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`taskId`),
+  KEY `FK_rfaft0es5uosy1hx6tfwgwvo5` (`workItemsId`),
+  KEY `FK_5si4lu9kdr444ssnv98iu9unt` (`leadsName`),
+  KEY `FK_m390pufxnroghehfxrbd8ye54` (`projectId`),
+  KEY `FK_7bgcjknujrxq7twqgeimkwejx` (`loginId`),
+  KEY `FK_nhmeps87spwxvg4yj2m7a1ql1` (`leadsId`),
+  CONSTRAINT `FK_5si4lu9kdr444ssnv98iu9unt` FOREIGN KEY (`leadsName`) REFERENCES `leads` (`Leads_Id`),
+  CONSTRAINT `FK_7bgcjknujrxq7twqgeimkwejx` FOREIGN KEY (`loginId`) REFERENCES `login` (`id`),
+  CONSTRAINT `FK_m390pufxnroghehfxrbd8ye54` FOREIGN KEY (`projectId`) REFERENCES `project` (`projectId`),
+  CONSTRAINT `FK_nhmeps87spwxvg4yj2m7a1ql1` FOREIGN KEY (`leadsId`) REFERENCES `leads` (`Leads_Id`),
+  CONSTRAINT `FK_rfaft0es5uosy1hx6tfwgwvo5` FOREIGN KEY (`workItemsId`) REFERENCES `workitem` (`workItemId`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `task_management`
+--
+
+/*!40000 ALTER TABLE `task_management` DISABLE KEYS */;
+INSERT INTO `task_management` (`taskId`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`Description`,`closedTime`,`date`,`dueDate`,`entityId`,`entityName`,`isActive`,`isDelete`,`leadName`,`priority`,`relatedTo`,`status`,`subject`,`workItemsId`,`leadsName`,`projectId`,`loginId`,`leadsId`) VALUES 
+ (1,3,'2024-06-07 18:28:33',0,'2024-06-07 18:28:33',0,'sdfdsgsdgs',NULL,NULL,'06/14/2024',0,NULL,1,0,NULL,'Highest',NULL,'Completed',NULL,45,NULL,21,6,6),
+ (2,2,'2024-06-08 15:07:11',0,'2024-06-08 15:07:11',0,'well',NULL,NULL,'06/09/2024',0,NULL,1,0,NULL,'Highest',NULL,'Completed',NULL,43,NULL,22,4,2),
+ (3,2,'2024-06-08 15:03:42',0,'2024-06-08 15:03:42',0,'sdfghj',NULL,NULL,'06/15/2024',0,NULL,1,0,NULL,'High',NULL,'Working',NULL,43,NULL,22,4,2),
+ (4,2,'2024-06-08 13:05:31',0,'2024-06-08 13:05:31',0,'qwsedrftgyhujikolp',NULL,NULL,'06/24/2024',0,NULL,1,0,NULL,'Low',NULL,'Completed',NULL,43,NULL,22,5,8),
+ (5,2,NULL,0,NULL,0,'poiuytrew',NULL,NULL,'06/08/2024',0,NULL,0,0,NULL,'High',NULL,'Working',NULL,43,NULL,22,5,3),
+ (6,2,NULL,0,NULL,0,'asdfghj',NULL,NULL,'06/19/2024',0,NULL,0,0,NULL,'High',NULL,'Working',NULL,43,NULL,22,4,9),
+ (7,2,'2024-06-08 15:52:26',0,'2024-06-08 15:52:26',0,'sdfgyhuji',NULL,NULL,'06/25/2024',0,NULL,1,0,NULL,'High',NULL,'Completed',NULL,43,NULL,22,12,10);
+/*!40000 ALTER TABLE `task_management` ENABLE KEYS */;
+
+
+--
+-- Definition of table `task_updates`
+--
+
+DROP TABLE IF EXISTS `task_updates`;
+CREATE TABLE `task_updates` (
+  `taskTrackingId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `descriptions` varchar(255) DEFAULT NULL,
+  `entityid` bigint(20) NOT NULL,
+  `entitytype` varchar(255) DEFAULT NULL,
+  `priority` varchar(255) DEFAULT NULL,
+  `report` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `uploadfile` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`taskTrackingId`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `task_updates`
+--
+
+/*!40000 ALTER TABLE `task_updates` DISABLE KEYS */;
+INSERT INTO `task_updates` (`taskTrackingId`,`companyId`,`created`,`createdBy`,`modified`,`modifiedBy`,`date`,`descriptions`,`entityid`,`entitytype`,`priority`,`report`,`status`,`subject`,`uploadfile`) VALUES 
+ (1,NULL,NULL,0,NULL,0,'06/17/2024','well',2,'TaskManagement',NULL,'fine',NULL,NULL,'1.png'),
+ (2,NULL,NULL,0,NULL,0,'06/11/2024','ydtydtyd',1,'TaskManagement',NULL,'fututdytd',NULL,NULL,'2.png'),
+ (3,NULL,NULL,0,NULL,0,'03/25/2024','afasfwqqw',2,'TaskManagement',NULL,'asfafas',NULL,NULL,'3.png');
+/*!40000 ALTER TABLE `task_updates` ENABLE KEYS */;
+
+
+--
+-- Definition of table `users_roles`
+--
+
+DROP TABLE IF EXISTS `users_roles`;
+CREATE TABLE `users_roles` (
+  `id` bigint(20) NOT NULL,
+  `roleId` bigint(20) NOT NULL,
+  KEY `FK_onke18cwkc3wbu3kglh0kb175` (`roleId`),
+  KEY `FK_guft6s91aqv6wp7hc91cplhl9` (`id`),
+  CONSTRAINT `FK_guft6s91aqv6wp7hc91cplhl9` FOREIGN KEY (`id`) REFERENCES `login` (`id`),
+  CONSTRAINT `FK_onke18cwkc3wbu3kglh0kb175` FOREIGN KEY (`roleId`) REFERENCES `roles` (`roleId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users_roles`
+--
+
+/*!40000 ALTER TABLE `users_roles` DISABLE KEYS */;
+INSERT INTO `users_roles` (`id`,`roleId`) VALUES 
+ (1,2),
+ (4,3),
+ (6,3);
+/*!40000 ALTER TABLE `users_roles` ENABLE KEYS */;
+
+
+--
+-- Definition of table `workitem`
+--
+
+DROP TABLE IF EXISTS `workitem`;
+CREATE TABLE `workitem` (
+  `workItemId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created` datetime DEFAULT NULL,
+  `createdBy` bigint(20) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `modifiedBy` bigint(20) DEFAULT NULL,
+  `is_Active` tinyint(1) DEFAULT NULL,
+  `is_Delete` tinyint(1) DEFAULT NULL,
+  `sNo` int(11) NOT NULL,
+  `Work_Item` varchar(255) DEFAULT NULL,
+  `Work_Item_Code` varchar(255) DEFAULT NULL,
+  `Work_Item_Type` varchar(255) DEFAULT NULL,
+  `companyId` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`workItemId`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `workitem`
+--
+
+/*!40000 ALTER TABLE `workitem` DISABLE KEYS */;
+INSERT INTO `workitem` (`workItemId`,`created`,`createdBy`,`modified`,`modifiedBy`,`is_Active`,`is_Delete`,`sNo`,`Work_Item`,`Work_Item_Code`,`Work_Item_Type`,`companyId`) VALUES 
+ (38,'2024-05-17 16:41:31',0,'2024-05-17 16:41:31',0,1,0,0,'sales acceleratords','3658','Dynamicsq',1),
+ (39,NULL,1,NULL,0,1,1,0,'1234','hgfddgj','12345',1),
+ (40,NULL,1,NULL,0,1,1,0,'!\"£$%^^&','qwfvdgfd','!\"££$$',1),
+ (41,NULL,1,NULL,0,1,0,0,'4344234242','43243242342','123323123123',1),
+ (42,NULL,1,NULL,0,1,0,0,'','','',1),
+ (43,NULL,4,NULL,0,1,0,0,'sales accelerator','365','Dynamics',2),
+ (44,NULL,1,NULL,0,1,0,0,'sales accelerator','365','Dynamics',1),
+ (45,NULL,6,NULL,0,1,0,0,'Demo','2404','Testing',3),
+ (46,NULL,1,NULL,0,1,0,0,'sales acceleratords','364','Dynamics',1),
+ (47,NULL,1,NULL,0,1,0,0,'sales acceleratords','666545','Dynamicsq',1),
+ (48,NULL,1,NULL,0,1,0,0,'sales accelerator','3658','sales order',1),
+ (49,NULL,1,NULL,0,1,0,0,'sales accelerator','367','copyright',1),
+ (50,NULL,1,NULL,0,1,0,0,'sales accelerator','456','techology',1);
+/*!40000 ALTER TABLE `workitem` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
