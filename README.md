@@ -16,7 +16,8 @@ SalesSphere aims to simplify the product sales process for businesses of all siz
        Generate detailed sales and inventory reports for data-driven decisions.
 # 🔒 Secure Authentication:
        Role-based access control to ensure data privacy.
-# 🌐 Responsive UI: Built with JSP for a dynamic and interactive user experience.
+# 🌐 Responsive UI: 
+      Built with JSP for a dynamic and interactive user experience.
 
 
 # 🛠️ Tech Stack
